@@ -1,0 +1,711 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology/"
+     xml:base="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#actedIn -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#actedIn">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#hasActor"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#Actor"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#Film"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#countryOfOriginOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#countryOfOriginOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#hasCountryOfOrigin"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#CountryOfOrigin"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#CinematicWork"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#directorOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#directorOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#hasDirector"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#Director"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#CinematicWork"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#dubbedIn -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#dubbedIn">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#dubbingOf"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#CinematicWork"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#Language"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#dubbingOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#dubbingOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#Language"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#CinematicWork"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#friendOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#friendOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#User"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#User"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#hasActor -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#hasActor">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#Film"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#Actor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#hasCountryOfOrigin -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#hasCountryOfOrigin">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#CinematicWork"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#CountryOfOrigin"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#hasDirector -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#hasDirector">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#CinematicWork"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#Director"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#hasParticipant -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#hasParticipant">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#participatedIn"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#Event"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#CinematicWork"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#hasPreference -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#hasPreference">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#preferenceOf"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#User"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#Preference"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#hasRating -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#hasRating">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#CinematicWork"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#Rating"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#hasScreenwriter -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#hasScreenwriter">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#screenwriterOf"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#CinematicWork"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#Screenwriter"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#hasTheme -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#hasTheme">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#themeOf"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#CinematicWork"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#Theme"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#makesRating -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#makesRating">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#ratingOf"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#User"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#Rating"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#participatedIn -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#participatedIn">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#CinematicWork"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#Event"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#preferenceOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#preferenceOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#Preference"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#User"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#prefers -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#prefers">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#Preference"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#Actor"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#CinematicWork"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#Director"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#Theme"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#ratingAbout -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#ratingAbout">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#Rating"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#Actor"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#CinematicWork"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#Director"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#ratingOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#ratingOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#Rating"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#User"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#screenwriterOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#screenwriterOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#Screenwriter"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#CinematicWork"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#themeOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#themeOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#Theme"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#CinematicWork"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#watched -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#watched">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#User"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#CinematicWork"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#winnerOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#winnerOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#wonBy"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#CinematicWork"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#Award"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#wonBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#wonBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#Award"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#CinematicWork"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#active -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#active">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#Preference"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#age -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#age">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#User"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#ageRating -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#ageRating">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#CinematicWork"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#birthDate -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#birthDate">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#countryName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#countryName">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#CountryOfOrigin"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#durationMinutes -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#durationMinutes">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#CinematicWork"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#email -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#email">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#User"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#eventDate -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#eventDate">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#AwardCeremony"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#interestLevel -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#interestLevel">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#Preference"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#languageName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#languageName">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#Language"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#location -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#location">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#AwardCeremony"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#name -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#name">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#nationality -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#nationality">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#originalTitle -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#originalTitle">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#CinematicWork"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#phoneNumber -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#phoneNumber">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#User"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#portugueseTitle -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#portugueseTitle">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#CinematicWork"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#preferenceType -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#preferenceType">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#Preference"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#ratingDate -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#ratingDate">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#Rating"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#registrationDate -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#registrationDate">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#Preference"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#User"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#releaseDate -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#releaseDate">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#CinematicWork"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#relevance -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#relevance">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#Preference"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#Rating"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#score -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#score">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#Rating"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#username -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#username">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#User"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#Actor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#Actor">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#FilmProfessional"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#Award -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#Award">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#AwardCeremony"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#AwardCeremony -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#AwardCeremony">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#entity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#CinematicWork -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#CinematicWork">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#entity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#CountryOfOrigin -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#CountryOfOrigin">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#entity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#Director -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#Director">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#FilmProfessional"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#Documentary -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#Documentary">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#CinematicWork"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#Event -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#Event">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#AwardCeremony"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#Film -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#Film">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#CinematicWork"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#FilmProfessional -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#FilmProfessional">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#Person"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#Language -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#Language">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#entity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#Person -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#Person">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#entity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#Preference -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#Preference">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#entity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#Rating -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#Rating">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#entity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#Screenwriter -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#Screenwriter">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#FilmProfessional"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#Theme -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#Theme">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#entity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#User -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#User">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#Person"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#entity -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#entity"/>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+
