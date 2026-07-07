@@ -17,9 +17,11 @@ class OntologyManager:
         self.ontology.save(file=self.ontology_path)
 
 
-    def get_ontology(self):
-        return self.ontology
-    
+    @property
+    def ontology(self):
+        return self._ontology
 
-    def list_classes(self):
-        return list(self.ontology.classes())
+    @ontology.setter
+    def ontology(self, value):
+        self._ontology = value
+    
