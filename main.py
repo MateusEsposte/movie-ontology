@@ -17,24 +17,6 @@ def main():
     repository = OntologyRepository(manager)
 
     print_separator()
-    print("CLASSES\n")
-    for cls in repository.get_classes():
-        print(cls.name)
-
-
-    print_separator()
-    print("OBJECT PROPERTIES\n")
-    for prop in repository.get_object_properties():
-        print(prop.name)
-
-
-    print_separator()
-    print("DATA PROPERTIES\n")
-    for prop in repository.get_data_properties():
-        print(prop.name)
-
-
-    print_separator()
     print("INDIVÍDUOS\n")
     individuals = repository.get_individuals()
     if len(individuals) == 0:

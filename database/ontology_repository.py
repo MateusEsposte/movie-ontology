@@ -156,3 +156,32 @@ class OntologyRepository:
 
         if target in relation:
             relation.remove(target)
+
+    
+    def add_class(self, individual, class_name: str):
+        """Adiciona uma classe a um indivíduo existente."""
+        ontology_class = self.find_class(class_name)
+
+        if ontology_class is None:
+            raise ValueError(f"Classe '{class_name}' não encontrada.")
+
+        if ontology_class not in individual.is_a:
+            individual.is_a.append(ontology_class)
+
+    
+    def has_class(self, individual, class_name: str):
+        ontology_class = self.find_class(class_name)
+
+        if ontology_class is None:
+            return False
+
+        return ontology_class in individual.is_a
+    
+
+    def list_individuals_by_class(self, class_name: str):
+        ontology_class = self.find_class(class_name)
+
+        if ontology_class is None:
+            raise ValueError(f"Classe '{class_name}' não encontrada.")
+
+        return list(ontology_class.instances())

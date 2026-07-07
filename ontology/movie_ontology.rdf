@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
-<rdf:RDF xmlns="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology/"
-     xml:base="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology/"
+<rdf:RDF xmlns="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#"
+     xml:base="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
@@ -703,6 +703,23 @@
     <!-- http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#entity -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#entity"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#christopher_nolan -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/espos/ontologies/2026/5/movie-ontology#christopher_nolan"/>
 </rdf:RDF>
 
 
