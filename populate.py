@@ -2,18 +2,40 @@
 from database.ontology_manager import OntologyManager
 from database.ontology_repository import OntologyRepository
 from data.people import PEOPLE
+from data.theme import THEMES
+from data.languages import LANGUAGES
+from data.countries import COUNTRIES
+
 
 
 def populate_themes(repository):
-    pass
+    for theme in THEMES:
+
+        create_entity(
+            repository,
+            "Theme",
+            theme
+        )
 
 
 def populate_languages(repository):
-    pass
+    for language in LANGUAGES:
+
+        create_entity(
+            repository,
+            "Language",
+            language
+        )
 
 
 def populate_countries(repository):
-    pass
+    for country in COUNTRIES:
+
+        create_entity(
+            repository,
+            "Country",
+            country
+        )
 
 
 def populate_people(repository):
@@ -53,6 +75,37 @@ def populate_preferences(repository):
 
 def populate_ratings(repository):
     pass
+
+
+def create_entity(
+    repository,
+    class_name,
+    entity_data
+):
+    """Cria um indivíduo e preenche automaticamente todas as Data Properties informadas."""
+
+    entity_id = entity_data["id"]
+
+    if repository.exists_individual(entity_id):
+        return repository.get_individual_by_name(entity_id)
+
+    entity = repository.create_individual(
+        class_name,
+        entity_id
+    )
+
+    for property_name, value in entity_data.items():
+
+        if property_name == "id":
+            continue
+
+        repository.set_data_property(
+            entity,
+            property_name,
+            value
+        )
+
+    return entity
 
 
 def main():
