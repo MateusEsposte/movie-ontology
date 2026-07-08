@@ -185,3 +185,25 @@ class OntologyRepository:
             raise ValueError(f"Classe '{class_name}' não encontrada.")
 
         return list(ontology_class.instances())
+    
+
+    def connect_individuals(
+        self,
+        source_individual,
+        property_name: str,
+        target_individual_name: str
+    ):
+        """Cria uma Object Property entre dois indivíduos."""
+
+        target = self.get_individual_by_name(target_individual_name)
+
+        if target is None:
+            raise ValueError(
+                f"Indivíduo '{target_individual_name}' não encontrado."
+            )
+
+        self.add_object_property(
+            source_individual,
+            property_name,
+            target
+        )
