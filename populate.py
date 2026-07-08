@@ -30,7 +30,7 @@ def populate_people(repository):
         )
 
         # Data Properties
-        repository.set_data_property(person, "name", person_data["name"])
+        repository.set_data_property(person, "fullName", person_data["name"])
         repository.set_data_property(person, "birthDate", person_data["birth_date"])
         repository.set_data_property(person, "nationality", person_data["nationality"])
 

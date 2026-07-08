@@ -8,16 +8,12 @@ def print_separator():
 
 
 def main():
-    print_separator()
-    print("MOVIE RECOMMENDATION SYSTEM")
-    print_separator()
-
     manager = OntologyManager("ontology/movie_ontology.rdf")
     manager.load()
     repository = OntologyRepository(manager)
 
-    print_separator()
     print("INDIVÍDUOS\n")
+    
     individuals = repository.get_individuals()
     if len(individuals) == 0:
         print("Nenhum indivíduo cadastrado.")

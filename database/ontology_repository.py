@@ -160,7 +160,7 @@ class OntologyRepository:
     
     def add_class(self, individual, class_name: str):
         """Adiciona uma classe a um indivíduo existente."""
-        ontology_class = self.find_class(class_name)
+        ontology_class = self.get_class_by_name(class_name)
 
         if ontology_class is None:
             raise ValueError(f"Classe '{class_name}' não encontrada.")
@@ -170,7 +170,7 @@ class OntologyRepository:
 
     
     def has_class(self, individual, class_name: str):
-        ontology_class = self.find_class(class_name)
+        ontology_class = self.get_class_by_name(class_name)
 
         if ontology_class is None:
             return False
