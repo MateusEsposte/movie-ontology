@@ -1,4 +1,4 @@
-MOVIES = [
+DATA_MOVIES = [
 
     {
         "id": "film_gran_torino",

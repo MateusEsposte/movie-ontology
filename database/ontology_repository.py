@@ -247,3 +247,14 @@ class OntologyRepository:
             )
 
         return list(object_property[individual])
+    
+
+    def require_individual(self, individual_name: str):
+        individual = self.get_individual_by_name(individual_name)
+
+        if individual is None:
+            raise ValueError(
+                f"Indivíduo '{individual_name}' não encontrado."
+            )
+
+        return individual

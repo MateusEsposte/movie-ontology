@@ -1,4 +1,4 @@
-COUNTRIES = [
+DATA_COUNTRIES = [
 
     {
         "id": "country_usa",

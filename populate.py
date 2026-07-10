@@ -1,49 +1,48 @@
 
 from database.ontology_manager import OntologyManager
 from database.ontology_repository import OntologyRepository
-from data.people import PEOPLE
-from data.theme import THEMES
-from data.languages import LANGUAGES
-from data.countries import COUNTRIES
-from data.movies import MOVIES
-
-
+from data.people import DATA_PEOPLE
+from data.theme import DATA_THEMES
+from data.languages import DATA_LANGUAGES
+from data.countries import DATA_COUNTRIES
+from data.movies import DATA_MOVIES
+from constants.ontology_constants import *
 
 def populate_themes(repository):
-    for theme in THEMES:
+    for theme in DATA_THEMES:
         create_entity(
             repository,
-            "Theme",
+            THEME,
             theme
         )
 
 
 def populate_languages(repository):
-    for language in LANGUAGES:
+    for language in DATA_LANGUAGES:
         create_entity(
             repository,
-            "Language",
+            LANGUAGE,
             language
         )
 
 
 def populate_countries(repository):
-    for country in COUNTRIES:
+    for country in DATA_COUNTRIES:
         create_entity(
             repository,
-            "CountryOfOrigin",
+            COUNTRY,
             country
         )
 
 
 def populate_people(repository):
-    for person_data in PEOPLE:
+    for person_data in DATA_PEOPLE:
         if repository.exists_individual(person_data["id"]):
             print(f"  - {person_data['name']} já existe.")
             continue
 
         person = repository.create_individual(
-            "Person",
+            PERSON,
             person_data["id"]
         )
 
@@ -56,7 +55,7 @@ def populate_people(repository):
 
 
 def populate_movies(repository):
-    for movie_data in MOVIES:
+    for movie_data in DATA_MOVIES:
         # Evita criar o mesmo filme novamente
         if repository.exists_individual(movie_data["id"]):
             print(f'  - {movie_data["originalTitle"]} já existe.')
@@ -64,8 +63,8 @@ def populate_movies(repository):
 
         # Cria o indivíduo Film
         movie = repository.create_individual(
-            "Film",
-            movie_data["id"]
+            FILM,
+            movie_data["originalTitle"]
         )
 
         # -----------------------------
@@ -73,31 +72,31 @@ def populate_movies(repository):
         # -----------------------------
         repository.set_data_property(
             movie,
-            "originalTitle",
+            ORIGINAL,
             movie_data["originalTitle"]
         )
 
         repository.set_data_property(
             movie,
-            "portugueseTitle",
+            PORTUGUESE,
             movie_data["portugueseTitle"]
         )
 
         repository.set_data_property(
             movie,
-            "releaseDate",
+            RELEASE,
             movie_data["releaseDate"]
         )
 
         repository.set_data_property(
             movie,
-            "durationMinutes",
+            DURATION_MINUTES,
             movie_data["durationMinutes"]
         )
 
         repository.set_data_property(
             movie,
-            "ageRating",
+            AGE_RATING,
             movie_data["ageRating"]
         )
 
@@ -111,10 +110,9 @@ def populate_movies(repository):
             )
 
             if director is not None:
-
                 repository.add_object_property(
                     movie,
-                    "hasDirector",
+                    HAS_DIRECTOR,
                     director
                 )
 
@@ -126,10 +124,9 @@ def populate_movies(repository):
             actor = repository.get_individual_by_name(actor_id)
 
             if actor is not None:
-
                 repository.add_object_property(
                     movie,
-                    "hasActor",
+                    HAS_ACTOR,
                     actor
                 )
 
@@ -144,7 +141,7 @@ def populate_movies(repository):
 
                 repository.add_object_property(
                     movie,
-                    "hasTheme",
+                    HAS_THEME,
                     theme
                 )
 
@@ -159,7 +156,7 @@ def populate_movies(repository):
 
             repository.add_object_property(
                 movie,
-                "hasCountryOfOrigin",
+                HAS_COUNTRY_OF_ORIGIN,
                 country
             )
 

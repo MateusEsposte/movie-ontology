@@ -1,4 +1,4 @@
-LANGUAGES = [
+DATA_LANGUAGES = [
 
     {
         "id": "language_english",

@@ -488,7 +488,7 @@
   <countryName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Brazil</countryName>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#film_gran_torino">
+<owl:NamedIndividual rdf:about="#Gran Torino">
   <rdf:type rdf:resource="#Film"/>
   <hasDirector rdf:resource="#clint_eastwood"/>
   <hasActor rdf:resource="#clint_eastwood"/>
@@ -501,7 +501,7 @@
   <ageRating rdf:datatype="http://www.w3.org/2001/XMLSchema#string">16</ageRating>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#film_forrest_gump">
+<owl:NamedIndividual rdf:about="#Forrest Gump">
   <rdf:type rdf:resource="#Film"/>
   <hasActor rdf:resource="#tom_hanks"/>
   <hasTheme rdf:resource="#theme_drama"/>

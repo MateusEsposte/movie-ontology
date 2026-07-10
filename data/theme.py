@@ -1,4 +1,4 @@
-THEMES = [
+DATA_THEMES = [
 
     {
         "id": "theme_action",

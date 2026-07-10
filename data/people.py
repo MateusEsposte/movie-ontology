@@ -1,4 +1,4 @@
-PEOPLE = [
+DATA_PEOPLE = [
     {
         "id": "christopher_nolan",
         "name": "Christopher Nolan",
