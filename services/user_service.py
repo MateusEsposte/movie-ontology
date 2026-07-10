@@ -18,6 +18,6 @@ class UserService:
     def delete_user():
         pass
     
-    def exists():
-        pass
+    def exists(self, username: str) -> bool:
+        return self.repository.exists_individual(username)
     
