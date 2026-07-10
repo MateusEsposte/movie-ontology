@@ -1,3 +1,5 @@
+from owlready2 import destroy_entity
+
 class OntologyRepository:
     def __init__(self, manager):
         self.manager = manager
@@ -95,7 +97,11 @@ class OntologyRepository:
         if self.exists_individual(individual_name):
             raise ValueError(f"O indivíduo '{individual_name}' já existe.")
 
-        return ontology_class(individual_name)
+        individual = ontology_class(individual_name)
+
+        self.save()
+
+        return individual
     
 
     def list_individuals_by_class(self, class_name: str):
@@ -115,6 +121,7 @@ class OntologyRepository:
             )
 
         setattr(individual, property_name, [value])
+        self.save()
 
 
     def get_data_property(self, individual, property_name: str):
@@ -131,27 +138,17 @@ class OntologyRepository:
         return values[0]
     
 
-    def add_object_property(
-        self,
-        source,
-        property_name: str,
-        target
-    ):
+    def add_object_property(self, source, property_name: str, target):
 
         if not hasattr(source, property_name):
             raise ValueError(
                 f"Object Property '{property_name}' não encontrada."
             )
         getattr(source, property_name).append(target)
+        self.save()
 
 
-    def remove_object_property(
-        self,
-        source,
-        property_name: str,
-        target
-    ):
-
+    def remove_object_property(self, source, property_name: str, target):
         relation = getattr(source, property_name)
 
         if target in relation:
@@ -187,12 +184,7 @@ class OntologyRepository:
         return list(ontology_class.instances())
     
 
-    def connect_individuals(
-        self,
-        source_individual,
-        property_name: str,
-        target_individual_name: str
-    ):
+    def connect_individuals(self, source_individual, property_name: str, target_individual_name: str):
         """Cria uma Object Property entre dois indivíduos."""
 
         target = self.get_individual_by_name(target_individual_name)
@@ -207,3 +199,33 @@ class OntologyRepository:
             property_name,
             target
         )
+
+
+    def save(self):
+        self.manager.save()
+
+
+    def get_individuals_by_class(self, class_name: str):
+        ontology_class = self.get_class_by_name(class_name)
+
+        if ontology_class is None:
+            raise ValueError(
+                f"Classe '{class_name}' não encontrada."
+            )
+
+        return list(ontology_class.instances())
+    
+    
+    def remove_individual(self, individual_name: str):
+        individual = self.get_individual_by_name(
+            individual_name
+        )
+
+        if individual is None:
+            raise ValueError(
+                f"Indivíduo '{individual_name}' não encontrado."
+            )
+
+        destroy_entity(individual)
+
+        self.save()

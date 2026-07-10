@@ -31,7 +31,7 @@ def populate_countries(repository):
     for country in COUNTRIES:
         create_entity(
             repository,
-            "Country",
+            "CountryOfOrigin",
             country
         )
 
