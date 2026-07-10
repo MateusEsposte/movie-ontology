@@ -114,13 +114,14 @@ class OntologyRepository:
     
 
     def set_data_property(self, individual, property_name: str, value):
-        """Define o valor de uma Data Property."""
-        if not hasattr(individual, property_name):
+        data_property = self.get_data_property_by_name(property_name)
+        if data_property is None:
             raise ValueError(
                 f"Data Property '{property_name}' não encontrada."
             )
 
         setattr(individual, property_name, [value])
+
         self.save()
 
 
@@ -233,7 +234,6 @@ class OntologyRepository:
         destroy_entity(individual)
 
         self.save()
-
 
 
     def get_object_property(self, individual, property_name: str):

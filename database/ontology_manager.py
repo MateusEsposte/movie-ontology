@@ -5,6 +5,7 @@ class OntologyManager:
     def __init__(self, ontology_path):
         self.ontology_path = ontology_path
         self.ontology = None
+        self.load()
 
 
     def load(self):

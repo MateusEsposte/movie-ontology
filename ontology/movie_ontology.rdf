@@ -513,5 +513,17 @@
   <ageRating rdf:datatype="http://www.w3.org/2001/XMLSchema#string">12</ageRating>
 </owl:NamedIndividual>
 
+<owl:NamedIndividual rdf:about="#['Mateus Esposte']">
+  <rdf:type rdf:resource="#User"/>
+  <username rdf:datatype="http://www.w3.org/2001/XMLSchema#string">mateus</username>
+  <email rdf:datatype="http://www.w3.org/2001/XMLSchema#string">mateus@email.com</email>
+  <age rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">24</age>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#mateus">
+  <rdf:type rdf:resource="#User"/>
+  <username rdf:datatype="http://www.w3.org/2001/XMLSchema#string">mateus</username>
+</owl:NamedIndividual>
+
 
 </rdf:RDF>

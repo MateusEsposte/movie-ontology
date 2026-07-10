@@ -176,13 +176,7 @@ def populate_ratings(repository):
     pass
 
 
-def create_entity(
-    repository,
-    class_name,
-    entity_data
-):
-    """Cria um indivíduo e preenche automaticamente todas as Data Properties informadas."""
-
+def create_entity(repository, class_name, entity_data):
     entity_id = entity_data["id"]
 
     if repository.exists_individual(entity_id):
