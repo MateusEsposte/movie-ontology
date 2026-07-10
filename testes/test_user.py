@@ -7,11 +7,7 @@ manager = OntologyManager("./ontology/movie_ontology.rdf")
 repository = OntologyRepository(manager)
 service = UserService(repository, manager)
 
-service.create_user(
-    username="mateus",
-    name="Mateus Esposte",
-    email="mateus@email.com",
-    age=24
-)
+users = service.list_users()
 
-print(service.exists("mateus"))
+for user in users:
+    print(user)
