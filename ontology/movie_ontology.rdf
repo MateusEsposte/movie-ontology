@@ -500,5 +500,50 @@
   <ageRating rdf:datatype="http://www.w3.org/2001/XMLSchema#string">12</ageRating>
 </owl:NamedIndividual>
 
+<owl:NamedIndividual rdf:about="#film_gran_torino">
+  <rdf:type rdf:resource="#Film"/>
+  <hasDirector rdf:resource="#clint_eastwood"/>
+  <hasActor rdf:resource="#clint_eastwood"/>
+  <hasTheme rdf:resource="#theme_drama"/>
+  <hasCountryOfOrigin rdf:resource="#country_usa"/>
+  <originalTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Gran Torino</originalTitle>
+  <portugueseTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Gran Torino</portugueseTitle>
+  <releaseDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2008</releaseDate>
+  <durationMinutes rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">116</durationMinutes>
+  <ageRating rdf:datatype="http://www.w3.org/2001/XMLSchema#string">16</ageRating>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#mateus">
+  <rdf:type rdf:resource="#User"/>
+  <hasRating rdf:resource="#rating_001"/>
+  <fullName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mateus Esposte</fullName>
+  <email rdf:datatype="http://www.w3.org/2001/XMLSchema#string">mateus@example.com</email>
+  <age rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">23</age>
+  <registrationDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2026-07-11</registrationDate>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#rating_001">
+  <rdf:type rdf:resource="#Rating"/>
+  <ratingAbout rdf:resource="#film_gran_torino"/>
+  <ratingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2026-07-11</ratingDate>
+  <score rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</score>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#joao">
+  <rdf:type rdf:resource="#User"/>
+  <fullName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">João Silva</fullName>
+  <email rdf:datatype="http://www.w3.org/2001/XMLSchema#string">joao@example.com</email>
+  <age rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">25</age>
+  <registrationDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2026-07-11</registrationDate>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#maria">
+  <rdf:type rdf:resource="#User"/>
+  <fullName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Maria Souza</fullName>
+  <email rdf:datatype="http://www.w3.org/2001/XMLSchema#string">maria@example.com</email>
+  <age rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">22</age>
+  <registrationDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2026-07-11</registrationDate>
+</owl:NamedIndividual>
+
 
 </rdf:RDF>

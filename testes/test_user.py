@@ -1,14 +1,17 @@
 from database.ontology_manager import OntologyManager
 from database.ontology_repository import OntologyRepository
-from services.movie_services import MovieService
+from services.rating_services import RatingService
 
 
 manager = OntologyManager("./ontology/movie_ontology.rdf")
 repository = OntologyRepository(manager)
-service = MovieService(repository)
+service = RatingService(repository)
 
 
-movies = service.search_by_theme("Drama")
+ratings = service.list_user_ratings("mateus")
 
-for movie in movies:
-    print(movie.original_title)
+for rating in ratings:
+    print(
+        rating.movie_title,
+        rating.score
+    )

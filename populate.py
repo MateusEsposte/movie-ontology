@@ -6,6 +6,7 @@ from data.theme import DATA_THEMES
 from data.languages import DATA_LANGUAGES
 from data.countries import DATA_COUNTRIES
 from data.movies import DATA_MOVIES
+from data.users import DATA_USERS
 from constants.ontology_constants import *
 
 def populate_themes(repository):
@@ -135,7 +136,6 @@ def populate_movies(repository):
             theme = repository.get_individual_by_name(theme_id)
 
             if theme is not None:
-
                 repository.add_object_property(
                     movie,
                     HAS_THEME,
@@ -159,7 +159,18 @@ def populate_movies(repository):
 
 
 def populate_users(repository):
-    pass
+    for user in DATA_USERS:
+        create_entity(
+            repository,
+            USER,
+            {
+                "id": user["id"],
+                NAME: user["full_name"],
+                EMAIL: user["email"],
+                AGE: user["age"],
+                REGISTRATION: user["registration_date"]
+            }
+        )
 
 
 def populate_preferences(repository):
