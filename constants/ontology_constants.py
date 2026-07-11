@@ -20,7 +20,6 @@ FILM_PROFESSIONAL = "FilmProfessional"
 DOCUMENTARY = "Documentary"
 PREFERENCE = "Preference"
 
-
 # ==========================
 # DATA PROPERTIES
 # ==========================
@@ -35,7 +34,7 @@ EMAIL = "email"
 EVENT_DATE = "eventDate"
 NAME = "fullName"
 INTEREST_LEVEL = "interestLevel"
-LANGUAGE = "languageName" 
+LANGUAGE_NAME = "languageName" 
 LOCATION = "location"
 NATIONALITY = "nationality"
 ORIGINAL = "originalTitle"
@@ -48,7 +47,6 @@ RELEVANCE = "relevance"
 SCORE = "score"
 THEME_NAME = "themeName"
 USERNAME = "username"
-
 
 # ==========================
 # OBJECT PROPERTIES
@@ -79,3 +77,13 @@ THEME_OF = "themeOf"
 WATCHED = "watched"
 WINNER_OF = "winnerOf"
 WON_BY = "wonBy"
+
+# ==========================
+# PREFIX
+# ==========================
+
+FILM_PREFIX = "film_"
+PERSON_PREFIX = ""
+COUNTRY_PREFIX = "country_"
+THEME_PREFIX = "theme_"
+LANGUAGE_PREFIX = "language_"

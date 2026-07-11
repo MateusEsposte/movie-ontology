@@ -16,33 +16,19 @@ class UserService:
                 "Já existe um usuário com esse username."
             )
 
-        individual = self.repository.create_individual(
+        user = self.repository.create_individual(
             USER,
             username
         )
 
-        self.repository.set_data_property(
-            individual,
-            USERNAME,
-            username
-        )
-
-        self.repository.set_data_property(
-            individual,
-            NAME,
-            full_name
-        )
-
-        self.repository.set_data_property(
-            individual,
-            EMAIL,
-            email
-        )
-
-        self.repository.set_data_property(
-            individual,
-            AGE,
-            age
+        self.repository.set_data_properties(
+            user,
+            {
+                USERNAME: username,
+                NAME: full_name,
+                EMAIL: email,
+                AGE: age
+            }
         )
 
         return User(username=username, name=full_name, email=email, age=age)

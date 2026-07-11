@@ -64,7 +64,7 @@ def populate_movies(repository):
         # Cria o indivíduo Film
         movie = repository.create_individual(
             FILM,
-            movie_data["originalTitle"]
+            movie_data["id"]
         )
 
         # -----------------------------
@@ -104,7 +104,6 @@ def populate_movies(repository):
         # Director (opcional)
         # -----------------------------
         if movie_data.get("director"):
-
             director = repository.get_individual_by_name(
                 movie_data["director"]
             )
@@ -120,7 +119,6 @@ def populate_movies(repository):
         # Actors
         # -----------------------------
         for actor_id in movie_data["actors"]:
-
             actor = repository.get_individual_by_name(actor_id)
 
             if actor is not None:
@@ -134,7 +132,6 @@ def populate_movies(repository):
         # Themes
         # -----------------------------
         for theme_id in movie_data["themes"]:
-
             theme = repository.get_individual_by_name(theme_id)
 
             if theme is not None:

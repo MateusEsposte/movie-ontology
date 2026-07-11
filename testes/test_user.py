@@ -8,4 +8,7 @@ repository = OntologyRepository(manager)
 service = MovieService(repository)
 
 
-print(service.exists("Gran Torino"))
+movies = service.search_by_theme("Drama")
+
+for movie in movies:
+    print(movie.original_title)

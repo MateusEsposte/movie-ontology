@@ -488,20 +488,7 @@
   <countryName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Brazil</countryName>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#Gran Torino">
-  <rdf:type rdf:resource="#Film"/>
-  <hasDirector rdf:resource="#clint_eastwood"/>
-  <hasActor rdf:resource="#clint_eastwood"/>
-  <hasTheme rdf:resource="#theme_drama"/>
-  <hasCountryOfOrigin rdf:resource="#country_usa"/>
-  <originalTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Gran Torino</originalTitle>
-  <portugueseTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Gran Torino</portugueseTitle>
-  <releaseDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2008</releaseDate>
-  <durationMinutes rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">116</durationMinutes>
-  <ageRating rdf:datatype="http://www.w3.org/2001/XMLSchema#string">16</ageRating>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#Forrest Gump">
+<owl:NamedIndividual rdf:about="#film_forrest_gump">
   <rdf:type rdf:resource="#Film"/>
   <hasActor rdf:resource="#tom_hanks"/>
   <hasTheme rdf:resource="#theme_drama"/>

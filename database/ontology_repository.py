@@ -221,14 +221,10 @@ class OntologyRepository:
         return list(ontology_class.instances())
     
     
-    def remove_individual(self, individual_name: str):
-        individual = self.get_individual_by_name(
-            individual_name
-        )
-
+    def remove_individual(self, individual):
         if individual is None:
             raise ValueError(
-                f"Indivíduo '{individual_name}' não encontrado."
+                "Indivíduo não encontrado."
             )
 
         destroy_entity(individual)
@@ -258,3 +254,23 @@ class OntologyRepository:
             )
 
         return individual
+    
+    
+    def set_data_properties(self, individual, properties: dict):
+        """
+        Define várias Data Properties de uma única vez.
+
+        Args:
+            individual: indivíduo da ontologia.
+            properties: dicionário no formato
+                        {"property_name": value}
+        """
+
+        for property_name, value in properties.items():
+            self.set_data_property(
+                individual,
+                property_name,
+                value
+            )
+
+        self.save()
