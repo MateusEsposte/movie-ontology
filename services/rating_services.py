@@ -347,9 +347,3 @@ class RatingService:
         )
 
         return ranking
-
-
-
-
-
-
