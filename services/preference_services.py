@@ -4,10 +4,7 @@ from constants.ontology_constants import *
 
 
 class PreferenceService:
-    def __init__(
-        self,
-        repository: OntologyRepository
-    ):
+    def __init__(self, repository: OntologyRepository):
         self.repository = repository
 
     def _next_preference_id(self) -> str:
@@ -88,7 +85,28 @@ class PreferenceService:
 
         if preferred:
 
-            preferred_element = preferred[0].name
+            preferred = preferred[0]
+
+            if preference_type == "Theme":
+
+                preferred_element = self.repository.get_data_property(
+                    preferred,
+                    THEME_NAME
+                )
+
+            elif preference_type in ("Actor", "Director"):
+
+                preferred_element = self.repository.get_data_property(
+                    preferred,
+                    NAME
+                )
+
+            elif preference_type == "CinematicWork":
+
+                preferred_element = self.repository.get_data_property(
+                    preferred,
+                    ORIGINAL
+                )
 
         return Preference(
             preference_id=preference_id,
@@ -261,9 +279,3 @@ class PreferenceService:
             )
 
         return preferences
-
-
-
-
-
-
