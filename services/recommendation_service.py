@@ -343,14 +343,3 @@ class RecommendationService:
             similar_users
         )
 
-
-
-
-
-
-
-
-
-
-
-
