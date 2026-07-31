@@ -129,9 +129,6 @@ class UserService:
                 movie
             )
 
-    def unwatch_movie(self, username: str, movie_title: str):
-        pass
-
     def get_watched_movies(
         self,
         username: str
@@ -159,6 +156,9 @@ class UserService:
         return movies
 
     def get_unwatched_movies(self, username: str):
+        pass
+
+    def unwatch_movie(self, username: str, movie_title: str):
         pass
 
     def _build_movie(

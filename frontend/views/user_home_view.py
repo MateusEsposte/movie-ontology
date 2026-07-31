@@ -53,27 +53,9 @@ class UserHomeView(ctk.CTkFrame):
             weight=1
         )
 
-        title = ctk.CTkLabel(
-            self.content,
-            text="Bem-vindo ao Movie Recommendation System",
-            font=("Arial", 28, "bold")
-        )
-
-        title.pack(
-            pady=(80, 20)
-        )
-
-        subtitle = ctk.CTkLabel(
-            self.content,
-            text="Selecione uma opção no menu lateral.",
-            font=("Arial", 18)
-        )
-
         self.show_content(
             MoviesView
         )
-
-        subtitle.pack()
 
     def show_content(self, view_class):
 

@@ -171,8 +171,9 @@ class MoviesView(ctk.CTkFrame):
             text=info
         )
 
-    def watch_movie(self):
+        self.update_watch_button()
 
+    def watch_movie(self):
         if self.selected_movie is None:
             return
 
@@ -183,6 +184,8 @@ class MoviesView(ctk.CTkFrame):
             self.selected_movie.ontology_id
 
         )
+
+        self.update_watch_button()
 
         print(
             f"{self.current_user.username} assistiu {self.selected_movie.original_title}"
@@ -196,4 +199,35 @@ class MoviesView(ctk.CTkFrame):
 
         for movie in movies:
             print(movie.original_title)
+
+    def update_watch_button(self):
+        if self.selected_movie is None:
+            return
+
+        watched_movies = self.user_service.get_watched_movies(
+            self.current_user.username
+        )
+
+        watched_ids = [
+            movie.ontology_id
+            for movie in watched_movies
+        ]
+
+        if self.selected_movie.ontology_id in watched_ids:
+            self.watch_button.configure(
+                text="Assistido ✓",
+                state="disabled"
+            )
+        else:
+            self.watch_button.configure(
+                text="Marcar como assistido",
+                state="normal"
+            )
+
+
+
+
+
+
+
 
