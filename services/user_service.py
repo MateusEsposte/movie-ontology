@@ -1,6 +1,6 @@
 from models.user import User
 from constants.ontology_constants import *
-
+from models.movie import Movie
 
 class UserService:
     def __init__(self, repository, manager):
@@ -101,3 +101,204 @@ class UserService:
             )
 
         return users
+
+    def watch_movie(
+        self,
+        username: str,
+        movie_title: str
+    ):
+
+        user = self.repository.require_individual(
+            username
+        )
+
+        movie = self.repository.require_individual(
+            movie_title
+        )
+
+        watched = self.repository.get_object_property(
+            user,
+            WATCHED
+        )
+
+        if movie not in watched:
+
+            self.repository.add_object_property(
+                user,
+                WATCHED,
+                movie
+            )
+
+    def unwatch_movie(self, username: str, movie_title: str):
+        pass
+
+    def get_watched_movies(
+        self,
+        username: str
+    ) -> list[Movie]:
+
+        user = self.repository.require_individual(
+            username
+        )
+
+        watched_movies = self.repository.get_object_property(
+            user,
+            WATCHED
+        )
+
+        movies = []
+
+        for movie in watched_movies:
+
+            movies.append(
+                self._build_movie(
+                    movie
+                )
+            )
+
+        return movies
+
+    def get_unwatched_movies(self, username: str):
+        pass
+
+    def _build_movie(
+        self,
+        movie_individual
+    ):
+
+        ontology_id = movie_individual.name
+
+        original_title = self.repository.get_data_property(
+            movie_individual,
+            ORIGINAL
+        )
+
+        portuguese_title = self.repository.get_data_property(
+            movie_individual,
+            PORTUGUESE
+        )
+
+        release_date = self.repository.get_data_property(
+            movie_individual,
+            RELEASE
+        )
+
+        duration_minutes = self.repository.get_data_property(
+            movie_individual,
+            DURATION_MINUTES
+        )
+
+        age_rating = self.repository.get_data_property(
+            movie_individual,
+            AGE_RATING
+        )
+
+
+        directors = self.repository.get_object_property(
+            movie_individual,
+            HAS_DIRECTOR
+        )
+
+        director = None
+
+        if directors:
+
+            director = self.repository.get_data_property(
+                directors[0],
+                NAME
+            )
+
+
+        actors = self.repository.get_object_property(
+            movie_individual,
+            HAS_ACTOR
+        )
+
+        actor_names = []
+
+        for actor in actors:
+
+            actor_names.append(
+                self.repository.get_data_property(
+                    actor,
+                    NAME
+                )
+            )
+
+
+        themes = self.repository.get_object_property(
+            movie_individual,
+            HAS_THEME
+        )
+
+        theme = None
+
+        if themes:
+
+            theme = self.repository.get_data_property(
+                themes[0],
+                THEME_NAME
+            )
+
+
+        countries = self.repository.get_object_property(
+            movie_individual,
+            HAS_COUNTRY_OF_ORIGIN
+        )
+
+        country = None
+
+        if countries:
+
+            country = self.repository.get_data_property(
+                countries[0],
+                COUNTRY_NAME
+            )
+
+
+        languages = self.repository.get_object_property(
+            movie_individual,
+            DUBBED_IN
+        )
+
+        language_names = []
+
+        for language in languages:
+
+            language_names.append(
+                self.repository.get_data_property(
+                    language,
+                    LANGUAGE_NAME
+                )
+            )
+
+
+        return Movie(
+            ontology_id=ontology_id,
+            original_title=original_title,
+            portuguese_title=portuguese_title,
+            release_date=release_date,
+            duration_minutes=duration_minutes,
+            age_rating=age_rating,
+            country=country,
+            languages=language_names,
+            theme=theme,
+            director=director,
+            actors=actor_names
+        )
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    

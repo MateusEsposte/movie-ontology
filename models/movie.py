@@ -1,6 +1,7 @@
 class Movie:
     def __init__(
         self,
+        ontology_id: str,
         original_title: str,
         portuguese_title: str,
         release_date: str,
@@ -13,6 +14,7 @@ class Movie:
         actors: list[str]
     ):
 
+        self.ontology_id = ontology_id
         self.original_title = original_title
         self.portuguese_title = portuguese_title
         self.release_date = release_date

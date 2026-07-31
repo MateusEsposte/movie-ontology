@@ -1,15 +1,15 @@
 from services.movie_services import MovieService
-
 import customtkinter as ctk
 
 
 class MoviesView(ctk.CTkFrame):
 
-    def __init__(self, master, repository):
-
+    def __init__(self, master, repository, current_user, user_service):
         super().__init__(master)
 
         self.repository = repository
+        self.current_user = current_user
+        self.user_service = user_service
 
         self.movie_service = MovieService(
             repository
@@ -79,11 +79,9 @@ class MoviesView(ctk.CTkFrame):
             pady=10
         )
 
-
         self.movie_buttons = []
 
         for movie in self.movies:
-
             button = ctk.CTkButton(
                 self.movie_list_frame,
                 text=movie.original_title,
@@ -126,6 +124,16 @@ class MoviesView(ctk.CTkFrame):
             anchor="w"
         )
 
+        self.watch_button = ctk.CTkButton(
+            self.details_frame,
+            text="Marcar como assistido",
+            command=self.watch_movie
+        )
+
+        self.watch_button.pack(
+            pady=20
+        )
+
         self.details_frame.grid(
             row=0,
             column=1,
@@ -140,7 +148,6 @@ class MoviesView(ctk.CTkFrame):
             )
 
     def show_movie(self, movie):
-
         info = (
             f"Título Original: {movie.original_title}\n\n"
             f"Título em Português: {movie.portuguese_title}\n\n"
@@ -154,6 +161,8 @@ class MoviesView(ctk.CTkFrame):
             f"Atores: {', '.join(movie.actors)}"
         )
 
+        self.selected_movie = movie
+
         self.title_label.configure(
             text=movie.original_title
         )
@@ -162,4 +171,29 @@ class MoviesView(ctk.CTkFrame):
             text=info
         )
 
+    def watch_movie(self):
+
+        if self.selected_movie is None:
+            return
+
+        self.user_service.watch_movie(
+
+            self.current_user.username,
+
+            self.selected_movie.ontology_id
+
+        )
+
+        print(
+            f"{self.current_user.username} assistiu {self.selected_movie.original_title}"
+        )
+
+        movies = self.user_service.get_watched_movies(
+            self.current_user.username
+        )
+
+        print("\nFilmes assistidos:")
+
+        for movie in movies:
+            print(movie.original_title)
 

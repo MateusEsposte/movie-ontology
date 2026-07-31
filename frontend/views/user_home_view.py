@@ -10,6 +10,8 @@ class UserHomeView(ctk.CTkFrame):
         super().__init__(master)
 
         self.repository = repository
+        self.current_user = master.current_user
+        self.user_service = master.user_service
 
         self.pack(fill="both", expand=True)
 
@@ -76,12 +78,13 @@ class UserHomeView(ctk.CTkFrame):
     def show_content(self, view_class):
 
         if hasattr(self, "current_view") and self.current_view:
-
             self.current_view.destroy()
 
         self.current_view = view_class(
-            self.content, 
-            self.repository
+            self.content,
+            self.repository,
+            self.current_user,
+            self.user_service
         )
 
         self.current_view.pack(

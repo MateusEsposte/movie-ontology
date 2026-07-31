@@ -23,24 +23,10 @@ class LoginView(ctk.CTkFrame):
 
         title.pack(pady=(80, 40))
 
-        print("\n========== USUÁRIOS ==========")
-        print("Quantidade:", len(self.users))
-
         values = []
 
         for user in self.users:
-
-            print("--------------------------")
-            print("Objeto:", user)
-            print("username:", user.username)
-            print("name:", user.name)
-            print("email:", user.email)
-
             values.append(user.username)
-
-        print("--------------------------")
-        print("Lista enviada ao ComboBox:", values)
-        print("===============================\n")
 
         self.user_combobox = ctk.CTkComboBox(
             self,
@@ -68,8 +54,6 @@ class LoginView(ctk.CTkFrame):
         user = self.user_service.get_user(
             username
         )
-
-        print("\nUsuário logado:", user.username)
 
         self.master.current_user = user
 

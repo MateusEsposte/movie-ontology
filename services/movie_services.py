@@ -161,6 +161,7 @@ class MovieService:
         )
 
     def _build_movie(self, movie_individual):
+        ontology_id = movie_individual.name
 
         original_title = self.repository.get_data_property(
             movie_individual,
@@ -260,6 +261,7 @@ class MovieService:
 
 
         return Movie(
+            ontology_id=ontology_id,
             original_title=original_title,
             portuguese_title=portuguese_title,
             release_date=release_date,

@@ -518,6 +518,7 @@
   <hasRating rdf:resource="#rating_001"/>
   <hasPreference rdf:resource="#preference_001"/>
   <hasPreference rdf:resource="#preference_002"/>
+  <watched rdf:resource="#film_forrest_gump"/>
   <fullName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mateus Esposte</fullName>
   <email rdf:datatype="http://www.w3.org/2001/XMLSchema#string">mateus@example.com</email>
   <age rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">23</age>
@@ -538,6 +539,13 @@
   <preferenceType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Theme</preferenceType>
 </owl:NamedIndividual>
 
+<owl:NamedIndividual rdf:about="#preference_002">
+  <rdf:type rdf:resource="#Preference"/>
+  <prefers rdf:resource="#theme_drama"/>
+  <interestLevel rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</interestLevel>
+  <preferenceType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Theme</preferenceType>
+</owl:NamedIndividual>
+
 <owl:NamedIndividual rdf:about="#joao">
   <rdf:type rdf:resource="#User"/>
   <fullName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">João Silva</fullName>
@@ -552,13 +560,6 @@
   <email rdf:datatype="http://www.w3.org/2001/XMLSchema#string">maria@example.com</email>
   <age rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">22</age>
   <registrationDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2026-07-11</registrationDate>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#preference_002">
-  <rdf:type rdf:resource="#Preference"/>
-  <prefers rdf:resource="#theme_drama"/>
-  <interestLevel rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</interestLevel>
-  <preferenceType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Theme</preferenceType>
 </owl:NamedIndividual>
 
 
