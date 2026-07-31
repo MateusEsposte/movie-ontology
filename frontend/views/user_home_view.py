@@ -1,13 +1,15 @@
 import customtkinter as ctk
-from components.sidebar import Sidebar
-from views.movies_view import MoviesView
+from frontend.components.sidebar import Sidebar
+from frontend.views.movies_view import MoviesView
 
 
 class UserHomeView(ctk.CTkFrame):
 
-    def __init__(self, master):
+    def __init__(self, master, repository):
 
         super().__init__(master)
+
+        self.repository = repository
 
         self.pack(fill="both", expand=True)
 
@@ -23,7 +25,8 @@ class UserHomeView(ctk.CTkFrame):
 
         self.sidebar = Sidebar(
             self,
-            self
+            self,
+            repository
         )
 
         self.sidebar.grid(
@@ -77,7 +80,8 @@ class UserHomeView(ctk.CTkFrame):
             self.current_view.destroy()
 
         self.current_view = view_class(
-            self.content
+            self.content, 
+            self.repository
         )
 
         self.current_view.pack(

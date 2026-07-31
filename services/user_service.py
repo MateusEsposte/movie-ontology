@@ -44,10 +44,7 @@ class UserService:
         )
 
         return User(
-            username=self.repository.get_data_property(
-                individual,
-                USERNAME
-            ),
+            username=individual.name,
             name=self.repository.get_data_property(
                 individual,
                 NAME

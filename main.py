@@ -1,5 +1,7 @@
 from database.ontology_manager import OntologyManager
 from database.ontology_repository import OntologyRepository
+from frontend.app import App
+import customtkinter as ctk
 
 
 def print_separator():
@@ -9,17 +11,21 @@ def print_separator():
 
 def main():
     manager = OntologyManager("ontology/movie_ontology.rdf")
-    manager.load()
-    repository = OntologyRepository(manager)
 
-    print("INDIVÍDUOS\n")
+    manager.load()
+
+    repository = OntologyRepository(manager)
     
-    individuals = repository.get_individuals()
-    if len(individuals) == 0:
-        print("Nenhum indivíduo cadastrado.")
-    else:
-        for individual in individuals:
-            print(individual.name)
+    ctk.set_appearance_mode("dark")
+    ctk.set_default_color_theme("blue")
+
+    app = App(
+        repository,
+        manager
+    )
+
+    app.mainloop()
+
 
 
 if __name__ == "__main__":

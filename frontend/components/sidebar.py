@@ -1,20 +1,23 @@
 import customtkinter as ctk
-from views.movies_view import MoviesView
-from views.preferences_view import PreferencesView
-from views.ratings_view import RatingsView
-from views.friends_view import FriendsView
-from views.recommendations_view import RecommendationsView
+from frontend.views.movies_view import MoviesView
+from frontend.views.preferences_view import PreferencesView
+from frontend.views.ratings_view import RatingsView
+from frontend.views.friends_view import FriendsView
+from frontend.views.recommendations_view import RecommendationsView
 
 
 class Sidebar(ctk.CTkFrame):
-    def __init__(self, master, home_view):
+    def __init__(self, master, home_view, repository):
         super().__init__(
             master,
             width=220,
             corner_radius=0
         )
 
+        self.repository = repository
+
         self.grid_rowconfigure(7, weight=1)
+
         self.home_view = home_view
 
         title = ctk.CTkLabel(
