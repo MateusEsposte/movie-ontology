@@ -155,12 +155,6 @@ class UserService:
 
         return movies
 
-    def get_unwatched_movies(self, username: str):
-        pass
-
-    def unwatch_movie(self, username: str, movie_title: str):
-        pass
-
     def _build_movie(
         self,
         movie_individual
@@ -287,7 +281,47 @@ class UserService:
             actors=actor_names
         )
 
+    def rate_movie(
+        self,
+        username: str,
+        movie_id: str,
+        rating: int
+    ):
 
+        user = self.repository.require_individual(
+            username
+        )
+
+        movie = self.repository.require_individual(
+            movie_id
+        )
+
+        self.repository.add_or_update_rating(
+            user,
+            movie,
+            rating
+        )
+
+        self.repository.save()
+
+    def get_movie_rating(
+        self,
+        username: str,
+        movie_id: str
+    ):
+
+        user = self.repository.require_individual(
+            username
+        )
+
+        movie = self.repository.require_individual(
+            movie_id
+        )
+
+        return self.repository.get_rating(
+            user,
+            movie
+        )
 
 
 

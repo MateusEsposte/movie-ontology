@@ -274,3 +274,116 @@ class OntologyRepository:
             )
 
         self.save()
+
+
+    def get_rating(
+        self,
+        user,
+        movie
+    ):
+
+        ratings = self.get_object_property(
+            user,
+            "makesRating"
+        )
+
+        for rating in ratings:
+
+            rated_movies = self.get_object_property(
+                rating,
+                "ratingAbout"
+            )
+
+            if rated_movies and rated_movies[0] == movie:
+
+                return self.get_data_property(
+                    rating,
+                    "score"
+                )
+
+        return None
+
+
+    def add_or_update_rating(
+        self,
+        user,
+        movie,
+        score
+    ):
+
+        ratings = self.get_object_property(
+            user,
+            "makesRating"
+        )
+
+        for rating in ratings:
+
+            rated_movies = self.get_object_property(
+                rating,
+                "ratingAbout"
+            )
+
+            if rated_movies and rated_movies[0] == movie:
+
+                self.set_data_property(
+                    rating,
+                    "score",
+                    score
+                )
+
+                self.save()
+                return
+
+        rating_name = f"rating_{user.name}_{movie.name}"
+
+        rating = self.create_individual(
+            "Rating",
+            rating_name
+        )
+
+        self.add_object_property(
+            user,
+            "makesRating",
+            rating
+        )
+
+        self.add_object_property(
+            rating,
+            "ratingAbout",
+            movie
+        )
+
+        self.set_data_property(
+            rating,
+            "score",
+            score
+        )
+
+        self.save()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
