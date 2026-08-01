@@ -515,10 +515,43 @@
 
 <owl:NamedIndividual rdf:about="#mateus">
   <rdf:type rdf:resource="#User"/>
+  <watched rdf:resource="#film_forrest_gump"/>
+  <watched rdf:resource="#film_gran_torino"/>
+  <hasPreference rdf:resource="#preference_005"/>
+  <hasPreference rdf:resource="#preference_006"/>
+  <hasPreference rdf:resource="#preference_007"/>
   <fullName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mateus Esposte</fullName>
   <email rdf:datatype="http://www.w3.org/2001/XMLSchema#string">mateus@example.com</email>
   <age rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">23</age>
   <registrationDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2026-07-11</registrationDate>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#preference_001">
+  <rdf:type rdf:resource="#Preference"/>
+  <prefers rdf:resource="#theme_action"/>
+  <interestLevel rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</interestLevel>
+  <preferenceType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Theme</preferenceType>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#preference_002">
+  <rdf:type rdf:resource="#Preference"/>
+  <prefers rdf:resource="#clint_eastwood"/>
+  <interestLevel rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</interestLevel>
+  <preferenceType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Actor</preferenceType>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#preference_003">
+  <rdf:type rdf:resource="#Preference"/>
+  <prefers rdf:resource="#christopher_nolan"/>
+  <interestLevel rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</interestLevel>
+  <preferenceType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Director</preferenceType>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#preference_004">
+  <rdf:type rdf:resource="#Preference"/>
+  <prefers rdf:resource="#film_forrest_gump"/>
+  <interestLevel rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</interestLevel>
+  <preferenceType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CinematicWork</preferenceType>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#joao">
@@ -535,6 +568,59 @@
   <email rdf:datatype="http://www.w3.org/2001/XMLSchema#string">maria@example.com</email>
   <age rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">22</age>
   <registrationDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2026-07-11</registrationDate>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#theme_horror">
+  <rdf:type rdf:resource="#Theme"/>
+  <themeName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">horror</themeName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#theme_anime">
+  <rdf:type rdf:resource="#Theme"/>
+  <themeName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Anime</themeName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#steven_spielberg">
+  <rdf:type rdf:resource="#Person"/>
+  <rdf:type rdf:resource="#Director"/>
+  <fullName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Steven Spielberg</fullName>
+  <birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1946-12-18</birthDate>
+  <nationality rdf:datatype="http://www.w3.org/2001/XMLSchema#string">American</nationality>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#film_the_green_mile">
+  <rdf:type rdf:resource="#Film"/>
+  <hasTheme rdf:resource="#theme_drama"/>
+  <hasDirector rdf:resource="#steven_spielberg"/>
+  <hasCountryOfOrigin rdf:resource="#country_usa"/>
+  <hasActor rdf:resource="#tom_hanks"/>
+  <dubbedIn rdf:resource="#language_english"/>
+  <originalTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The Green Mile</originalTitle>
+  <portugueseTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">À Espera de um Milagre</portugueseTitle>
+  <releaseDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1999</releaseDate>
+  <durationMinutes rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">189</durationMinutes>
+  <ageRating rdf:datatype="http://www.w3.org/2001/XMLSchema#string">14</ageRating>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#preference_005">
+  <rdf:type rdf:resource="#Preference"/>
+  <prefers rdf:resource="#theme_drama"/>
+  <interestLevel rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</interestLevel>
+  <preferenceType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Theme</preferenceType>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#preference_006">
+  <rdf:type rdf:resource="#Preference"/>
+  <prefers rdf:resource="#steven_spielberg"/>
+  <interestLevel rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</interestLevel>
+  <preferenceType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Director</preferenceType>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#preference_007">
+  <rdf:type rdf:resource="#Preference"/>
+  <prefers rdf:resource="#tom_hanks"/>
+  <interestLevel rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</interestLevel>
+  <preferenceType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Actor</preferenceType>
 </owl:NamedIndividual>
 
 

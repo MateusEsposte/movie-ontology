@@ -151,20 +151,41 @@ class PreferenceService:
 
     def _get_preference_type(
         self,
-        individual
+        preferred_element
     ) -> str:
-        for parent in individual.is_a:
-            if hasattr(parent, "name"):
-                if parent.name in (
-                    "Theme",
-                    "Actor",
-                    "Director",
-                    "CinematicWork"
-                ):
-                    return parent.name
+
+        if (
+            self.repository.has_class(
+                preferred_element,
+                FILM
+            )
+            or self.repository.has_class(
+                preferred_element,
+                CINEMATIC_WORK
+            )
+        ):
+            return "CinematicWork"
+
+        if self.repository.has_class(
+            preferred_element,
+            THEME
+        ):
+            return "Theme"
+
+        if self.repository.has_class(
+            preferred_element,
+            ACTOR
+        ):
+            return "Actor"
+
+        if self.repository.has_class(
+            preferred_element,
+            DIRECTOR
+        ):
+            return "Director"
 
         raise ValueError(
-            "Elemento incompatível para preferência."
+            "O elemento informado não pode ser usado como preferência."
         )
 
     def create_preference(

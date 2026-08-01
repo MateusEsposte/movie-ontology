@@ -221,13 +221,18 @@ class OntologyRepository:
         return list(ontology_class.instances())
     
     
-    def remove_individual(self, individual):
-        if individual is None:
-            raise ValueError(
-                "Indivíduo não encontrado."
-            )
+    def remove_individual(
+        self,
+        individual_name: str
+    ):
 
-        destroy_entity(individual)
+        individual = self.require_individual(
+            individual_name
+        )
+
+        destroy_entity(
+            individual
+        )
 
         self.save()
 

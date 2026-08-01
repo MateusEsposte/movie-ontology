@@ -22,14 +22,21 @@ class RecommendationService:
         self.rating_service = RatingService(repository)
         self.preference_service = PreferenceService(repository)
 
-    def _get_watched_movies(self, username: str) -> set[str]:
-        ratings = self.rating_service.list_user_ratings(username)
-        watched = set()
+    def _get_watched_movies(
+        self,
+        username: str
+    ) -> set[str]:
 
-        for rating in ratings:
-            watched.add(rating.movie_title)
+        watched_movies = (
+            self.user_service.get_watched_movies(
+                username
+            )
+        )
 
-        return watched
+        return {
+            movie.original_title
+            for movie in watched_movies
+        }
 
     def _get_unwatched_movies(self, username: str) -> list[Movie]:
         watched = self._get_watched_movies(username)
@@ -117,41 +124,6 @@ class RecommendationService:
                 score += preference.interest_level
 
         return score
-
-    def recommend_by_preferences(
-        self,
-        username: str
-    ) -> list[tuple[Movie, int]]:
-
-        preferences = self._get_user_preferences(
-            username
-        )
-
-        movies = self._get_unwatched_movies(
-            username
-        )
-
-        scored_movies = []
-
-        for movie in movies:
-
-            score = self._calculate_preference_score(
-                movie,
-                preferences
-            )
-
-            if score > 0:
-
-                scored_movies.append(
-                    (movie, score)
-                )
-
-        scored_movies.sort(
-            key=lambda item: item[1],
-            reverse=True
-        )
-
-        return scored_movies
 
     def _common_ratings(
         self,
@@ -343,3 +315,46 @@ class RecommendationService:
             similar_users
         )
 
+    def recommend_by_preferences(
+        self,
+        username: str
+    ) -> list[tuple[Movie, int]]:
+
+        preferences = self._get_user_preferences(
+            username
+        )
+
+        movies = self._get_unwatched_movies(
+            username
+        )
+
+        scored_movies = []
+
+        for movie in movies:
+
+            score = self._calculate_preference_score(
+                movie,
+                preferences
+            )
+
+            if score > 0:
+
+                scored_movies.append(
+                    (movie, score)
+                )
+
+        scored_movies.sort(
+            key=lambda item: item[1],
+            reverse=True
+        )
+
+        return scored_movies
+
+
+
+
+
+
+
+
+    

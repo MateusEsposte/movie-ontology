@@ -1,5 +1,5 @@
 import customtkinter as ctk
-
+from frontend.views.admin_home_view import AdminHomeView
 from frontend.views.user_home_view import UserHomeView
 
 
@@ -46,9 +46,18 @@ class LoginView(ctk.CTkFrame):
 
         button.pack(pady=30)
 
+        admin_button = ctk.CTkButton(
+            self,
+            text="Entrar como administrador",
+            command=self.open_admin
+        )
+
+        admin_button.pack(
+            pady=10
+        )
+
 
     def login(self):
-
         username = self.user_combobox.get()
 
         user = self.user_service.get_user(
@@ -59,4 +68,11 @@ class LoginView(ctk.CTkFrame):
 
         self.master.navigation.show_view(
             UserHomeView
+        )
+
+    def open_admin(self):
+        self.master.current_user = None
+
+        self.master.navigation.show_view(
+            AdminHomeView
         )
