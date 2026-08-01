@@ -323,7 +323,142 @@ class UserService:
             movie
         )
 
+    def list_friends(
+        self,
+        username: str
+    ) -> list[User]:
 
+        user = self.repository.require_individual(
+            username
+        )
+
+        friend_individuals = (
+            self.repository.get_object_property(
+                user,
+                FRIEND_OF
+            )
+        )
+
+        friends = []
+
+        for friend in friend_individuals:
+
+            friends.append(
+                self.get_user(
+                    friend.name
+                )
+            )
+
+        return friends
+
+    def add_friend(
+        self,
+        username: str,
+        friend_username: str
+    ):
+
+        if username == friend_username:
+            raise ValueError(
+                "Um usuário não pode adicionar a si mesmo."
+            )
+
+        user = self.repository.require_individual(
+            username
+        )
+
+        friend = self.repository.require_individual(
+            friend_username
+        )
+
+        user_friends = (
+            self.repository.get_object_property(
+                user,
+                FRIEND_OF
+            )
+        )
+
+        if friend in user_friends:
+            raise ValueError(
+                "Esse usuário já está na lista de amigos."
+            )
+
+        # Como friendOf não foi declarada simétrica,
+        # criamos as duas relações explicitamente.
+        self.repository.add_object_property(
+            user,
+            FRIEND_OF,
+            friend
+        )
+
+        friend_friends = (
+            self.repository.get_object_property(
+                friend,
+                FRIEND_OF
+            )
+        )
+
+        if user not in friend_friends:
+
+            self.repository.add_object_property(
+                friend,
+                FRIEND_OF,
+                user
+            )
+
+        self.repository.save()
+
+    def remove_friend(
+        self,
+        username: str,
+        friend_username: str
+    ):
+
+        user = self.repository.require_individual(
+            username
+        )
+
+        friend = self.repository.require_individual(
+            friend_username
+        )
+
+        user_friends = (
+            self.repository.get_object_property(
+                user,
+                FRIEND_OF
+            )
+        )
+
+        if friend not in user_friends:
+            raise ValueError(
+                "Esse usuário não está na lista de amigos."
+            )
+
+        self.repository.remove_object_property(
+            user,
+            FRIEND_OF,
+            friend
+        )
+
+        # Remove também a relação inversa criada
+        # explicitamente pelo sistema.
+        friend_friends = (
+            self.repository.get_object_property(
+                friend,
+                FRIEND_OF
+            )
+        )
+
+        if user in friend_friends:
+
+            self.repository.remove_object_property(
+                friend,
+                FRIEND_OF,
+                user
+            )
+
+        # remove_object_property não salva sozinho
+        # no Repository atual.
+        self.repository.save()
 
 
 

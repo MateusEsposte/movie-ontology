@@ -520,10 +520,32 @@
   <hasPreference rdf:resource="#preference_005"/>
   <hasPreference rdf:resource="#preference_006"/>
   <hasPreference rdf:resource="#preference_007"/>
+  <friendOf rdf:resource="#joao"/>
   <fullName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mateus Esposte</fullName>
   <email rdf:datatype="http://www.w3.org/2001/XMLSchema#string">mateus@example.com</email>
   <age rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">23</age>
   <registrationDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2026-07-11</registrationDate>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#preference_005">
+  <rdf:type rdf:resource="#Preference"/>
+  <prefers rdf:resource="#theme_drama"/>
+  <interestLevel rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</interestLevel>
+  <preferenceType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Theme</preferenceType>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#preference_006">
+  <rdf:type rdf:resource="#Preference"/>
+  <prefers rdf:resource="#steven_spielberg"/>
+  <interestLevel rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</interestLevel>
+  <preferenceType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Director</preferenceType>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#preference_007">
+  <rdf:type rdf:resource="#Preference"/>
+  <prefers rdf:resource="#tom_hanks"/>
+  <interestLevel rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</interestLevel>
+  <preferenceType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Actor</preferenceType>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#preference_001">
@@ -556,6 +578,7 @@
 
 <owl:NamedIndividual rdf:about="#joao">
   <rdf:type rdf:resource="#User"/>
+  <friendOf rdf:resource="#mateus"/>
   <fullName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">João Silva</fullName>
   <email rdf:datatype="http://www.w3.org/2001/XMLSchema#string">joao@example.com</email>
   <age rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">25</age>
@@ -600,27 +623,6 @@
   <releaseDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1999</releaseDate>
   <durationMinutes rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">189</durationMinutes>
   <ageRating rdf:datatype="http://www.w3.org/2001/XMLSchema#string">14</ageRating>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#preference_005">
-  <rdf:type rdf:resource="#Preference"/>
-  <prefers rdf:resource="#theme_drama"/>
-  <interestLevel rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</interestLevel>
-  <preferenceType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Theme</preferenceType>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#preference_006">
-  <rdf:type rdf:resource="#Preference"/>
-  <prefers rdf:resource="#steven_spielberg"/>
-  <interestLevel rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</interestLevel>
-  <preferenceType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Director</preferenceType>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#preference_007">
-  <rdf:type rdf:resource="#Preference"/>
-  <prefers rdf:resource="#tom_hanks"/>
-  <interestLevel rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</interestLevel>
-  <preferenceType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Actor</preferenceType>
 </owl:NamedIndividual>
 
 
