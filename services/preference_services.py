@@ -184,12 +184,47 @@ class PreferenceService:
             )
         )
 
-        preference_type = (
-            self._get_preference_type(
-                preferred_element
+        preference_type = self._get_preference_type(
+            preferred_element
+        )
+
+        user_preferences = (
+            self.repository.get_object_property(
+                user,
+                HAS_PREFERENCE
             )
         )
 
+        for preference in user_preferences:
+
+            preferred_elements = (
+                self.repository.get_object_property(
+                    preference,
+                    PREFERS
+                )
+            )
+
+            if (
+                preferred_elements
+                and preferred_elements[0] == preferred_element
+            ):
+                self.repository.set_data_property(
+                    preference,
+                    INTEREST_LEVEL,
+                    interest_level
+                )
+
+                self.repository.set_data_property(
+                    preference,
+                    PREFERENCE_TYPE,
+                    preference_type
+                )
+
+                return self._build_preference(
+                    preference
+                )
+
+        # Caso não exista, cria uma nova.
         preference = self.repository.create_individual(
             PREFERENCE,
             self._next_preference_id()
@@ -245,11 +280,34 @@ class PreferenceService:
 
     def delete_preference(
         self,
+        username: str,
         preference_id: str
     ):
 
+        user = self.repository.require_individual(
+            username
+        )
+
         preference = self.repository.require_individual(
             preference_id
+        )
+
+        user_preferences = (
+            self.repository.get_object_property(
+                user,
+                HAS_PREFERENCE
+            )
+        )
+
+        if preference not in user_preferences:
+            raise ValueError(
+                "A preferência não pertence ao usuário."
+            )
+
+        self.repository.remove_object_property(
+            user,
+            HAS_PREFERENCE,
+            preference
         )
 
         self.repository.remove_individual(

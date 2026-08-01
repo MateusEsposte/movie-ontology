@@ -361,29 +361,3 @@ class OntologyRepository:
 
         self.save()
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
