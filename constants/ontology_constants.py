@@ -47,6 +47,7 @@ RELEVANCE = "relevance"
 SCORE = "score"
 THEME_NAME = "themeName"
 USERNAME = "username"
+PASSWORD_HASH = "passwordHash"
 
 # ==========================
 # OBJECT PROPERTIES

@@ -1,6 +1,6 @@
 import customtkinter as ctk
 from frontend.controllers.navigation import NavigationManager
-from frontend.views.login_view import LoginView
+from frontend.views.welcome_view import WelcomeView
 from services.user_service import UserService
 
 
@@ -17,4 +17,4 @@ class App(ctk.CTk):
         self.geometry("1100x700")
         self.minsize(1000, 650)
         self.navigation = NavigationManager(self, repository)
-        self.navigation.show_view(LoginView)        
+        self.navigation.show_view(WelcomeView)        

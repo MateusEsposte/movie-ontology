@@ -2,18 +2,62 @@ from models.user import User
 from constants.ontology_constants import *
 from models.movie import Movie
 
+import hashlib
+import hmac
+import os
+
+from constants.ontology_constants import PASSWORD_HASH
+
 class UserService:
     def __init__(self, repository, manager):
         self.repository = repository
         self.manager = manager
 
-    def create_user(self, username, full_name, email, age) -> User:
+    def create_user(
+        self,
+        username: str,
+        full_name: str,
+        email: str,
+        age: int,
+        password: str
+    ) -> User:
 
-        self._validate_user( username, full_name, email, age)
+        username = username.strip().lower()
+        full_name = full_name.strip()
+        email = email.strip().lower()
 
-        if self.exists(username):
+        self._validate_user(
+            username,
+            full_name,
+            email,
+            age
+        )
+
+        if not username:
             raise ValueError(
-                "Já existe um usuário com esse username."
+                "O nome de usuário é obrigatório."
+            )
+
+        if " " in username:
+            raise ValueError(
+                "O nome de usuário não pode conter espaços."
+            )
+
+        if len(password) < 6:
+            raise ValueError(
+                "A senha deve possuir pelo menos 6 caracteres."
+            )
+
+        if age <= 0:
+            raise ValueError(
+                "A idade deve ser maior que zero."
+            )
+
+        if self.repository.exists_individual(
+            username
+        ):
+            raise ValueError(
+                "Esse nome de usuário já está em uso."
             )
 
         user = self.repository.create_individual(
@@ -27,11 +71,19 @@ class UserService:
                 USERNAME: username,
                 NAME: full_name,
                 EMAIL: email,
-                AGE: age
+                AGE: age,
+                PASSWORD_HASH: self._hash_password(
+                    password
+                )
             }
         )
 
-        return User(username=username, name=full_name, email=email, age=age)
+        return User(
+            username=username,
+            name=full_name,
+            email=email,
+            age=age
+        )
     
     def get_user(self, username: str) -> User:
         if not self.exists(username):
@@ -460,9 +512,110 @@ class UserService:
         # no Repository atual.
         self.repository.save()
 
+    def _hash_password(
+        self,
+        password: str
+    ) -> str:
 
+        salt = os.urandom(16)
 
+        password_hash = hashlib.pbkdf2_hmac(
+            "sha256",
+            password.encode("utf-8"),
+            salt,
+            100_000
+        )
 
+        return (
+            f"{salt.hex()}:"
+            f"{password_hash.hex()}"
+        )
+
+    def _verify_password(
+        self,
+        password: str,
+        stored_password: str
+    ) -> bool:
+
+        try:
+            salt_hex, hash_hex = (
+                stored_password.split(":", 1)
+            )
+
+            salt = bytes.fromhex(
+                salt_hex
+            )
+
+            expected_hash = bytes.fromhex(
+                hash_hex
+            )
+
+        except (ValueError, AttributeError):
+            return False
+
+        received_hash = hashlib.pbkdf2_hmac(
+            "sha256",
+            password.encode("utf-8"),
+            salt,
+            100_000
+        )
+
+        return hmac.compare_digest(
+            received_hash,
+            expected_hash
+    )
+
+    def authenticate(
+        self,
+        username: str,
+        password: str
+    ) -> User:
+
+        username = username.strip()
+
+        if not username or not password:
+            raise ValueError(
+                "Informe o usuário e a senha."
+            )
+
+        individual = (
+            self.repository.get_individual_by_name(
+                username
+            )
+        )
+
+        if (
+            individual is None
+            or not self.repository.has_class(
+                individual,
+                "User"
+            )
+        ):
+            raise ValueError(
+                "Usuário ou senha inválidos."
+            )
+
+        stored_password = (
+            self.repository.get_data_property(
+                individual,
+                PASSWORD_HASH
+            )
+        )
+
+        if (
+            stored_password is None
+            or not self._verify_password(
+                password,
+                stored_password
+            )
+        ):
+            raise ValueError(
+                "Usuário ou senha inválidos."
+            )
+
+        return self.get_user(
+            username
+        )
 
 
 
