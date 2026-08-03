@@ -2,6 +2,9 @@ import re
 import unicodedata
 
 import customtkinter as ctk
+from services.movie_services import MovieService
+import csv
+from tkinter import filedialog
 
 
 class AdminMoviesView(ctk.CTkFrame):
@@ -14,6 +17,10 @@ class AdminMoviesView(ctk.CTkFrame):
         super().__init__(master)
 
         self.repository = repository
+
+        self.movie_service = MovieService(
+            repository
+        )
 
         self.actor_variables = {}
         self.language_variables = {}
@@ -242,6 +249,16 @@ class AdminMoviesView(ctk.CTkFrame):
             pady=(30, 10)
         )
 
+        self.import_button = ctk.CTkButton(
+            self.form_frame,
+            text="Importar filmes de CSV",
+            command=self.import_movies_from_csv
+        )
+
+        self.import_button.pack(
+            pady=(5, 10)
+        )
+
         self.message_label = ctk.CTkLabel(
             self.form_frame,
             text="",
@@ -272,10 +289,6 @@ class AdminMoviesView(ctk.CTkFrame):
 
         self.load_selection_data()
         self.load_movies()
-
-    # =========================================
-    # Construção da interface
-    # =========================================
 
     def create_field_label(
         self,
@@ -313,10 +326,6 @@ class AdminMoviesView(ctk.CTkFrame):
         )
 
         return entry
-
-    # =========================================
-    # Identificador
-    # =========================================
 
     def generate_identifier(
         self,
@@ -374,10 +383,6 @@ class AdminMoviesView(ctk.CTkFrame):
         self.identifier_label.configure(
             text=f"Identificador: {identifier}"
         )
-
-    # =========================================
-    # Carregamento das opções
-    # =========================================
 
     def load_selection_data(self):
 
@@ -645,10 +650,6 @@ class AdminMoviesView(ctk.CTkFrame):
                 language.name
             ] = variable
 
-    # =========================================
-    # Cadastro
-    # =========================================
-
     def get_selected_ids(
         self,
         variables: dict
@@ -811,87 +812,18 @@ class AdminMoviesView(ctk.CTkFrame):
 
         try:
 
-            movie = self.repository.create_individual(
-                "Film",
-                movie_id
-            )
-
-            self.repository.set_data_properties(
-                movie,
-                {
-                    "originalTitle": original_title,
-                    "portugueseTitle": portuguese_title,
-                    "releaseDate": release_date,
-                    "durationMinutes": duration,
-                    "ageRating": age_rating
-                }
-            )
-
-            theme = self.repository.require_individual(
-                theme_id
-            )
-
-            director = (
-                self.repository.require_individual(
-                    director_id
+            self.movie_service.create_movie(
+                    original_title=original_title,
+                    portuguese_title=portuguese_title,
+                    release_date=release_date,
+                    duration_minutes=duration,
+                    age_rating=age_rating,
+                    country=country_id,
+                    languages=language_ids,
+                    theme=theme_id,
+                    director=director_id,
+                    actors=actor_ids
                 )
-            )
-
-            country = (
-                self.repository.require_individual(
-                    country_id
-                )
-            )
-
-            self.repository.add_object_property(
-                movie,
-                "hasTheme",
-                theme
-            )
-
-            self.repository.add_object_property(
-                movie,
-                "hasDirector",
-                director
-            )
-
-            self.repository.add_object_property(
-                movie,
-                "hasCountryOfOrigin",
-                country
-            )
-
-            for actor_id in actor_ids:
-
-                actor = (
-                    self.repository
-                    .require_individual(
-                        actor_id
-                    )
-                )
-
-                self.repository.add_object_property(
-                    movie,
-                    "hasActor",
-                    actor
-                )
-
-            for language_id in language_ids:
-
-                language = (
-                    self.repository
-                    .require_individual(
-                        language_id
-                    )
-                )
-
-                self.repository.add_object_property(
-                    movie,
-                    "dubbedIn",
-                    language
-                )
-
-            self.repository.save()
 
             self.message_label.configure(
                 text="Filme cadastrado com sucesso."
@@ -905,10 +837,6 @@ class AdminMoviesView(ctk.CTkFrame):
             self.message_label.configure(
                 text=str(error)
             )
-
-    # =========================================
-    # Limpeza do formulário
-    # =========================================
 
     def clear_form(self):
 
@@ -940,10 +868,6 @@ class AdminMoviesView(ctk.CTkFrame):
         self.identifier_label.configure(
             text="Identificador: -"
         )
-
-    # =========================================
-    # Listagem e exclusão
-    # =========================================
 
     def load_movies(self):
 
@@ -1086,16 +1010,12 @@ class AdminMoviesView(ctk.CTkFrame):
 
         try:
 
-            movie = self.repository.require_individual(
+            self.repository.remove_individual(
                 movie_id
             )
 
-            self.repository.remove_individual(
-                movie
-            )
-
             self.message_label.configure(
-                text="Filme excluído."
+                text="Filme excluído com sucesso."
             )
 
             self.load_movies()
@@ -1105,3 +1025,511 @@ class AdminMoviesView(ctk.CTkFrame):
             self.message_label.configure(
                 text=str(error)
             )
+
+    def normalize_csv_value(
+        self,
+        value
+    ) -> str:
+
+        if value is None:
+            return ""
+
+        return str(value).strip()
+
+    def find_mapping_id(
+        self,
+        mapping: dict,
+        display_name: str,
+        field_name: str
+    ) -> str:
+
+        normalized_name = (
+            self.normalize_csv_value(
+                display_name
+            )
+        )
+
+        if not normalized_name:
+            raise ValueError(
+                f"O campo '{field_name}' está vazio."
+            )
+
+        # Primeiro tenta localizar exatamente
+        # como o nome aparece na interface.
+        individual_id = mapping.get(
+            normalized_name
+        )
+
+        if individual_id is not None:
+            return individual_id
+
+        # Depois tenta ignorando diferenças
+        # entre maiúsculas e minúsculas.
+        normalized_comparison = (
+            normalized_name.casefold()
+        )
+
+        for displayed_value, mapped_id in (
+            mapping.items()
+        ):
+
+            if (
+                str(displayed_value)
+                .strip()
+                .casefold()
+                == normalized_comparison
+            ):
+                return mapped_id
+
+        raise ValueError(
+            f"{field_name} '{normalized_name}' "
+            "não encontrado na ontologia."
+        )
+
+    def find_actor_ids(
+        self,
+        actors_text: str
+    ) -> list[str]:
+
+        actor_names = [
+            actor.strip()
+            for actor in actors_text.split("|")
+            if actor.strip()
+        ]
+
+        if not actor_names:
+            raise ValueError(
+                "O filme deve possuir pelo menos um ator."
+            )
+
+        actor_mapping = {}
+
+        actors = (
+            self.repository
+            .get_individuals_by_class(
+                "Actor"
+            )
+        )
+
+        for actor in actors:
+
+            display_name = self.get_display_name(
+                actor,
+                "fullName"
+            )
+
+            actor_mapping[
+                display_name
+            ] = actor.name
+
+        actor_ids = []
+
+        for actor_name in actor_names:
+
+            actor_id = self.find_mapping_id(
+                actor_mapping,
+                actor_name,
+                "Ator"
+            )
+
+            actor_ids.append(
+                actor_id
+            )
+
+        return actor_ids
+
+    def find_language_ids(
+        self,
+        languages_text: str
+    ) -> list[str]:
+
+        language_names = [
+            language.strip()
+            for language in languages_text.split("|")
+            if language.strip()
+        ]
+
+        if not language_names:
+            raise ValueError(
+                "O filme deve possuir pelo menos um idioma."
+            )
+
+        language_mapping = {}
+
+        languages = (
+            self.repository
+            .get_individuals_by_class(
+                "Language"
+            )
+        )
+
+        for language in languages:
+
+            display_name = self.get_display_name(
+                language,
+                "languageName"
+            )
+
+            language_mapping[
+                display_name
+            ] = language.name
+
+        language_ids = []
+
+        for language_name in language_names:
+
+            language_id = self.find_mapping_id(
+                language_mapping,
+                language_name,
+                "Idioma"
+            )
+
+            language_ids.append(
+                language_id
+            )
+
+        return language_ids
+
+    def import_movies_from_csv(self):
+
+        csv_path = filedialog.askopenfilename(
+            title="Selecionar arquivo de filmes",
+            filetypes=[
+                (
+                    "Arquivos CSV",
+                    "*.csv"
+                ),
+                (
+                    "Todos os arquivos",
+                    "*.*"
+                )
+            ]
+        )
+
+        if not csv_path:
+            return
+
+        imported_count = 0
+        skipped_count = 0
+        errors = []
+
+        required_columns = {
+            "original_title",
+            "portuguese_title",
+            "release_date",
+            "duration_minutes",
+            "age_rating",
+            "theme",
+            "director",
+            "country",
+            "actors",
+            "languages"
+        }
+
+        try:
+
+            with open(
+                csv_path,
+                mode="r",
+                encoding="utf-8-sig",
+                newline=""
+            ) as csv_file:
+
+                reader = csv.DictReader(
+                    csv_file
+                )
+
+                if reader.fieldnames is None:
+
+                    self.message_label.configure(
+                        text=(
+                            "O arquivo CSV não possui "
+                            "cabeçalho."
+                        )
+                    )
+
+                    return
+
+                available_columns = {
+                    column.strip()
+                    for column in reader.fieldnames
+                    if column is not None
+                }
+
+                missing_columns = (
+                    required_columns
+                    - available_columns
+                )
+
+                if missing_columns:
+
+                    missing_text = ", ".join(
+                        sorted(missing_columns)
+                    )
+
+                    self.message_label.configure(
+                        text=(
+                            "Colunas ausentes no CSV: "
+                            f"{missing_text}"
+                        )
+                    )
+
+                    return
+
+                for line_number, row in enumerate(
+                    reader,
+                    start=2
+                ):
+
+                    try:
+
+                        original_title = (
+                            self.normalize_csv_value(
+                                row.get(
+                                    "original_title"
+                                )
+                            )
+                        )
+
+                        portuguese_title = (
+                            self.normalize_csv_value(
+                                row.get(
+                                    "portuguese_title"
+                                )
+                            )
+                        )
+
+                        release_date = (
+                            self.normalize_csv_value(
+                                row.get(
+                                    "release_date"
+                                )
+                            )
+                        )
+
+                        duration_text = (
+                            self.normalize_csv_value(
+                                row.get(
+                                    "duration_minutes"
+                                )
+                            )
+                        )
+
+                        age_rating = (
+                            self.normalize_csv_value(
+                                row.get(
+                                    "age_rating"
+                                )
+                            )
+                        )
+
+                        theme_name = (
+                            self.normalize_csv_value(
+                                row.get(
+                                    "theme"
+                                )
+                            )
+                        )
+
+                        director_name = (
+                            self.normalize_csv_value(
+                                row.get(
+                                    "director"
+                                )
+                            )
+                        )
+
+                        country_name = (
+                            self.normalize_csv_value(
+                                row.get(
+                                    "country"
+                                )
+                            )
+                        )
+
+                        actors_text = (
+                            self.normalize_csv_value(
+                                row.get(
+                                    "actors"
+                                )
+                            )
+                        )
+
+                        languages_text = (
+                            self.normalize_csv_value(
+                                row.get(
+                                    "languages"
+                                )
+                            )
+                        )
+
+                        if not original_title:
+                            raise ValueError(
+                                "Título original vazio."
+                            )
+
+                        try:
+
+                            duration_minutes = int(
+                                duration_text
+                            )
+
+                        except ValueError as error:
+
+                            raise ValueError(
+                                "A duração deve ser "
+                                "um número inteiro."
+                            ) from error
+
+                        movie_id = (
+                            self.generate_identifier(
+                                original_title
+                            )
+                        )
+
+                        if (
+                            self.repository
+                            .exists_individual(
+                                movie_id
+                            )
+                        ):
+                            skipped_count += 1
+                            continue
+
+                        theme_id = self.find_mapping_id(
+                            self.theme_mapping,
+                            theme_name,
+                            "Tema"
+                        )
+
+                        director_id = (
+                            self.find_mapping_id(
+                                self.director_mapping,
+                                director_name,
+                                "Diretor"
+                            )
+                        )
+
+                        country_id = (
+                            self.find_mapping_id(
+                                self.country_mapping,
+                                country_name,
+                                "País"
+                            )
+                        )
+
+                        actor_ids = (
+                            self.find_actor_ids(
+                                actors_text
+                            )
+                        )
+
+                        language_ids = (
+                            self.find_language_ids(
+                                languages_text
+                            )
+                        )
+
+                        self.movie_service.create_movie(
+                            original_title=original_title,
+                            portuguese_title=(
+                                portuguese_title
+                            ),
+                            release_date=release_date,
+                            duration_minutes=(
+                                duration_minutes
+                            ),
+                            age_rating=age_rating,
+                            country=country_id,
+                            languages=language_ids,
+                            theme=theme_id,
+                            director=director_id,
+                            actors=actor_ids
+                        )
+
+                        imported_count += 1
+
+                    except (
+                        ValueError,
+                        TypeError
+                    ) as error:
+
+                        errors.append(
+                            (
+                                line_number,
+                                original_title
+                                if "original_title"
+                                in locals()
+                                else "",
+                                str(error)
+                            )
+                        )
+
+        except (
+            OSError,
+            csv.Error
+        ) as error:
+
+            self.message_label.configure(
+                text=(
+                    "Não foi possível ler o CSV: "
+                    f"{error}"
+                )
+            )
+
+            return
+
+        self.load_movies()
+
+        summary = (
+            f"Importados: {imported_count}\n"
+            f"Ignorados: {skipped_count}\n"
+            f"Erros: {len(errors)}"
+        )
+
+        if errors:
+
+            print(
+                "\n=== ERROS NA IMPORTAÇÃO ==="
+            )
+
+            for (
+                line_number,
+                movie_title,
+                error_message
+            ) in errors:
+
+                print(
+                    f"Linha {line_number} | "
+                    f"{movie_title or 'Sem título'} | "
+                    f"{error_message}"
+                )
+
+            summary += (
+                "\n\nConsulte o terminal para "
+                "ver os erros."
+            )
+
+        self.message_label.configure(
+            text=summary
+        )
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

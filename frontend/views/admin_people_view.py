@@ -651,12 +651,8 @@ class AdminPeopleView(ctk.CTkFrame):
 
         try:
 
-            person = self.repository.require_individual(
-                person_id
-            )
-
             self.repository.remove_individual(
-                person
+                person_id
             )
 
             self.message_label.configure(

@@ -11,16 +11,6 @@ class AdminElementsView(ctk.CTkFrame):
             "prefix": "theme",
             "data_property": "themeName"
         },
-        "Ator": {
-            "class_name": "Actor",
-            "prefix": "actor",
-            "data_property": "fullName"
-        },
-        "Diretor": {
-            "class_name": "Director",
-            "prefix": "director",
-            "data_property": "fullName"
-        },
         "País": {
             "class_name": "CountryOfOrigin",
             "prefix": "country",
@@ -309,11 +299,7 @@ class AdminElementsView(ctk.CTkFrame):
         )
 
     def save_element(self):
-
-        element_type = (
-            self.type_combobox.get()
-        )
-
+        element_type = self.type_combobox.get()
         name = self.name_entry.get().strip()
 
         if element_type not in self.ELEMENT_CONFIG:
@@ -347,8 +333,8 @@ class AdminElementsView(ctk.CTkFrame):
 
             self.message_label.configure(
                 text=(
-                    "Já existe um elemento com "
-                    "esse identificador."
+                    "Já existe um elemento "
+                    "com esse identificador."
                 )
             )
 
@@ -369,6 +355,8 @@ class AdminElementsView(ctk.CTkFrame):
                 name
             )
 
+            self.repository.save()
+
             self.message_label.configure(
                 text=(
                     f"{element_type} cadastrado "
@@ -385,6 +373,7 @@ class AdminElementsView(ctk.CTkFrame):
                 text="Identificador: -"
             )
 
+            # Atualiza a lista depois do cadastro.
             self.load_elements()
 
         except ValueError as error:
@@ -395,14 +384,10 @@ class AdminElementsView(ctk.CTkFrame):
 
     def load_elements(self):
 
-        for widget in (
-            self.elements_frame.winfo_children()
-        ):
+        for widget in self.elements_frame.winfo_children():
             widget.destroy()
 
-        element_type = (
-            self.type_combobox.get()
-        )
+        element_type = self.type_combobox.get()
 
         if element_type not in self.ELEMENT_CONFIG:
             return
@@ -414,8 +399,7 @@ class AdminElementsView(ctk.CTkFrame):
         try:
 
             individuals = (
-                self.repository
-                .get_individuals_by_class(
+                self.repository.get_individuals_by_class(
                     config["class_name"]
                 )
             )
@@ -438,8 +422,8 @@ class AdminElementsView(ctk.CTkFrame):
             empty_label = ctk.CTkLabel(
                 self.elements_frame,
                 text=(
-                    "Nenhum elemento desse "
-                    "tipo foi cadastrado."
+                    "Nenhum elemento desse tipo "
+                    "foi cadastrado."
                 )
             )
 
@@ -449,10 +433,9 @@ class AdminElementsView(ctk.CTkFrame):
 
             return
 
-        for individual in sorted(
-            individuals,
-            key=lambda item: item.name
-        ):
+        elements_data = []
+
+        for individual in individuals:
 
             stored_name = (
                 self.repository.get_data_property(
@@ -462,71 +445,91 @@ class AdminElementsView(ctk.CTkFrame):
             )
 
             if stored_name is None:
+
                 stored_name = self.format_identifier(
                     individual.name
                 )
 
-        element_frame = ctk.CTkFrame(
-            self.elements_frame
+            elements_data.append(
+                (
+                    individual,
+                    stored_name
+                )
+            )
+
+        elements_data.sort(
+            key=lambda item: str(
+                item[1]
+            ).lower()
         )
 
-        element_frame.pack(
-            fill="x",
-            padx=8,
-            pady=6
-        )
+        for individual, stored_name in elements_data:
 
-        element_frame.grid_columnconfigure(
-            0,
-            weight=1
-        )
+            element_frame = ctk.CTkFrame(
+                self.elements_frame
+            )
 
-        name_label = ctk.CTkLabel(
-            element_frame,
-            text=stored_name,
-            font=("Arial",17,"bold"),
-            anchor="w"
-        )
+            element_frame.pack(
+                fill="x",
+                padx=8,
+                pady=6
+            )
 
-        name_label.grid(
-            row=0,
-            column=0,
-            sticky="w",
-            padx=15,
-            pady=(10,0)
-        )
+            element_frame.grid_columnconfigure(
+                0,
+                weight=1
+            )
 
-        identifier_label = ctk.CTkLabel(
-            element_frame,
-            text=individual.name,
-            anchor="w"
-        )
+            name_label = ctk.CTkLabel(
+                element_frame,
+                text=str(stored_name),
+                font=("Arial", 17, "bold"),
+                anchor="w"
+            )
 
-        identifier_label.grid(
-            row=1,
-            column=0,
-            sticky="w",
-            padx=15,
-            pady=(0,10)
-        )
+            name_label.grid(
+                row=0,
+                column=0,
+                sticky="ew",
+                padx=15,
+                pady=(12, 4)
+            )
 
-        delete_button = ctk.CTkButton(
-            element_frame,
-            text="Excluir",
-            width=80,
-            fg_color="firebrick",
-            hover_color="darkred",
-            command=lambda ind=individual.name:
-                self.delete_element(ind)
-        )
+            identifier_label = ctk.CTkLabel(
+                element_frame,
+                text=(
+                    f"Identificador: "
+                    f"{individual.name}"
+                ),
+                anchor="w"
+            )
 
-        delete_button.grid(
-            row=0,
-            column=1,
-            rowspan=2,
-            padx=15,
-            pady=10
-        )
+            identifier_label.grid(
+                row=1,
+                column=0,
+                sticky="ew",
+                padx=15,
+                pady=(0, 12)
+            )
+
+            delete_button = ctk.CTkButton(
+                element_frame,
+                text="Excluir",
+                width=80,
+                command=lambda individual_name=(
+                    individual.name
+                ): self.delete_element(
+                    individual_name
+                )
+            )
+
+            delete_button.grid(
+                row=0,
+                column=1,
+                rowspan=2,
+                padx=12,
+                pady=12
+            )
 
     def format_identifier(
         self,

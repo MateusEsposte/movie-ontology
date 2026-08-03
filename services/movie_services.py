@@ -1,6 +1,8 @@
 from database.ontology_repository import OntologyRepository
 from models.movie import Movie
 from constants.ontology_constants import *
+import re
+import unicodedata
 
 
 class MovieService:
@@ -117,16 +119,14 @@ class MovieService:
             actors
         )
 
-        if self.exists(original_title):
+        movie_id = self._generate_movie_id(
+            original_title
+        )
+
+        if self.repository.exists_individual(movie_id):
             raise ValueError(
                 "Já existe um filme com esse título."
             )
-
-        movie_id = (
-            original_title
-                .lower()
-                .replace(" ", "_")
-        )
 
         movie = self.repository.create_individual(FILM, movie_id)
 
@@ -148,18 +148,19 @@ class MovieService:
         self._link_languages(movie, languages)
 
         return Movie(
-            original_title,
-            portuguese_title,
-            release_date,
-            duration_minutes,
-            age_rating,
-            country,
-            languages,
-            theme,
-            director,
-            actors
+            ontology_id=movie_id,
+            original_title=original_title,
+            portuguese_title=portuguese_title,
+            release_date=release_date,
+            duration_minutes=duration_minutes,
+            age_rating=age_rating,
+            country=country,
+            languages=languages,
+            theme=theme,
+            director=director,
+            actors=actors
         )
-
+    
     def _build_movie(self, movie_individual):
         ontology_id = movie_individual.name
 
@@ -275,12 +276,8 @@ class MovieService:
         )
 
     def get_movie(self, original_title: str) -> Movie:
-        movie_id = (
-            FILM_PREFIX +
+        movie_id = self._generate_movie_id(
             original_title
-                .strip()
-                .lower()
-                .replace(" ", "_")
         )
 
         movie_individual = self.repository.require_individual(
@@ -304,21 +301,18 @@ class MovieService:
 
         return movies
 
-    def delete_movie(self, original_title: str):
+    def delete_movie(
+        self,
+        original_title: str
+    ):
 
-        movie_id = (
-            FILM_PREFIX +
+        movie_id = self._generate_movie_id(
             original_title
-                .strip()
-                .lower()
-                .replace(" ", "_")
         )
 
-        movie = self.repository.require_individual(
+        self.repository.remove_individual(
             movie_id
         )
-
-        self.repository.remove_individual(movie)
 
     def search_by_actor(self, actor_name: str) -> list[Movie]:
         movies = self.list_movies()
@@ -378,3 +372,47 @@ class MovieService:
                 result.append(movie)
 
         return result
+
+    def _generate_movie_id(
+        self,
+        original_title: str
+    ) -> str:
+
+        normalized = (
+            unicodedata.normalize(
+                "NFKD",
+                original_title
+            )
+            .encode(
+                "ascii",
+                "ignore"
+            )
+            .decode(
+                "ascii"
+            )
+            .lower()
+        )
+
+        normalized = re.sub(
+            r"[^a-z0-9]+",
+            "_",
+            normalized
+        )
+
+        normalized = (
+            normalized.strip("_")
+        )
+
+        return (
+            f"{FILM_PREFIX}"
+            f"{normalized}"
+        )
+
+
+
+
+
+
+
+
+
