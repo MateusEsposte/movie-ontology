@@ -871,26 +871,31 @@ class AdminMoviesView(ctk.CTkFrame):
 
     def load_movies(self):
 
-        for widget in (
-            self.movies_frame.winfo_children()
-        ):
+        for widget in self.movies_frame.winfo_children():
             widget.destroy()
 
-        movies = (
-            self.repository
-            .get_individuals_by_class(
-                "Film"
+        try:
+            movies = self.movie_service.list_movies()
+
+        except ValueError as error:
+            error_label = ctk.CTkLabel(
+                self.movies_frame,
+                text=str(error)
             )
-        )
+
+            error_label.pack(
+                pady=25
+            )
+
+            return
 
         if not movies:
-
-            label = ctk.CTkLabel(
+            empty_label = ctk.CTkLabel(
                 self.movies_frame,
                 text="Nenhum filme cadastrado."
             )
 
-            label.pack(
+            empty_label.pack(
                 pady=25
             )
 
@@ -898,39 +903,11 @@ class AdminMoviesView(ctk.CTkFrame):
 
         movies.sort(
             key=lambda movie: (
-                self.repository.get_data_property(
-                    movie,
-                    "originalTitle"
-                )
-                or movie.name
-            )
+                movie.original_title or ""
+            ).casefold()
         )
 
         for movie in movies:
-
-            original_title = (
-                self.repository.get_data_property(
-                    movie,
-                    "originalTitle"
-                )
-                or movie.name
-            )
-
-            portuguese_title = (
-                self.repository.get_data_property(
-                    movie,
-                    "portugueseTitle"
-                )
-                or "-"
-            )
-
-            release_date = (
-                self.repository.get_data_property(
-                    movie,
-                    "releaseDate"
-                )
-                or "-"
-            )
 
             movie_frame = ctk.CTkFrame(
                 self.movies_frame
@@ -949,7 +926,7 @@ class AdminMoviesView(ctk.CTkFrame):
 
             title_label = ctk.CTkLabel(
                 movie_frame,
-                text=original_title,
+                text=movie.original_title or movie.ontology_id,
                 font=("Arial", 18, "bold"),
                 anchor="w"
             )
@@ -962,11 +939,39 @@ class AdminMoviesView(ctk.CTkFrame):
                 pady=(12, 4)
             )
 
+            actors_text = (
+                ", ".join(
+                    str(actor)
+                    for actor in movie.actors
+                    if actor
+                )
+                if movie.actors
+                else "-"
+            )
+
+            languages_text = (
+                ", ".join(
+                    str(language)
+                    for language in movie.languages
+                    if language
+                )
+                if movie.languages
+                else "-"
+            )
+
             details = (
                 f"Título em português: "
-                f"{portuguese_title}\n"
-                f"Ano: {release_date}\n"
-                f"Identificador: {movie.name}"
+                f"{movie.portuguese_title or '-'}\n"
+                f"Ano: {movie.release_date or '-'}\n"
+                f"Duração: "
+                f"{movie.duration_minutes or '-'} minutos\n"
+                f"Classificação: {movie.age_rating or '-'}\n"
+                f"Tema: {movie.theme or '-'}\n"
+                f"Diretor: {movie.director or '-'}\n"
+                f"Atores: {actors_text}\n"
+                f"País: {movie.country or '-'}\n"
+                f"Idiomas: {languages_text}\n"
+                f"Identificador: {movie.ontology_id}"
             )
 
             details_label = ctk.CTkLabel(
@@ -988,10 +993,8 @@ class AdminMoviesView(ctk.CTkFrame):
                 movie_frame,
                 text="Excluir",
                 width=80,
-                command=lambda movie_id=(
-                    movie.name
-                ): self.delete_movie(
-                    movie_id
+                command=lambda movie_id=movie.ontology_id: (
+                    self.delete_movie(movie_id)
                 )
             )
 
