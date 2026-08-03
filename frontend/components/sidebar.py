@@ -4,6 +4,7 @@ from frontend.views.preferences_view import PreferencesView
 from frontend.views.ratings_view import RatingsView
 from frontend.views.friends_view import FriendsView
 from frontend.views.recommendations_view import RecommendationsView
+from frontend.views.home_view import HomeView
 
 
 class Sidebar(ctk.CTkFrame):
@@ -35,7 +36,12 @@ class Sidebar(ctk.CTkFrame):
 
         self.home_button = ctk.CTkButton(
             self,
-            text="Home"
+            text="Home",
+            command=lambda: (
+                self.home_view.show_content(
+                    HomeView
+                )
+            )
         )
 
         self.home_button.grid(

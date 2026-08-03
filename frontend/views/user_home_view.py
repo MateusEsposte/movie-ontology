@@ -1,7 +1,6 @@
 import customtkinter as ctk
 from frontend.components.sidebar import Sidebar
-from frontend.views.movies_view import MoviesView
-
+from frontend.views.home_view import HomeView
 
 class UserHomeView(ctk.CTkFrame):
 
@@ -54,7 +53,7 @@ class UserHomeView(ctk.CTkFrame):
         )
 
         self.show_content(
-            MoviesView
+            HomeView
         )
 
     def show_content(self, view_class):

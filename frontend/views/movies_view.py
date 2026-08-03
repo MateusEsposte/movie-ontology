@@ -17,6 +17,10 @@ class MoviesView(ctk.CTkFrame):
 
         self.movies = self.movie_service.list_movies()
 
+        self.filtered_movies = list(
+            self.movies
+        )
+
         self.grid_columnconfigure(
             0,
             weight=1
@@ -62,8 +66,80 @@ class MoviesView(ctk.CTkFrame):
         )
 
         self.main_frame.grid_rowconfigure(
-            0,
+            1,
             weight=1
+        )
+
+        self.filters_frame = ctk.CTkFrame(
+            self.main_frame
+        )
+
+        self.filters_frame.grid(
+            row=0,
+            column=0,
+            sticky="new",
+            padx=(10, 5),
+            pady=10
+        )
+
+        self.search_entry = ctk.CTkEntry(
+            self.filters_frame,
+            placeholder_text="Buscar por título"
+        )
+
+        self.search_entry.pack(
+            fill="x",
+            padx=10,
+            pady=(10, 5)
+        )
+
+        self.search_entry.bind(
+            "<KeyRelease>",
+            self.apply_filters
+        )
+
+        themes = sorted({
+            movie.theme
+            for movie in self.movies
+            if movie.theme
+        })
+
+        self.theme_filter = ctk.CTkComboBox(
+            self.filters_frame,
+            values=["Todos"] + themes,
+            command=self.apply_filters
+        )
+
+        self.theme_filter.set(
+            "Todos"
+        )
+
+        self.theme_filter.pack(
+            fill="x",
+            padx=10,
+            pady=5
+        )
+
+        countries = sorted({
+            movie.country
+            for movie in self.movies
+            if movie.country
+        })
+
+        self.country_filter = ctk.CTkComboBox(
+            self.filters_frame,
+            values=["Todos"] + countries,
+            command=self.apply_filters
+        )
+
+        self.country_filter.set(
+            "Todos"
+        )
+
+        self.country_filter.pack(
+            fill="x",
+            padx=10,
+            pady=5
         )
 
         self.movie_list_frame = ctk.CTkScrollableFrame(
@@ -72,30 +148,18 @@ class MoviesView(ctk.CTkFrame):
         )
 
         self.movie_list_frame.grid(
-            row=0,
+            row=1,
             column=0,
-            sticky="nsw",
-            padx=(10,5),
-            pady=10
+            sticky="nsew",
+            padx=(10, 5),
+            pady=(0, 10)
         )
 
         self.movie_buttons = []
 
-        for movie in self.movies:
-            button = ctk.CTkButton(
-                self.movie_list_frame,
-                text=movie.original_title,
-                command=lambda m=movie: self.show_movie(m)
-            )
-
-            button.pack(
-                fill="x",
-                padx=5,
-                pady=4
-            )
-
-            self.movie_buttons.append(button)
-
+        self.render_movie_list(
+            self.movies
+        )
 
         self.details_frame = ctk.CTkFrame(
             self.main_frame
@@ -137,8 +201,9 @@ class MoviesView(ctk.CTkFrame):
         self.details_frame.grid(
             row=0,
             column=1,
+            rowspan=2,
             sticky="nsew",
-            padx=(5,10),
+            padx=(5, 10),
             pady=10
         )
 
@@ -224,7 +289,127 @@ class MoviesView(ctk.CTkFrame):
                 state="normal"
             )
 
+    def render_movie_list(
+        self,
+        movies
+    ):
 
+        for widget in (
+            self.movie_list_frame.winfo_children()
+        ):
+            widget.destroy()
+
+        self.movie_buttons = []
+
+        if not movies:
+
+            empty_label = ctk.CTkLabel(
+                self.movie_list_frame,
+                text="Nenhum filme encontrado."
+            )
+
+            empty_label.pack(
+                pady=20
+            )
+
+            return
+
+        for movie in movies:
+
+            button = ctk.CTkButton(
+                self.movie_list_frame,
+                text=movie.original_title,
+                command=lambda m=movie: (
+                    self.show_movie(m)
+                )
+            )
+
+            button.pack(
+                fill="x",
+                padx=5,
+                pady=4
+            )
+
+            self.movie_buttons.append(
+                button
+            )
+
+    def apply_filters(
+        self,
+        event=None
+    ):
+
+        search_text = (
+            self.search_entry
+            .get()
+            .strip()
+            .lower()
+        )
+
+        selected_theme = (
+            self.theme_filter.get()
+        )
+
+        selected_country = (
+            self.country_filter.get()
+        )
+
+        filtered = []
+
+        for movie in self.movies:
+
+            titles = (
+                f"{movie.original_title} "
+                f"{movie.portuguese_title}"
+            ).lower()
+
+            if (
+                search_text
+                and search_text not in titles
+            ):
+                continue
+
+            if (
+                selected_theme != "Todos"
+                and movie.theme != selected_theme
+            ):
+                continue
+
+            if (
+                selected_country != "Todos"
+                and movie.country != selected_country
+            ):
+                continue
+
+            filtered.append(
+                movie
+            )
+
+        self.filtered_movies = filtered
+
+        self.render_movie_list(
+            filtered
+        )
+
+        if filtered:
+            self.show_movie(
+                filtered[0]
+            )
+        else:
+            self.selected_movie = None
+
+            self.title_label.configure(
+                text=""
+            )
+
+            self.info_label.configure(
+                text=""
+            )
+
+            self.watch_button.configure(
+                text="Marcar como assistido",
+                state="disabled"
+            )
 
 
 
