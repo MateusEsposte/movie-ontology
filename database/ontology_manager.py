@@ -25,4 +25,5 @@ class OntologyManager:
     @ontology.setter
     def ontology(self, value):
         self._ontology = value
+
     

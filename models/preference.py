@@ -13,3 +13,4 @@ class Preference:
         self.preference_type = preference_type
         self.preferred_element = preferred_element
         self.interest_level = interest_level
+        

@@ -107,3 +107,4 @@ class AdminSidebar(ctk.CTkFrame):
         app = self.winfo_toplevel()
         app.current_user = None
         app.navigation.show_view(WelcomeView)
+        

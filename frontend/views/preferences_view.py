@@ -4,7 +4,6 @@ from services.movie_services import MovieService
 
 
 class PreferencesView(ctk.CTkFrame):
-
     PREFERENCE_CLASSES = {
         "Filme": "CinematicWork",
         "Tema": "Theme",

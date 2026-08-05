@@ -12,3 +12,4 @@ class Rating:
         self.movie_title = movie_title
         self.score = score
         self.rating_date = rating_date
+        

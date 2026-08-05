@@ -13,3 +13,4 @@ class NavigationManager:
 
         self.current_view = view_class(self.app, self.repository)
         self.current_view.pack(fill="both", expand=True)
+        

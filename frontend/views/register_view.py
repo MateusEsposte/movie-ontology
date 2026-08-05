@@ -5,7 +5,6 @@ from frontend.views.welcome_view import WelcomeView
 
 
 class RegisterView(ctk.CTkFrame):
-
     def __init__(
         self,
         master,

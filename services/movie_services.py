@@ -408,11 +408,3 @@ class MovieService:
             f"{normalized}"
         )
 
-
-
-
-
-
-
-
-

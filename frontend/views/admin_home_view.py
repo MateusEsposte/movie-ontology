@@ -4,7 +4,6 @@ from frontend.views.admin_movies_view import AdminMoviesView
 
 
 class AdminHomeView(ctk.CTkFrame):
-
     def __init__(
         self,
         master,

@@ -3,7 +3,6 @@ import customtkinter as ctk
 
 
 class MoviesView(ctk.CTkFrame):
-
     def __init__(self, master, repository, current_user, user_service):
         super().__init__(master)
 
@@ -488,7 +487,4 @@ class MoviesView(ctk.CTkFrame):
         )
 
         self.load_rating()
-
-
-
 

@@ -584,3 +584,4 @@ class AdminElementsView(ctk.CTkFrame):
             self.message_label.configure(
                 text=str(error)
             )
+            

@@ -2,7 +2,6 @@ import customtkinter as ctk
 
 
 class WelcomeView(ctk.CTkFrame):
-
     def __init__(
         self,
         master,

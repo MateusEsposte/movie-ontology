@@ -3,7 +3,6 @@ from frontend.components.sidebar import Sidebar
 from frontend.views.home_view import HomeView
 
 class UserHomeView(ctk.CTkFrame):
-
     def __init__(self, master, repository):
 
         super().__init__(master)

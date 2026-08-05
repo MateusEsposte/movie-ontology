@@ -1517,4 +1517,3 @@ class AdminMoviesView(ctk.CTkFrame):
             text=summary
         )
 
-

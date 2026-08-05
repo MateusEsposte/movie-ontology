@@ -278,3 +278,4 @@ class RatingService:
         )
 
         return ranking
+

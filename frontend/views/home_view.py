@@ -6,7 +6,6 @@ from services.recommendation_service import (
 
 
 class HomeView(ctk.CTkFrame):
-
     def __init__(
         self,
         master,

@@ -8,7 +8,6 @@ from services.auth_service import AuthService
 
 
 class LoginView(ctk.CTkFrame):
-
     def __init__(
         self,
         master,

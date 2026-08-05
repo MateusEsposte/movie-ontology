@@ -235,4 +235,5 @@ class RatingsView(ctk.CTkFrame):
 
         self.load_rating()
 
-        
+
+    

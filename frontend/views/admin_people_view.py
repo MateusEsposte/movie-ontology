@@ -666,3 +666,4 @@ class AdminPeopleView(ctk.CTkFrame):
             self.message_label.configure(
                 text=str(error)
             )
+            

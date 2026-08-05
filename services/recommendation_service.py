@@ -344,11 +344,3 @@ class RecommendationService:
 
         return scored_movies
 
-
-
-
-
-
-
-
-    

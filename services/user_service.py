@@ -616,11 +616,3 @@ class UserService:
         return self.get_user(
             username
         )
-
-
-
-
-
-
-
-    
