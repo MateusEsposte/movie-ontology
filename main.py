@@ -4,11 +4,6 @@ from frontend.app import App
 import customtkinter as ctk
 
 
-def print_separator():
-
-    print("=" * 60)
-
-
 def main():
     manager = OntologyManager("ontology/movie_ontology.rdf")
 

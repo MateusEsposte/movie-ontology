@@ -1,7 +1,6 @@
 import customtkinter as ctk
 from frontend.views.movies_view import MoviesView
 from frontend.views.preferences_view import PreferencesView
-from frontend.views.ratings_view import RatingsView
 from frontend.views.friends_view import FriendsView
 from frontend.views.recommendations_view import RecommendationsView
 from frontend.views.home_view import HomeView
@@ -15,11 +14,9 @@ class Sidebar(ctk.CTkFrame):
             corner_radius=0
         )
 
-        self.repository = repository
-
-        self.grid_rowconfigure(7, weight=1)
-
+        self.app = master.winfo_toplevel()
         self.home_view = home_view
+        self.repository = repository
 
         title = ctk.CTkLabel(
             self,
@@ -86,23 +83,6 @@ class Sidebar(ctk.CTkFrame):
             sticky="ew"
         )
 
-        self.ratings_button = ctk.CTkButton(
-            self,
-            text="Avaliações",
-            command=lambda:
-            self.home_view.show_content(
-                RatingsView
-            )
-        )
-
-        self.ratings_button.grid(
-            row=4,
-            column=0,
-            padx=20,
-            pady=8,
-            sticky="ew"
-        )
-
         self.friends_button = ctk.CTkButton(
             self,
             text="Amigos",
@@ -123,9 +103,10 @@ class Sidebar(ctk.CTkFrame):
         self.recommendations_button = ctk.CTkButton(
             self,
             text="Recomendações",
-            command=lambda:
-            self.home_view.show_content(
-                RecommendationsView
+            command=lambda: (
+                self.home_view.show_content(
+                    RecommendationsView
+                )
             )
         )
 
@@ -136,3 +117,28 @@ class Sidebar(ctk.CTkFrame):
             pady=8,
             sticky="ew"
         )
+
+        self.grid_rowconfigure(
+            7,
+            weight=1
+        )
+
+        self.logout_button = ctk.CTkButton(
+            self,
+            text="Sair da conta",
+            command=self.logout
+        )
+
+        self.logout_button.grid(
+            row=8,
+            column=0,
+            padx=20,
+            pady=(8, 25),
+            sticky="ew"
+        )
+
+    def logout(self):
+        from frontend.views.welcome_view import WelcomeView
+        app = self.winfo_toplevel()
+        app.current_user = None
+        app.navigation.show_view(WelcomeView)

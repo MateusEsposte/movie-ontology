@@ -269,6 +269,12 @@
   <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
 </owl:DatatypeProperty>
 
+<owl:DatatypeProperty rdf:about="#passwordHash">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
 <owl:DatatypeProperty rdf:about="#phoneNumber">
   <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
   <rdfs:domain rdf:resource="#User"/>
@@ -411,6 +417,91 @@
   <rdfs:subClassOf rdf:resource="#CinematicWork"/>
 </owl:Class>
 
+<owl:NamedIndividual rdf:about="#aaron_sorkin">
+  <rdf:type rdf:resource="#Person"/>
+  <rdf:type rdf:resource="#Screenwriter"/>
+  <birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">09/06/1961</birthDate>
+  <fullName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Aaron Sorkin</fullName>
+  <nationality rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Estados Unidos</nationality>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#akira_kurosawa">
+  <rdf:type rdf:resource="#Director"/>
+  <rdf:type rdf:resource="#Person"/>
+  <rdf:type rdf:resource="#Screenwriter"/>
+  <birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">23/03/1910</birthDate>
+  <fullName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Akira Kurosawa</fullName>
+  <nationality rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Japão</nationality>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#al_pacino">
+  <rdf:type rdf:resource="#Actor"/>
+  <rdf:type rdf:resource="#Person"/>
+  <birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">25/04/1940</birthDate>
+  <fullName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Al Pacino</fullName>
+  <nationality rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Estados Unidos</nationality>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#audrey_tautou">
+  <rdf:type rdf:resource="#Actor"/>
+  <rdf:type rdf:resource="#Person"/>
+  <birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">09/08/1976</birthDate>
+  <fullName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Audrey Tautou</fullName>
+  <nationality rdf:datatype="http://www.w3.org/2001/XMLSchema#string">França</nationality>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#bong_joon_ho">
+  <rdf:type rdf:resource="#Director"/>
+  <rdf:type rdf:resource="#Person"/>
+  <rdf:type rdf:resource="#Screenwriter"/>
+  <birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">14/09/1969</birthDate>
+  <fullName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bong Joon-ho</fullName>
+  <nationality rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Coreia do Sul</nationality>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#brad_pitt">
+  <rdf:type rdf:resource="#Actor"/>
+  <rdf:type rdf:resource="#Person"/>
+  <birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">18/12/1963</birthDate>
+  <fullName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Brad Pitt</fullName>
+  <nationality rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Estados Unidos</nationality>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#charlie_kaufman">
+  <rdf:type rdf:resource="#Director"/>
+  <rdf:type rdf:resource="#Person"/>
+  <rdf:type rdf:resource="#Screenwriter"/>
+  <birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">19/11/1958</birthDate>
+  <fullName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Charlie Kaufman</fullName>
+  <nationality rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Estados Unidos</nationality>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#christian_bale">
+  <rdf:type rdf:resource="#Actor"/>
+  <rdf:type rdf:resource="#Person"/>
+  <birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">30/01/1974</birthDate>
+  <fullName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Christian Bale</fullName>
+  <nationality rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Reino Unido</nationality>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#christopher_nolan">
+  <rdf:type rdf:resource="#Director"/>
+  <rdf:type rdf:resource="#Person"/>
+  <rdf:type rdf:resource="#Screenwriter"/>
+  <birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">30/07/1970</birthDate>
+  <fullName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Christopher Nolan</fullName>
+  <nationality rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Reino Unido</nationality>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#clint_eastwood">
+  <rdf:type rdf:resource="#Actor"/>
+  <rdf:type rdf:resource="#Director"/>
+  <rdf:type rdf:resource="#Person"/>
+  <birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">31/05/1930</birthDate>
+  <fullName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Clint Eastwood</fullName>
+  <nationality rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Estados Unidos</nationality>
+</owl:NamedIndividual>
+
 <owl:NamedIndividual rdf:about="#country_brasil">
   <rdf:type rdf:resource="#CountryOfOrigin"/>
   <countryName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Brasil</countryName>
@@ -446,24 +537,67 @@
   <countryName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Reino Unido</countryName>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#language_alemao">
-  <rdf:type rdf:resource="#Language"/>
-  <languageName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Alemão</languageName>
+<owl:NamedIndividual rdf:about="#daniel_radcliffe">
+  <rdf:type rdf:resource="#Actor"/>
+  <rdf:type rdf:resource="#Person"/>
+  <birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">23/07/1989</birthDate>
+  <fullName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Daniel Radcliffe</fullName>
+  <nationality rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Reino Unido</nationality>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#language_coreano">
-  <rdf:type rdf:resource="#Language"/>
-  <languageName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Coreano</languageName>
+<owl:NamedIndividual rdf:about="#david_fincher">
+  <rdf:type rdf:resource="#Director"/>
+  <rdf:type rdf:resource="#Person"/>
+  <birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">28/08/1962</birthDate>
+  <fullName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">David Fincher</fullName>
+  <nationality rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Estados Unidos</nationality>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#language_espanhol">
-  <rdf:type rdf:resource="#Language"/>
-  <languageName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Espanhol</languageName>
+<owl:NamedIndividual rdf:about="#denis_villeneuve">
+  <rdf:type rdf:resource="#Director"/>
+  <rdf:type rdf:resource="#Person"/>
+  <rdf:type rdf:resource="#Screenwriter"/>
+  <birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">03/10/1967</birthDate>
+  <fullName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Denis Villeneuve</fullName>
+  <nationality rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Canadá</nationality>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#language_frances">
-  <rdf:type rdf:resource="#Language"/>
-  <languageName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Francês</languageName>
+<owl:NamedIndividual rdf:about="#emma_watson">
+  <rdf:type rdf:resource="#Actor"/>
+  <rdf:type rdf:resource="#Person"/>
+  <birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">15/04/1990</birthDate>
+  <fullName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Emma Watson</fullName>
+  <nationality rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Reino Unido</nationality>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#fernanda_montenegro">
+  <rdf:type rdf:resource="#Actor"/>
+  <rdf:type rdf:resource="#Person"/>
+  <birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">16/10/1929</birthDate>
+  <fullName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Fernanda Montenegro</fullName>
+  <nationality rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Brasil</nationality>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#fernando_meirelles">
+  <rdf:type rdf:resource="#Director"/>
+  <rdf:type rdf:resource="#Person"/>
+  <birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">09/11/1955</birthDate>
+  <fullName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Fernando Meirelles</fullName>
+  <nationality rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Brasil</nationality>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#film_amistad">
+  <rdf:type rdf:resource="#Film"/>
+  <dubbedIn rdf:resource="#language_ingles"/>
+  <hasActor rdf:resource="#morgan_freeman"/>
+  <hasCountryOfOrigin rdf:resource="#country_estados_unidos"/>
+  <hasDirector rdf:resource="#steven_spielberg"/>
+  <hasTheme rdf:resource="#theme_drama"/>
+  <ageRating rdf:datatype="http://www.w3.org/2001/XMLSchema#string">14 anos</ageRating>
+  <durationMinutes rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">155</durationMinutes>
+  <originalTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Amistad</originalTitle>
+  <portugueseTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Amistad</portugueseTitle>
+  <releaseDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1997</releaseDate>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#language_ingles">
@@ -471,29 +605,20 @@
   <languageName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Inglês</languageName>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#language_japones">
-  <rdf:type rdf:resource="#Language"/>
-  <languageName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Japonês</languageName>
+<owl:NamedIndividual rdf:about="#morgan_freeman">
+  <rdf:type rdf:resource="#Actor"/>
+  <rdf:type rdf:resource="#Person"/>
+  <birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">01/06/1937</birthDate>
+  <fullName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Morgan Freeman</fullName>
+  <nationality rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Estados Unidos</nationality>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#language_portugues">
-  <rdf:type rdf:resource="#Language"/>
-  <languageName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Português</languageName>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#theme_acao">
-  <rdf:type rdf:resource="#Theme"/>
-  <themeName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ação</themeName>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#theme_animacao">
-  <rdf:type rdf:resource="#Theme"/>
-  <themeName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Animação</themeName>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#theme_comedia">
-  <rdf:type rdf:resource="#Theme"/>
-  <themeName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Comédia</themeName>
+<owl:NamedIndividual rdf:about="#steven_spielberg">
+  <rdf:type rdf:resource="#Director"/>
+  <rdf:type rdf:resource="#Person"/>
+  <birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">18/12/1946</birthDate>
+  <fullName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Steven Spielberg</fullName>
+  <nationality rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Estados Unidos</nationality>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#theme_drama">
@@ -501,9 +626,75 @@
   <themeName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Drama</themeName>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#theme_ficcao_cientifica">
+<owl:NamedIndividual rdf:about="#film_batman_begins">
+  <rdf:type rdf:resource="#Film"/>
+  <dubbedIn rdf:resource="#language_ingles"/>
+  <hasActor rdf:resource="#christian_bale"/>
+  <hasCountryOfOrigin rdf:resource="#country_reino_unido"/>
+  <hasDirector rdf:resource="#christopher_nolan"/>
+  <hasTheme rdf:resource="#theme_acao"/>
+  <ageRating rdf:datatype="http://www.w3.org/2001/XMLSchema#string">10 anos</ageRating>
+  <durationMinutes rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">140</durationMinutes>
+  <originalTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Batman Begins</originalTitle>
+  <portugueseTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Batman Begins</portugueseTitle>
+  <releaseDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2005</releaseDate>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#theme_acao">
   <rdf:type rdf:resource="#Theme"/>
-  <themeName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ficção Científica</themeName>
+  <themeName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ação</themeName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#film_bridge_of_spies">
+  <rdf:type rdf:resource="#Film"/>
+  <dubbedIn rdf:resource="#language_ingles"/>
+  <hasActor rdf:resource="#tom_hanks"/>
+  <hasCountryOfOrigin rdf:resource="#country_estados_unidos"/>
+  <hasDirector rdf:resource="#steven_spielberg"/>
+  <hasTheme rdf:resource="#theme_drama"/>
+  <ageRating rdf:datatype="http://www.w3.org/2001/XMLSchema#string">12 anos</ageRating>
+  <durationMinutes rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">142</durationMinutes>
+  <originalTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bridge of Spies</originalTitle>
+  <portugueseTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ponte dos Espiões</portugueseTitle>
+  <releaseDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2015</releaseDate>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#tom_hanks">
+  <rdf:type rdf:resource="#Actor"/>
+  <rdf:type rdf:resource="#Person"/>
+  <birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">09/07/1956</birthDate>
+  <fullName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tom Hanks</fullName>
+  <nationality rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Estados Unidos</nationality>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#film_cape_fear">
+  <rdf:type rdf:resource="#Film"/>
+  <dubbedIn rdf:resource="#language_ingles"/>
+  <hasActor rdf:resource="#robert_de_niro"/>
+  <hasCountryOfOrigin rdf:resource="#country_estados_unidos"/>
+  <hasDirector rdf:resource="#martin_scorsese"/>
+  <hasTheme rdf:resource="#theme_suspense"/>
+  <ageRating rdf:datatype="http://www.w3.org/2001/XMLSchema#string">16 anos</ageRating>
+  <durationMinutes rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">128</durationMinutes>
+  <originalTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cape Fear</originalTitle>
+  <portugueseTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cabo do Medo</portugueseTitle>
+  <releaseDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1991</releaseDate>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#robert_de_niro">
+  <rdf:type rdf:resource="#Actor"/>
+  <rdf:type rdf:resource="#Person"/>
+  <birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">17/08/1943</birthDate>
+  <fullName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Robert De Niro</fullName>
+  <nationality rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Estados Unidos</nationality>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#martin_scorsese">
+  <rdf:type rdf:resource="#Director"/>
+  <rdf:type rdf:resource="#Person"/>
+  <birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">17/11/1942</birthDate>
+  <fullName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Martin Scorsese</fullName>
+  <nationality rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Estados Unidos</nationality>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#theme_suspense">
@@ -511,195 +702,1034 @@
   <themeName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Suspense</themeName>
 </owl:NamedIndividual>
 
+<owl:NamedIndividual rdf:about="#film_casino">
+  <rdf:type rdf:resource="#Film"/>
+  <dubbedIn rdf:resource="#language_ingles"/>
+  <hasActor rdf:resource="#robert_de_niro"/>
+  <hasCountryOfOrigin rdf:resource="#country_estados_unidos"/>
+  <hasDirector rdf:resource="#martin_scorsese"/>
+  <hasTheme rdf:resource="#theme_drama"/>
+  <ageRating rdf:datatype="http://www.w3.org/2001/XMLSchema#string">18 anos</ageRating>
+  <durationMinutes rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">178</durationMinutes>
+  <originalTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Casino</originalTitle>
+  <portugueseTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cassino</portugueseTitle>
+  <releaseDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1995</releaseDate>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#film_catch_me_if_you_can">
+  <rdf:type rdf:resource="#Film"/>
+  <dubbedIn rdf:resource="#language_ingles"/>
+  <hasActor rdf:resource="#leonardo_dicaprio"/>
+  <hasActor rdf:resource="#tom_hanks"/>
+  <hasCountryOfOrigin rdf:resource="#country_estados_unidos"/>
+  <hasDirector rdf:resource="#steven_spielberg"/>
+  <hasTheme rdf:resource="#theme_comedia"/>
+  <ageRating rdf:datatype="http://www.w3.org/2001/XMLSchema#string">12 anos</ageRating>
+  <durationMinutes rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">141</durationMinutes>
+  <originalTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Catch Me If You Can</originalTitle>
+  <portugueseTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Prenda-me Se For Capaz</portugueseTitle>
+  <releaseDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2002</releaseDate>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#leonardo_dicaprio">
+  <rdf:type rdf:resource="#Actor"/>
+  <rdf:type rdf:resource="#Person"/>
+  <birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">11/11/1974</birthDate>
+  <fullName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Leonardo DiCaprio</fullName>
+  <nationality rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Estados Unidos</nationality>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#theme_comedia">
+  <rdf:type rdf:resource="#Theme"/>
+  <themeName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Comédia</themeName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#film_django_unchained">
+  <rdf:type rdf:resource="#Film"/>
+  <dubbedIn rdf:resource="#language_ingles"/>
+  <hasActor rdf:resource="#leonardo_dicaprio"/>
+  <hasActor rdf:resource="#samuel_l_jackson"/>
+  <hasCountryOfOrigin rdf:resource="#country_estados_unidos"/>
+  <hasDirector rdf:resource="#quentin_tarantino"/>
+  <hasTheme rdf:resource="#theme_acao"/>
+  <ageRating rdf:datatype="http://www.w3.org/2001/XMLSchema#string">16 anos</ageRating>
+  <durationMinutes rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">165</durationMinutes>
+  <originalTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Django Unchained</originalTitle>
+  <portugueseTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Django Livre</portugueseTitle>
+  <releaseDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2012</releaseDate>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#samuel_l_jackson">
+  <rdf:type rdf:resource="#Actor"/>
+  <rdf:type rdf:resource="#Person"/>
+  <birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">21/12/1948</birthDate>
+  <fullName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Samuel L. Jackson</fullName>
+  <nationality rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Estados Unidos</nationality>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#quentin_tarantino">
+  <rdf:type rdf:resource="#Director"/>
+  <rdf:type rdf:resource="#Person"/>
+  <rdf:type rdf:resource="#Screenwriter"/>
+  <birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">27/03/1963</birthDate>
+  <fullName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Quentin Tarantino</fullName>
+  <nationality rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Estados Unidos</nationality>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#film_fight_club">
+  <rdf:type rdf:resource="#Film"/>
+  <dubbedIn rdf:resource="#language_ingles"/>
+  <hasActor rdf:resource="#brad_pitt"/>
+  <hasCountryOfOrigin rdf:resource="#country_estados_unidos"/>
+  <hasDirector rdf:resource="#david_fincher"/>
+  <hasTheme rdf:resource="#theme_drama"/>
+  <ageRating rdf:datatype="http://www.w3.org/2001/XMLSchema#string">18 anos</ageRating>
+  <durationMinutes rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">139</durationMinutes>
+  <originalTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Fight Club</originalTitle>
+  <portugueseTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Clube da Luta</portugueseTitle>
+  <releaseDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1999</releaseDate>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#film_gangs_of_new_york">
+  <rdf:type rdf:resource="#Film"/>
+  <dubbedIn rdf:resource="#language_ingles"/>
+  <hasActor rdf:resource="#leonardo_dicaprio"/>
+  <hasCountryOfOrigin rdf:resource="#country_estados_unidos"/>
+  <hasDirector rdf:resource="#martin_scorsese"/>
+  <hasTheme rdf:resource="#theme_drama"/>
+  <ageRating rdf:datatype="http://www.w3.org/2001/XMLSchema#string">16 anos</ageRating>
+  <durationMinutes rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">167</durationMinutes>
+  <originalTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Gangs of New York</originalTitle>
+  <portugueseTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Gangues de Nova York</portugueseTitle>
+  <releaseDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2002</releaseDate>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#film_goodfellas">
+  <rdf:type rdf:resource="#Film"/>
+  <dubbedIn rdf:resource="#language_ingles"/>
+  <hasActor rdf:resource="#robert_de_niro"/>
+  <hasCountryOfOrigin rdf:resource="#country_estados_unidos"/>
+  <hasDirector rdf:resource="#martin_scorsese"/>
+  <hasTheme rdf:resource="#theme_drama"/>
+  <ageRating rdf:datatype="http://www.w3.org/2001/XMLSchema#string">18 anos</ageRating>
+  <durationMinutes rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">145</durationMinutes>
+  <originalTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Goodfellas</originalTitle>
+  <portugueseTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Os Bons Companheiros</portugueseTitle>
+  <releaseDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1990</releaseDate>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#film_gran_torino">
+  <rdf:type rdf:resource="#Film"/>
+  <dubbedIn rdf:resource="#language_ingles"/>
+  <hasActor rdf:resource="#clint_eastwood"/>
+  <hasCountryOfOrigin rdf:resource="#country_estados_unidos"/>
+  <hasDirector rdf:resource="#clint_eastwood"/>
+  <hasTheme rdf:resource="#theme_drama"/>
+  <ageRating rdf:datatype="http://www.w3.org/2001/XMLSchema#string">16 anos</ageRating>
+  <durationMinutes rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">116</durationMinutes>
+  <originalTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Gran Torino</originalTitle>
+  <portugueseTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Gran Torino</portugueseTitle>
+  <releaseDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2008</releaseDate>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#film_high_and_low">
+  <rdf:type rdf:resource="#Film"/>
+  <dubbedIn rdf:resource="#language_japones"/>
+  <hasActor rdf:resource="#tatsuya_nakadai"/>
+  <hasCountryOfOrigin rdf:resource="#country_japao"/>
+  <hasDirector rdf:resource="#akira_kurosawa"/>
+  <hasTheme rdf:resource="#theme_suspense"/>
+  <ageRating rdf:datatype="http://www.w3.org/2001/XMLSchema#string">14 anos</ageRating>
+  <durationMinutes rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">143</durationMinutes>
+  <originalTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">High and Low</originalTitle>
+  <portugueseTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Céu e Inferno</portugueseTitle>
+  <releaseDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1963</releaseDate>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#language_japones">
+  <rdf:type rdf:resource="#Language"/>
+  <languageName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Japonês</languageName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#tatsuya_nakadai">
+  <rdf:type rdf:resource="#Actor"/>
+  <rdf:type rdf:resource="#Person"/>
+  <birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">13/12/1932</birthDate>
+  <fullName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tatsuya Nakadai</fullName>
+  <nationality rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Japão</nationality>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#film_house_of_gucci">
+  <rdf:type rdf:resource="#Film"/>
+  <dubbedIn rdf:resource="#language_ingles"/>
+  <hasActor rdf:resource="#al_pacino"/>
+  <hasCountryOfOrigin rdf:resource="#country_estados_unidos"/>
+  <hasDirector rdf:resource="#ridley_scott"/>
+  <hasTheme rdf:resource="#theme_drama"/>
+  <ageRating rdf:datatype="http://www.w3.org/2001/XMLSchema#string">14 anos</ageRating>
+  <durationMinutes rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">158</durationMinutes>
+  <originalTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">House of Gucci</originalTitle>
+  <portugueseTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Casa Gucci</portugueseTitle>
+  <releaseDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021</releaseDate>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#ridley_scott">
+  <rdf:type rdf:resource="#Director"/>
+  <rdf:type rdf:resource="#Person"/>
+  <birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">30/11/1937</birthDate>
+  <fullName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ridley Scott</fullName>
+  <nationality rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Reino Unido</nationality>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#film_howl_s_moving_castle">
+  <rdf:type rdf:resource="#Film"/>
+  <dubbedIn rdf:resource="#language_japones"/>
+  <hasActor rdf:resource="#christian_bale"/>
+  <hasCountryOfOrigin rdf:resource="#country_japao"/>
+  <hasDirector rdf:resource="#hayao_miyazaki"/>
+  <hasTheme rdf:resource="#theme_animacao"/>
+  <ageRating rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Livre</ageRating>
+  <durationMinutes rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">119</durationMinutes>
+  <originalTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Howl's Moving Castle</originalTitle>
+  <portugueseTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">O Castelo Animado</portugueseTitle>
+  <releaseDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2004</releaseDate>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#hayao_miyazaki">
+  <rdf:type rdf:resource="#Director"/>
+  <rdf:type rdf:resource="#Person"/>
+  <rdf:type rdf:resource="#Screenwriter"/>
+  <birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">05/01/1941</birthDate>
+  <fullName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Hayao Miyazaki</fullName>
+  <nationality rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Japão</nationality>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#theme_animacao">
+  <rdf:type rdf:resource="#Theme"/>
+  <themeName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Animação</themeName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#film_inception">
+  <rdf:type rdf:resource="#Film"/>
+  <dubbedIn rdf:resource="#language_ingles"/>
+  <hasActor rdf:resource="#leonardo_dicaprio"/>
+  <hasCountryOfOrigin rdf:resource="#country_reino_unido"/>
+  <hasDirector rdf:resource="#christopher_nolan"/>
+  <hasTheme rdf:resource="#theme_ficcao_cientifica"/>
+  <ageRating rdf:datatype="http://www.w3.org/2001/XMLSchema#string">14 anos</ageRating>
+  <durationMinutes rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">148</durationMinutes>
+  <originalTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Inception</originalTitle>
+  <portugueseTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A Origem</portugueseTitle>
+  <releaseDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2010</releaseDate>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#theme_ficcao_cientifica">
+  <rdf:type rdf:resource="#Theme"/>
+  <themeName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ficção Científica</themeName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#film_inglourious_basterds">
+  <rdf:type rdf:resource="#Film"/>
+  <dubbedIn rdf:resource="#language_ingles"/>
+  <hasActor rdf:resource="#brad_pitt"/>
+  <hasCountryOfOrigin rdf:resource="#country_estados_unidos"/>
+  <hasDirector rdf:resource="#quentin_tarantino"/>
+  <hasTheme rdf:resource="#theme_acao"/>
+  <ageRating rdf:datatype="http://www.w3.org/2001/XMLSchema#string">18 anos</ageRating>
+  <durationMinutes rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">153</durationMinutes>
+  <originalTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Inglourious Basterds</originalTitle>
+  <portugueseTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bastardos Inglórios</portugueseTitle>
+  <releaseDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2009</releaseDate>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#film_invictus">
+  <rdf:type rdf:resource="#Film"/>
+  <dubbedIn rdf:resource="#language_ingles"/>
+  <hasActor rdf:resource="#morgan_freeman"/>
+  <hasCountryOfOrigin rdf:resource="#country_estados_unidos"/>
+  <hasDirector rdf:resource="#clint_eastwood"/>
+  <hasTheme rdf:resource="#theme_drama"/>
+  <ageRating rdf:datatype="http://www.w3.org/2001/XMLSchema#string">10 anos</ageRating>
+  <durationMinutes rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">134</durationMinutes>
+  <originalTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Invictus</originalTitle>
+  <portugueseTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Invictus</portugueseTitle>
+  <releaseDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2009</releaseDate>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#film_jackie_brown">
+  <rdf:type rdf:resource="#Film"/>
+  <dubbedIn rdf:resource="#language_ingles"/>
+  <hasActor rdf:resource="#samuel_l_jackson"/>
+  <hasCountryOfOrigin rdf:resource="#country_estados_unidos"/>
+  <hasDirector rdf:resource="#quentin_tarantino"/>
+  <hasTheme rdf:resource="#theme_suspense"/>
+  <ageRating rdf:datatype="http://www.w3.org/2001/XMLSchema#string">18 anos</ageRating>
+  <durationMinutes rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">154</durationMinutes>
+  <originalTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Jackie Brown</originalTitle>
+  <portugueseTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Jackie Brown</portugueseTitle>
+  <releaseDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1997</releaseDate>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#film_kagemusha">
+  <rdf:type rdf:resource="#Film"/>
+  <dubbedIn rdf:resource="#language_japones"/>
+  <hasActor rdf:resource="#tatsuya_nakadai"/>
+  <hasCountryOfOrigin rdf:resource="#country_japao"/>
+  <hasDirector rdf:resource="#akira_kurosawa"/>
+  <hasTheme rdf:resource="#theme_drama"/>
+  <ageRating rdf:datatype="http://www.w3.org/2001/XMLSchema#string">14 anos</ageRating>
+  <durationMinutes rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">180</durationMinutes>
+  <originalTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Kagemusha</originalTitle>
+  <portugueseTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Kagemusha: A Sombra do Samurai</portugueseTitle>
+  <releaseDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1980</releaseDate>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#film_killers_of_the_flower_moon">
+  <rdf:type rdf:resource="#Film"/>
+  <dubbedIn rdf:resource="#language_ingles"/>
+  <hasActor rdf:resource="#leonardo_dicaprio"/>
+  <hasActor rdf:resource="#robert_de_niro"/>
+  <hasCountryOfOrigin rdf:resource="#country_estados_unidos"/>
+  <hasDirector rdf:resource="#martin_scorsese"/>
+  <hasTheme rdf:resource="#theme_drama"/>
+  <ageRating rdf:datatype="http://www.w3.org/2001/XMLSchema#string">16 anos</ageRating>
+  <durationMinutes rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">206</durationMinutes>
+  <originalTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Killers of the Flower Moon</originalTitle>
+  <portugueseTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Assassinos da Lua das Flores</portugueseTitle>
+  <releaseDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2023</releaseDate>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#film_la_femme_nikita">
+  <rdf:type rdf:resource="#Film"/>
+  <dubbedIn rdf:resource="#language_frances"/>
+  <hasActor rdf:resource="#jean_reno"/>
+  <hasCountryOfOrigin rdf:resource="#country_franca"/>
+  <hasDirector rdf:resource="#luc_besson"/>
+  <hasTheme rdf:resource="#theme_acao"/>
+  <ageRating rdf:datatype="http://www.w3.org/2001/XMLSchema#string">16 anos</ageRating>
+  <durationMinutes rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">117</durationMinutes>
+  <originalTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">La Femme Nikita</originalTitle>
+  <portugueseTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Nikita: Criada para Matar</portugueseTitle>
+  <releaseDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1990</releaseDate>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#language_frances">
+  <rdf:type rdf:resource="#Language"/>
+  <languageName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Francês</languageName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#jean_reno">
+  <rdf:type rdf:resource="#Actor"/>
+  <rdf:type rdf:resource="#Person"/>
+  <birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">30/07/1948</birthDate>
+  <fullName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Jean Reno</fullName>
+  <nationality rdf:datatype="http://www.w3.org/2001/XMLSchema#string">França</nationality>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#luc_besson">
+  <rdf:type rdf:resource="#Director"/>
+  <rdf:type rdf:resource="#Person"/>
+  <rdf:type rdf:resource="#Screenwriter"/>
+  <birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">18/03/1959</birthDate>
+  <fullName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Luc Besson</fullName>
+  <nationality rdf:datatype="http://www.w3.org/2001/XMLSchema#string">França</nationality>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#film_leon_the_professional">
+  <rdf:type rdf:resource="#Film"/>
+  <dubbedIn rdf:resource="#language_ingles"/>
+  <hasActor rdf:resource="#jean_reno"/>
+  <hasActor rdf:resource="#natalie_portman"/>
+  <hasCountryOfOrigin rdf:resource="#country_franca"/>
+  <hasDirector rdf:resource="#luc_besson"/>
+  <hasTheme rdf:resource="#theme_acao"/>
+  <ageRating rdf:datatype="http://www.w3.org/2001/XMLSchema#string">14 anos</ageRating>
+  <durationMinutes rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">110</durationMinutes>
+  <originalTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Léon: The Professional</originalTitle>
+  <portugueseTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">O Profissional</portugueseTitle>
+  <releaseDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1994</releaseDate>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#natalie_portman">
+  <rdf:type rdf:resource="#Actor"/>
+  <rdf:type rdf:resource="#Person"/>
+  <birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">09/06/1981</birthDate>
+  <fullName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Natalie Portman</fullName>
+  <nationality rdf:datatype="http://www.w3.org/2001/XMLSchema#string">França</nationality>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#film_lucy">
+  <rdf:type rdf:resource="#Film"/>
+  <dubbedIn rdf:resource="#language_ingles"/>
+  <hasActor rdf:resource="#scarlett_johansson"/>
+  <hasCountryOfOrigin rdf:resource="#country_franca"/>
+  <hasDirector rdf:resource="#luc_besson"/>
+  <hasTheme rdf:resource="#theme_ficcao_cientifica"/>
+  <ageRating rdf:datatype="http://www.w3.org/2001/XMLSchema#string">16 anos</ageRating>
+  <durationMinutes rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">89</durationMinutes>
+  <originalTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lucy</originalTitle>
+  <portugueseTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lucy</portugueseTitle>
+  <releaseDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2014</releaseDate>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#scarlett_johansson">
+  <rdf:type rdf:resource="#Actor"/>
+  <rdf:type rdf:resource="#Person"/>
+  <birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">22/11/1984</birthDate>
+  <fullName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Scarlett Johansson</fullName>
+  <nationality rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Estados Unidos</nationality>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#film_memories_of_murder">
+  <rdf:type rdf:resource="#Film"/>
+  <dubbedIn rdf:resource="#language_coreano"/>
+  <hasActor rdf:resource="#song_kang_ho"/>
+  <hasCountryOfOrigin rdf:resource="#country_coreia_do_sul"/>
+  <hasDirector rdf:resource="#bong_joon_ho"/>
+  <hasTheme rdf:resource="#theme_suspense"/>
+  <ageRating rdf:datatype="http://www.w3.org/2001/XMLSchema#string">16 anos</ageRating>
+  <durationMinutes rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">132</durationMinutes>
+  <originalTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Memories of Murder</originalTitle>
+  <portugueseTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Memórias de um Assassino</portugueseTitle>
+  <releaseDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2003</releaseDate>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#language_coreano">
+  <rdf:type rdf:resource="#Language"/>
+  <languageName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Coreano</languageName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#song_kang_ho">
+  <rdf:type rdf:resource="#Actor"/>
+  <rdf:type rdf:resource="#Person"/>
+  <birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">17/01/1967</birthDate>
+  <fullName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Song Kang-ho</fullName>
+  <nationality rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Coreia do Sul</nationality>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#film_million_dollar_baby">
+  <rdf:type rdf:resource="#Film"/>
+  <dubbedIn rdf:resource="#language_ingles"/>
+  <hasActor rdf:resource="#clint_eastwood"/>
+  <hasActor rdf:resource="#morgan_freeman"/>
+  <hasCountryOfOrigin rdf:resource="#country_estados_unidos"/>
+  <hasDirector rdf:resource="#clint_eastwood"/>
+  <hasTheme rdf:resource="#theme_drama"/>
+  <ageRating rdf:datatype="http://www.w3.org/2001/XMLSchema#string">12 anos</ageRating>
+  <durationMinutes rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">132</durationMinutes>
+  <originalTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Million Dollar Baby</originalTitle>
+  <portugueseTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Menina de Ouro</portugueseTitle>
+  <releaseDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2004</releaseDate>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#film_new_york_new_york">
+  <rdf:type rdf:resource="#Film"/>
+  <dubbedIn rdf:resource="#language_ingles"/>
+  <hasActor rdf:resource="#robert_de_niro"/>
+  <hasCountryOfOrigin rdf:resource="#country_estados_unidos"/>
+  <hasDirector rdf:resource="#martin_scorsese"/>
+  <hasTheme rdf:resource="#theme_drama"/>
+  <ageRating rdf:datatype="http://www.w3.org/2001/XMLSchema#string">12 anos</ageRating>
+  <durationMinutes rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">163</durationMinutes>
+  <originalTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">New York, New York</originalTitle>
+  <portugueseTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">New York, New York</portugueseTitle>
+  <releaseDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1977</releaseDate>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#film_okja">
+  <rdf:type rdf:resource="#Film"/>
+  <dubbedIn rdf:resource="#language_coreano"/>
+  <hasActor rdf:resource="#tilda_swinton"/>
+  <hasCountryOfOrigin rdf:resource="#country_coreia_do_sul"/>
+  <hasDirector rdf:resource="#bong_joon_ho"/>
+  <hasTheme rdf:resource="#theme_ficcao_cientifica"/>
+  <ageRating rdf:datatype="http://www.w3.org/2001/XMLSchema#string">12 anos</ageRating>
+  <durationMinutes rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">120</durationMinutes>
+  <originalTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Okja</originalTitle>
+  <portugueseTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Okja</portugueseTitle>
+  <releaseDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2017</releaseDate>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#tilda_swinton">
+  <rdf:type rdf:resource="#Actor"/>
+  <rdf:type rdf:resource="#Person"/>
+  <birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">05/11/1960</birthDate>
+  <fullName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tilda Swinton</fullName>
+  <nationality rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Reino Unido</nationality>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#film_once_upon_a_time_in_hollywood">
+  <rdf:type rdf:resource="#Film"/>
+  <dubbedIn rdf:resource="#language_ingles"/>
+  <hasActor rdf:resource="#brad_pitt"/>
+  <hasActor rdf:resource="#leonardo_dicaprio"/>
+  <hasCountryOfOrigin rdf:resource="#country_estados_unidos"/>
+  <hasDirector rdf:resource="#quentin_tarantino"/>
+  <hasTheme rdf:resource="#theme_comedia"/>
+  <ageRating rdf:datatype="http://www.w3.org/2001/XMLSchema#string">16 anos</ageRating>
+  <durationMinutes rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">161</durationMinutes>
+  <originalTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Once Upon a Time in Hollywood</originalTitle>
+  <portugueseTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Era uma Vez em... Hollywood</portugueseTitle>
+  <releaseDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2019</releaseDate>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#film_parasite">
+  <rdf:type rdf:resource="#Film"/>
+  <dubbedIn rdf:resource="#language_coreano"/>
+  <hasActor rdf:resource="#song_kang_ho"/>
+  <hasCountryOfOrigin rdf:resource="#country_coreia_do_sul"/>
+  <hasDirector rdf:resource="#bong_joon_ho"/>
+  <hasTheme rdf:resource="#theme_suspense"/>
+  <ageRating rdf:datatype="http://www.w3.org/2001/XMLSchema#string">16 anos</ageRating>
+  <durationMinutes rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">132</durationMinutes>
+  <originalTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Parasite</originalTitle>
+  <portugueseTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Parasita</portugueseTitle>
+  <releaseDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2019</releaseDate>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#film_prisoners">
+  <rdf:type rdf:resource="#Film"/>
+  <dubbedIn rdf:resource="#language_ingles"/>
+  <hasActor rdf:resource="#hugh_jackman"/>
+  <hasCountryOfOrigin rdf:resource="#country_estados_unidos"/>
+  <hasDirector rdf:resource="#denis_villeneuve"/>
+  <hasTheme rdf:resource="#theme_suspense"/>
+  <ageRating rdf:datatype="http://www.w3.org/2001/XMLSchema#string">16 anos</ageRating>
+  <durationMinutes rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">153</durationMinutes>
+  <originalTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Prisoners</originalTitle>
+  <portugueseTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Os Suspeitos</portugueseTitle>
+  <releaseDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2013</releaseDate>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#hugh_jackman">
+  <rdf:type rdf:resource="#Actor"/>
+  <rdf:type rdf:resource="#Person"/>
+  <birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">12/10/1968</birthDate>
+  <fullName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Hugh Jackman</fullName>
+  <nationality rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Reino Unido</nationality>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#film_pulp_fiction">
+  <rdf:type rdf:resource="#Film"/>
+  <dubbedIn rdf:resource="#language_ingles"/>
+  <hasActor rdf:resource="#samuel_l_jackson"/>
+  <hasCountryOfOrigin rdf:resource="#country_estados_unidos"/>
+  <hasDirector rdf:resource="#quentin_tarantino"/>
+  <hasTheme rdf:resource="#theme_suspense"/>
+  <ageRating rdf:datatype="http://www.w3.org/2001/XMLSchema#string">18 anos</ageRating>
+  <durationMinutes rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">154</durationMinutes>
+  <originalTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pulp Fiction</originalTitle>
+  <portugueseTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pulp Fiction: Tempo de Violência</portugueseTitle>
+  <releaseDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1994</releaseDate>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#film_raging_bull">
+  <rdf:type rdf:resource="#Film"/>
+  <dubbedIn rdf:resource="#language_ingles"/>
+  <hasActor rdf:resource="#robert_de_niro"/>
+  <hasCountryOfOrigin rdf:resource="#country_estados_unidos"/>
+  <hasDirector rdf:resource="#martin_scorsese"/>
+  <hasTheme rdf:resource="#theme_drama"/>
+  <ageRating rdf:datatype="http://www.w3.org/2001/XMLSchema#string">16 anos</ageRating>
+  <durationMinutes rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">129</durationMinutes>
+  <originalTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Raging Bull</originalTitle>
+  <portugueseTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Touro Indomável</portugueseTitle>
+  <releaseDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1980</releaseDate>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#film_ran">
+  <rdf:type rdf:resource="#Film"/>
+  <dubbedIn rdf:resource="#language_japones"/>
+  <hasActor rdf:resource="#tatsuya_nakadai"/>
+  <hasCountryOfOrigin rdf:resource="#country_japao"/>
+  <hasDirector rdf:resource="#akira_kurosawa"/>
+  <hasTheme rdf:resource="#theme_drama"/>
+  <ageRating rdf:datatype="http://www.w3.org/2001/XMLSchema#string">14 anos</ageRating>
+  <durationMinutes rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">162</durationMinutes>
+  <originalTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ran</originalTitle>
+  <portugueseTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ran</portugueseTitle>
+  <releaseDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1985</releaseDate>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#film_sanjuro">
+  <rdf:type rdf:resource="#Film"/>
+  <dubbedIn rdf:resource="#language_japones"/>
+  <hasActor rdf:resource="#tatsuya_nakadai"/>
+  <hasCountryOfOrigin rdf:resource="#country_japao"/>
+  <hasDirector rdf:resource="#akira_kurosawa"/>
+  <hasTheme rdf:resource="#theme_acao"/>
+  <ageRating rdf:datatype="http://www.w3.org/2001/XMLSchema#string">14 anos</ageRating>
+  <durationMinutes rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">96</durationMinutes>
+  <originalTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sanjuro</originalTitle>
+  <portugueseTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sanjuro</portugueseTitle>
+  <releaseDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1962</releaseDate>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#film_saving_private_ryan">
+  <rdf:type rdf:resource="#Film"/>
+  <dubbedIn rdf:resource="#language_ingles"/>
+  <hasActor rdf:resource="#tom_hanks"/>
+  <hasCountryOfOrigin rdf:resource="#country_estados_unidos"/>
+  <hasDirector rdf:resource="#steven_spielberg"/>
+  <hasTheme rdf:resource="#theme_acao"/>
+  <ageRating rdf:datatype="http://www.w3.org/2001/XMLSchema#string">16 anos</ageRating>
+  <durationMinutes rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">169</durationMinutes>
+  <originalTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Saving Private Ryan</originalTitle>
+  <portugueseTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">O Resgate do Soldado Ryan</portugueseTitle>
+  <releaseDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1998</releaseDate>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#film_se7en">
+  <rdf:type rdf:resource="#Film"/>
+  <dubbedIn rdf:resource="#language_ingles"/>
+  <hasActor rdf:resource="#brad_pitt"/>
+  <hasActor rdf:resource="#morgan_freeman"/>
+  <hasCountryOfOrigin rdf:resource="#country_estados_unidos"/>
+  <hasDirector rdf:resource="#david_fincher"/>
+  <hasTheme rdf:resource="#theme_suspense"/>
+  <ageRating rdf:datatype="http://www.w3.org/2001/XMLSchema#string">18 anos</ageRating>
+  <durationMinutes rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">127</durationMinutes>
+  <originalTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Se7en</originalTitle>
+  <portugueseTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Seven: Os Sete Crimes Capitais</portugueseTitle>
+  <releaseDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1995</releaseDate>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#film_shutter_island">
+  <rdf:type rdf:resource="#Film"/>
+  <dubbedIn rdf:resource="#language_ingles"/>
+  <hasActor rdf:resource="#leonardo_dicaprio"/>
+  <hasCountryOfOrigin rdf:resource="#country_estados_unidos"/>
+  <hasDirector rdf:resource="#martin_scorsese"/>
+  <hasTheme rdf:resource="#theme_suspense"/>
+  <ageRating rdf:datatype="http://www.w3.org/2001/XMLSchema#string">16 anos</ageRating>
+  <durationMinutes rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">138</durationMinutes>
+  <originalTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Shutter Island</originalTitle>
+  <portugueseTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ilha do Medo</portugueseTitle>
+  <releaseDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2010</releaseDate>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#film_snowpiercer">
+  <rdf:type rdf:resource="#Film"/>
+  <dubbedIn rdf:resource="#language_ingles"/>
+  <hasActor rdf:resource="#tilda_swinton"/>
+  <hasCountryOfOrigin rdf:resource="#country_coreia_do_sul"/>
+  <hasDirector rdf:resource="#bong_joon_ho"/>
+  <hasTheme rdf:resource="#theme_ficcao_cientifica"/>
+  <ageRating rdf:datatype="http://www.w3.org/2001/XMLSchema#string">16 anos</ageRating>
+  <durationMinutes rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">126</durationMinutes>
+  <originalTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Snowpiercer</originalTitle>
+  <portugueseTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Expresso do Amanhã</portugueseTitle>
+  <releaseDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2013</releaseDate>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#film_subway">
+  <rdf:type rdf:resource="#Film"/>
+  <dubbedIn rdf:resource="#language_frances"/>
+  <hasActor rdf:resource="#jean_reno"/>
+  <hasCountryOfOrigin rdf:resource="#country_franca"/>
+  <hasDirector rdf:resource="#luc_besson"/>
+  <hasTheme rdf:resource="#theme_suspense"/>
+  <ageRating rdf:datatype="http://www.w3.org/2001/XMLSchema#string">14 anos</ageRating>
+  <durationMinutes rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">104</durationMinutes>
+  <originalTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Subway</originalTitle>
+  <portugueseTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Subway</portugueseTitle>
+  <releaseDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1985</releaseDate>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#film_sully">
+  <rdf:type rdf:resource="#Film"/>
+  <dubbedIn rdf:resource="#language_ingles"/>
+  <hasActor rdf:resource="#tom_hanks"/>
+  <hasCountryOfOrigin rdf:resource="#country_estados_unidos"/>
+  <hasDirector rdf:resource="#clint_eastwood"/>
+  <hasTheme rdf:resource="#theme_drama"/>
+  <ageRating rdf:datatype="http://www.w3.org/2001/XMLSchema#string">10 anos</ageRating>
+  <durationMinutes rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">96</durationMinutes>
+  <originalTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sully</originalTitle>
+  <portugueseTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sully: O Herói do Rio Hudson</portugueseTitle>
+  <releaseDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2016</releaseDate>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#film_taxi_driver">
+  <rdf:type rdf:resource="#Film"/>
+  <dubbedIn rdf:resource="#language_ingles"/>
+  <hasActor rdf:resource="#robert_de_niro"/>
+  <hasCountryOfOrigin rdf:resource="#country_estados_unidos"/>
+  <hasDirector rdf:resource="#martin_scorsese"/>
+  <hasTheme rdf:resource="#theme_drama"/>
+  <ageRating rdf:datatype="http://www.w3.org/2001/XMLSchema#string">16 anos</ageRating>
+  <durationMinutes rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">114</durationMinutes>
+  <originalTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Taxi Driver</originalTitle>
+  <portugueseTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Taxi Driver: Motorista de Táxi</portugueseTitle>
+  <releaseDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1976</releaseDate>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#film_the_aviator">
+  <rdf:type rdf:resource="#Film"/>
+  <dubbedIn rdf:resource="#language_ingles"/>
+  <hasActor rdf:resource="#leonardo_dicaprio"/>
+  <hasCountryOfOrigin rdf:resource="#country_estados_unidos"/>
+  <hasDirector rdf:resource="#martin_scorsese"/>
+  <hasTheme rdf:resource="#theme_drama"/>
+  <ageRating rdf:datatype="http://www.w3.org/2001/XMLSchema#string">12 anos</ageRating>
+  <durationMinutes rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">170</durationMinutes>
+  <originalTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The Aviator</originalTitle>
+  <portugueseTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">O Aviador</portugueseTitle>
+  <releaseDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2004</releaseDate>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#film_the_bad_sleep_well">
+  <rdf:type rdf:resource="#Film"/>
+  <dubbedIn rdf:resource="#language_japones"/>
+  <hasActor rdf:resource="#tatsuya_nakadai"/>
+  <hasCountryOfOrigin rdf:resource="#country_japao"/>
+  <hasDirector rdf:resource="#akira_kurosawa"/>
+  <hasTheme rdf:resource="#theme_drama"/>
+  <ageRating rdf:datatype="http://www.w3.org/2001/XMLSchema#string">14 anos</ageRating>
+  <durationMinutes rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">151</durationMinutes>
+  <originalTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The Bad Sleep Well</originalTitle>
+  <portugueseTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Homem Mau Dorme Bem</portugueseTitle>
+  <releaseDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1960</releaseDate>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#film_the_big_blue">
+  <rdf:type rdf:resource="#Film"/>
+  <dubbedIn rdf:resource="#language_frances"/>
+  <hasActor rdf:resource="#jean_reno"/>
+  <hasCountryOfOrigin rdf:resource="#country_franca"/>
+  <hasDirector rdf:resource="#luc_besson"/>
+  <hasTheme rdf:resource="#theme_drama"/>
+  <ageRating rdf:datatype="http://www.w3.org/2001/XMLSchema#string">12 anos</ageRating>
+  <durationMinutes rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">168</durationMinutes>
+  <originalTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The Big Blue</originalTitle>
+  <portugueseTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Imensidão Azul</portugueseTitle>
+  <releaseDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1988</releaseDate>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#film_the_boy_and_the_heron">
+  <rdf:type rdf:resource="#Film"/>
+  <dubbedIn rdf:resource="#language_japones"/>
+  <hasActor rdf:resource="#christian_bale"/>
+  <hasCountryOfOrigin rdf:resource="#country_japao"/>
+  <hasDirector rdf:resource="#hayao_miyazaki"/>
+  <hasTheme rdf:resource="#theme_animacao"/>
+  <ageRating rdf:datatype="http://www.w3.org/2001/XMLSchema#string">12 anos</ageRating>
+  <durationMinutes rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">124</durationMinutes>
+  <originalTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The Boy and the Heron</originalTitle>
+  <portugueseTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">O Menino e a Garça</portugueseTitle>
+  <releaseDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2023</releaseDate>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#film_the_counselor">
+  <rdf:type rdf:resource="#Film"/>
+  <dubbedIn rdf:resource="#language_ingles"/>
+  <hasActor rdf:resource="#brad_pitt"/>
+  <hasCountryOfOrigin rdf:resource="#country_estados_unidos"/>
+  <hasDirector rdf:resource="#ridley_scott"/>
+  <hasTheme rdf:resource="#theme_suspense"/>
+  <ageRating rdf:datatype="http://www.w3.org/2001/XMLSchema#string">16 anos</ageRating>
+  <durationMinutes rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">117</durationMinutes>
+  <originalTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The Counselor</originalTitle>
+  <portugueseTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">O Conselheiro do Crime</portugueseTitle>
+  <releaseDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2013</releaseDate>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#film_the_curious_case_of_benjamin_button">
+  <rdf:type rdf:resource="#Film"/>
+  <dubbedIn rdf:resource="#language_ingles"/>
+  <hasActor rdf:resource="#brad_pitt"/>
+  <hasCountryOfOrigin rdf:resource="#country_estados_unidos"/>
+  <hasDirector rdf:resource="#david_fincher"/>
+  <hasTheme rdf:resource="#theme_drama"/>
+  <ageRating rdf:datatype="http://www.w3.org/2001/XMLSchema#string">12 anos</ageRating>
+  <durationMinutes rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">166</durationMinutes>
+  <originalTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The Curious Case of Benjamin Button</originalTitle>
+  <portugueseTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">O Curioso Caso de Benjamin Button</portugueseTitle>
+  <releaseDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2008</releaseDate>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#film_the_dark_knight">
+  <rdf:type rdf:resource="#Film"/>
+  <dubbedIn rdf:resource="#language_ingles"/>
+  <hasActor rdf:resource="#christian_bale"/>
+  <hasCountryOfOrigin rdf:resource="#country_reino_unido"/>
+  <hasDirector rdf:resource="#christopher_nolan"/>
+  <hasTheme rdf:resource="#theme_acao"/>
+  <ageRating rdf:datatype="http://www.w3.org/2001/XMLSchema#string">12 anos</ageRating>
+  <durationMinutes rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">152</durationMinutes>
+  <originalTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The Dark Knight</originalTitle>
+  <portugueseTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Batman: O Cavaleiro das Trevas</portugueseTitle>
+  <releaseDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2008</releaseDate>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#film_the_dark_knight_rises">
+  <rdf:type rdf:resource="#Film"/>
+  <dubbedIn rdf:resource="#language_ingles"/>
+  <hasActor rdf:resource="#christian_bale"/>
+  <hasCountryOfOrigin rdf:resource="#country_reino_unido"/>
+  <hasDirector rdf:resource="#christopher_nolan"/>
+  <hasTheme rdf:resource="#theme_acao"/>
+  <ageRating rdf:datatype="http://www.w3.org/2001/XMLSchema#string">12 anos</ageRating>
+  <durationMinutes rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">165</durationMinutes>
+  <originalTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The Dark Knight Rises</originalTitle>
+  <portugueseTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Batman: O Cavaleiro das Trevas Ressurge</portugueseTitle>
+  <releaseDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2012</releaseDate>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#film_the_departed">
+  <rdf:type rdf:resource="#Film"/>
+  <dubbedIn rdf:resource="#language_ingles"/>
+  <hasActor rdf:resource="#leonardo_dicaprio"/>
+  <hasCountryOfOrigin rdf:resource="#country_estados_unidos"/>
+  <hasDirector rdf:resource="#martin_scorsese"/>
+  <hasTheme rdf:resource="#theme_suspense"/>
+  <ageRating rdf:datatype="http://www.w3.org/2001/XMLSchema#string">18 anos</ageRating>
+  <durationMinutes rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">151</durationMinutes>
+  <originalTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The Departed</originalTitle>
+  <portugueseTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Os Infiltrados</portugueseTitle>
+  <releaseDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2006</releaseDate>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#film_the_family">
+  <rdf:type rdf:resource="#Film"/>
+  <dubbedIn rdf:resource="#language_ingles"/>
+  <hasActor rdf:resource="#robert_de_niro"/>
+  <hasCountryOfOrigin rdf:resource="#country_franca"/>
+  <hasDirector rdf:resource="#luc_besson"/>
+  <hasTheme rdf:resource="#theme_comedia"/>
+  <ageRating rdf:datatype="http://www.w3.org/2001/XMLSchema#string">16 anos</ageRating>
+  <durationMinutes rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">111</durationMinutes>
+  <originalTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The Family</originalTitle>
+  <portugueseTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A Família</portugueseTitle>
+  <releaseDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2013</releaseDate>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#film_the_hateful_eight">
+  <rdf:type rdf:resource="#Film"/>
+  <dubbedIn rdf:resource="#language_ingles"/>
+  <hasActor rdf:resource="#samuel_l_jackson"/>
+  <hasCountryOfOrigin rdf:resource="#country_estados_unidos"/>
+  <hasDirector rdf:resource="#quentin_tarantino"/>
+  <hasTheme rdf:resource="#theme_suspense"/>
+  <ageRating rdf:datatype="http://www.w3.org/2001/XMLSchema#string">18 anos</ageRating>
+  <durationMinutes rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">168</durationMinutes>
+  <originalTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The Hateful Eight</originalTitle>
+  <portugueseTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Os Oito Odiados</portugueseTitle>
+  <releaseDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2015</releaseDate>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#film_the_host">
+  <rdf:type rdf:resource="#Film"/>
+  <dubbedIn rdf:resource="#language_coreano"/>
+  <hasActor rdf:resource="#song_kang_ho"/>
+  <hasCountryOfOrigin rdf:resource="#country_coreia_do_sul"/>
+  <hasDirector rdf:resource="#bong_joon_ho"/>
+  <hasTheme rdf:resource="#theme_terror"/>
+  <ageRating rdf:datatype="http://www.w3.org/2001/XMLSchema#string">14 anos</ageRating>
+  <durationMinutes rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">120</durationMinutes>
+  <originalTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The Host</originalTitle>
+  <portugueseTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">O Hospedeiro</portugueseTitle>
+  <releaseDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2006</releaseDate>
+</owl:NamedIndividual>
+
 <owl:NamedIndividual rdf:about="#theme_terror">
   <rdf:type rdf:resource="#Theme"/>
   <themeName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Terror</themeName>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#tom_hanks">
-  <rdf:type rdf:resource="#Person"/>
-  <rdf:type rdf:resource="#Actor"/>
-  <fullName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tom Hanks</fullName>
-  <birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">09/07/1956</birthDate>
-  <nationality rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Estados Unidos</nationality>
+<owl:NamedIndividual rdf:about="#film_the_irishman">
+  <rdf:type rdf:resource="#Film"/>
+  <dubbedIn rdf:resource="#language_ingles"/>
+  <hasActor rdf:resource="#al_pacino"/>
+  <hasActor rdf:resource="#robert_de_niro"/>
+  <hasCountryOfOrigin rdf:resource="#country_estados_unidos"/>
+  <hasDirector rdf:resource="#martin_scorsese"/>
+  <hasTheme rdf:resource="#theme_drama"/>
+  <ageRating rdf:datatype="http://www.w3.org/2001/XMLSchema#string">16 anos</ageRating>
+  <durationMinutes rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">209</durationMinutes>
+  <originalTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The Irishman</originalTitle>
+  <portugueseTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">O Irlandês</portugueseTitle>
+  <releaseDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2019</releaseDate>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#leonardo_dicaprio">
+<owl:NamedIndividual rdf:about="#film_the_post">
+  <rdf:type rdf:resource="#Film"/>
+  <dubbedIn rdf:resource="#language_ingles"/>
+  <hasActor rdf:resource="#tom_hanks"/>
+  <hasCountryOfOrigin rdf:resource="#country_estados_unidos"/>
+  <hasDirector rdf:resource="#steven_spielberg"/>
+  <hasTheme rdf:resource="#theme_drama"/>
+  <ageRating rdf:datatype="http://www.w3.org/2001/XMLSchema#string">12 anos</ageRating>
+  <durationMinutes rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">116</durationMinutes>
+  <originalTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The Post</originalTitle>
+  <portugueseTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The Post: A Guerra Secreta</portugueseTitle>
+  <releaseDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2017</releaseDate>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#film_the_prestige">
+  <rdf:type rdf:resource="#Film"/>
+  <dubbedIn rdf:resource="#language_ingles"/>
+  <hasActor rdf:resource="#christian_bale"/>
+  <hasActor rdf:resource="#hugh_jackman"/>
+  <hasActor rdf:resource="#scarlett_johansson"/>
+  <hasCountryOfOrigin rdf:resource="#country_reino_unido"/>
+  <hasDirector rdf:resource="#christopher_nolan"/>
+  <hasTheme rdf:resource="#theme_suspense"/>
+  <ageRating rdf:datatype="http://www.w3.org/2001/XMLSchema#string">14 anos</ageRating>
+  <durationMinutes rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">130</durationMinutes>
+  <originalTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The Prestige</originalTitle>
+  <portugueseTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">O Grande Truque</portugueseTitle>
+  <releaseDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2006</releaseDate>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#film_the_terminal">
+  <rdf:type rdf:resource="#Film"/>
+  <dubbedIn rdf:resource="#language_ingles"/>
+  <hasActor rdf:resource="#tom_hanks"/>
+  <hasCountryOfOrigin rdf:resource="#country_estados_unidos"/>
+  <hasDirector rdf:resource="#steven_spielberg"/>
+  <hasTheme rdf:resource="#theme_comedia"/>
+  <ageRating rdf:datatype="http://www.w3.org/2001/XMLSchema#string">12 anos</ageRating>
+  <durationMinutes rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">128</durationMinutes>
+  <originalTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The Terminal</originalTitle>
+  <portugueseTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">O Terminal</portugueseTitle>
+  <releaseDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2004</releaseDate>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#film_the_wolf_of_wall_street">
+  <rdf:type rdf:resource="#Film"/>
+  <dubbedIn rdf:resource="#language_ingles"/>
+  <hasActor rdf:resource="#leonardo_dicaprio"/>
+  <hasCountryOfOrigin rdf:resource="#country_estados_unidos"/>
+  <hasDirector rdf:resource="#martin_scorsese"/>
+  <hasTheme rdf:resource="#theme_comedia"/>
+  <ageRating rdf:datatype="http://www.w3.org/2001/XMLSchema#string">18 anos</ageRating>
+  <durationMinutes rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">180</durationMinutes>
+  <originalTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The Wolf of Wall Street</originalTitle>
+  <portugueseTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">O Lobo de Wall Street</portugueseTitle>
+  <releaseDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2013</releaseDate>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#film_thelma_louise">
+  <rdf:type rdf:resource="#Film"/>
+  <dubbedIn rdf:resource="#language_ingles"/>
+  <hasActor rdf:resource="#brad_pitt"/>
+  <hasCountryOfOrigin rdf:resource="#country_estados_unidos"/>
+  <hasDirector rdf:resource="#ridley_scott"/>
+  <hasTheme rdf:resource="#theme_drama"/>
+  <ageRating rdf:datatype="http://www.w3.org/2001/XMLSchema#string">14 anos</ageRating>
+  <durationMinutes rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">130</durationMinutes>
+  <originalTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Thelma &amp; Louise</originalTitle>
+  <portugueseTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Thelma &amp; Louise</portugueseTitle>
+  <releaseDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1991</releaseDate>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#film_titanic">
+  <rdf:type rdf:resource="#Film"/>
+  <dubbedIn rdf:resource="#language_ingles"/>
+  <hasActor rdf:resource="#leonardo_dicaprio"/>
+  <hasCountryOfOrigin rdf:resource="#country_estados_unidos"/>
+  <hasDirector rdf:resource="#james_cameron"/>
+  <hasTheme rdf:resource="#theme_drama"/>
+  <ageRating rdf:datatype="http://www.w3.org/2001/XMLSchema#string">12 anos</ageRating>
+  <durationMinutes rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">194</durationMinutes>
+  <originalTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Titanic</originalTitle>
+  <portugueseTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Titanic</portugueseTitle>
+  <releaseDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1997</releaseDate>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#james_cameron">
+  <rdf:type rdf:resource="#Director"/>
   <rdf:type rdf:resource="#Person"/>
-  <rdf:type rdf:resource="#Actor"/>
-  <fullName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Leonardo DiCaprio</fullName>
-  <birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">11/11/1974</birthDate>
-  <nationality rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Estados Unidos</nationality>
+  <rdf:type rdf:resource="#Screenwriter"/>
+  <birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">16/08/1954</birthDate>
+  <fullName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">James Cameron</fullName>
+  <nationality rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Canadá</nationality>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#film_unforgiven">
+  <rdf:type rdf:resource="#Film"/>
+  <dubbedIn rdf:resource="#language_ingles"/>
+  <hasActor rdf:resource="#clint_eastwood"/>
+  <hasActor rdf:resource="#morgan_freeman"/>
+  <hasCountryOfOrigin rdf:resource="#country_estados_unidos"/>
+  <hasDirector rdf:resource="#clint_eastwood"/>
+  <hasTheme rdf:resource="#theme_drama"/>
+  <ageRating rdf:datatype="http://www.w3.org/2001/XMLSchema#string">14 anos</ageRating>
+  <durationMinutes rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">130</durationMinutes>
+  <originalTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Unforgiven</originalTitle>
+  <portugueseTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Os Imperdoáveis</portugueseTitle>
+  <releaseDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1992</releaseDate>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#film_yojimbo">
+  <rdf:type rdf:resource="#Film"/>
+  <dubbedIn rdf:resource="#language_japones"/>
+  <hasActor rdf:resource="#tatsuya_nakadai"/>
+  <hasCountryOfOrigin rdf:resource="#country_japao"/>
+  <hasDirector rdf:resource="#akira_kurosawa"/>
+  <hasTheme rdf:resource="#theme_acao"/>
+  <ageRating rdf:datatype="http://www.w3.org/2001/XMLSchema#string">14 anos</ageRating>
+  <durationMinutes rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">110</durationMinutes>
+  <originalTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Yojimbo</originalTitle>
+  <portugueseTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Yojimbo: O Guarda-Costas</portugueseTitle>
+  <releaseDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1961</releaseDate>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#keanu_reeves">
-  <rdf:type rdf:resource="#Person"/>
   <rdf:type rdf:resource="#Actor"/>
-  <fullName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Keanu Reeves</fullName>
+  <rdf:type rdf:resource="#Person"/>
   <birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">02/09/1964</birthDate>
+  <fullName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Keanu Reeves</fullName>
   <nationality rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Canadá</nationality>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#wagner_moura">
-  <rdf:type rdf:resource="#Person"/>
-  <rdf:type rdf:resource="#Actor"/>
-  <rdf:type rdf:resource="#Director"/>
-  <fullName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Wagner Moura</fullName>
-  <birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">27/06/1976</birthDate>
-  <nationality rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Brasil</nationality>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#fernanda_montenegro">
-  <rdf:type rdf:resource="#Person"/>
-  <rdf:type rdf:resource="#Actor"/>
-  <fullName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Fernanda Montenegro</fullName>
-  <birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">16/10/1929</birthDate>
-  <nationality rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Brasil</nationality>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#song_kang_ho">
-  <rdf:type rdf:resource="#Person"/>
-  <rdf:type rdf:resource="#Actor"/>
-  <fullName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Song Kang-ho</fullName>
-  <birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">17/01/1967</birthDate>
-  <nationality rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Coreia do Sul</nationality>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#ken_watanabe">
-  <rdf:type rdf:resource="#Person"/>
   <rdf:type rdf:resource="#Actor"/>
-  <fullName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ken Watanabe</fullName>
+  <rdf:type rdf:resource="#Person"/>
   <birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">21/10/1959</birthDate>
+  <fullName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ken Watanabe</fullName>
   <nationality rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Japão</nationality>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#daniel_radcliffe">
-  <rdf:type rdf:resource="#Person"/>
-  <rdf:type rdf:resource="#Actor"/>
-  <fullName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Daniel Radcliffe</fullName>
-  <birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">23/07/1989</birthDate>
-  <nationality rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Reino Unido</nationality>
+<owl:NamedIndividual rdf:about="#language_alemao">
+  <rdf:type rdf:resource="#Language"/>
+  <languageName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Alemão</languageName>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#jean_reno">
-  <rdf:type rdf:resource="#Person"/>
-  <rdf:type rdf:resource="#Actor"/>
-  <fullName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Jean Reno</fullName>
-  <birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">30/07/1948</birthDate>
-  <nationality rdf:datatype="http://www.w3.org/2001/XMLSchema#string">França</nationality>
+<owl:NamedIndividual rdf:about="#language_espanhol">
+  <rdf:type rdf:resource="#Language"/>
+  <languageName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Espanhol</languageName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#language_portugues">
+  <rdf:type rdf:resource="#Language"/>
+  <languageName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Português</languageName>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#marion_cotillard">
-  <rdf:type rdf:resource="#Person"/>
   <rdf:type rdf:resource="#Actor"/>
-  <fullName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Marion Cotillard</fullName>
+  <rdf:type rdf:resource="#Person"/>
   <birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">30/09/1975</birthDate>
+  <fullName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Marion Cotillard</fullName>
   <nationality rdf:datatype="http://www.w3.org/2001/XMLSchema#string">França</nationality>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#christopher_nolan">
-  <rdf:type rdf:resource="#Person"/>
+<owl:NamedIndividual rdf:about="#peter_jackson">
   <rdf:type rdf:resource="#Director"/>
+  <rdf:type rdf:resource="#Person"/>
   <rdf:type rdf:resource="#Screenwriter"/>
-  <fullName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Christopher Nolan</fullName>
-  <birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">30/07/1970</birthDate>
+  <birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">31/10/1961</birthDate>
+  <fullName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Peter Jackson</fullName>
   <nationality rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Reino Unido</nationality>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#steven_spielberg">
-  <rdf:type rdf:resource="#Person"/>
-  <rdf:type rdf:resource="#Director"/>
-  <fullName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Steven Spielberg</fullName>
-  <birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">18/12/1946</birthDate>
-  <nationality rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Estados Unidos</nationality>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#quentin_tarantino">
-  <rdf:type rdf:resource="#Person"/>
-  <rdf:type rdf:resource="#Director"/>
-  <rdf:type rdf:resource="#Screenwriter"/>
-  <fullName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Quentin Tarantino</fullName>
-  <birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">27/03/1963</birthDate>
-  <nationality rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Estados Unidos</nationality>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#clint_eastwood">
-  <rdf:type rdf:resource="#Person"/>
+<owl:NamedIndividual rdf:about="#ryoo_seung_ryong">
   <rdf:type rdf:resource="#Actor"/>
-  <rdf:type rdf:resource="#Director"/>
-  <fullName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Clint Eastwood</fullName>
-  <birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">31/05/1930</birthDate>
-  <nationality rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Estados Unidos</nationality>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#fernando_meirelles">
   <rdf:type rdf:resource="#Person"/>
-  <rdf:type rdf:resource="#Director"/>
-  <fullName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Fernando Meirelles</fullName>
-  <birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">09/11/1955</birthDate>
-  <nationality rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Brasil</nationality>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#bong_joon_ho">
-  <rdf:type rdf:resource="#Person"/>
-  <rdf:type rdf:resource="#Director"/>
-  <rdf:type rdf:resource="#Screenwriter"/>
-  <fullName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bong Joon-ho</fullName>
-  <birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">14/09/1969</birthDate>
+  <birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">29/11/1970</birthDate>
+  <fullName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ryoo Seung-ryong</fullName>
   <nationality rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Coreia do Sul</nationality>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#hayao_miyazaki">
-  <rdf:type rdf:resource="#Person"/>
-  <rdf:type rdf:resource="#Director"/>
-  <rdf:type rdf:resource="#Screenwriter"/>
-  <fullName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Hayao Miyazaki</fullName>
-  <birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">05/01/1941</birthDate>
-  <nationality rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Japão</nationality>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#akira_kurosawa">
-  <rdf:type rdf:resource="#Person"/>
-  <rdf:type rdf:resource="#Director"/>
-  <rdf:type rdf:resource="#Screenwriter"/>
-  <fullName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Akira Kurosawa</fullName>
-  <birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">23/03/1910</birthDate>
-  <nationality rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Japão</nationality>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#denis_villeneuve">
-  <rdf:type rdf:resource="#Person"/>
-  <rdf:type rdf:resource="#Director"/>
-  <rdf:type rdf:resource="#Screenwriter"/>
-  <fullName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Denis Villeneuve</fullName>
-  <birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">03/10/1967</birthDate>
-  <nationality rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Canadá</nationality>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#luc_besson">
-  <rdf:type rdf:resource="#Person"/>
-  <rdf:type rdf:resource="#Director"/>
-  <rdf:type rdf:resource="#Screenwriter"/>
-  <fullName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Luc Besson</fullName>
-  <birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">18/03/1959</birthDate>
-  <nationality rdf:datatype="http://www.w3.org/2001/XMLSchema#string">França</nationality>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#aaron_sorkin">
-  <rdf:type rdf:resource="#Person"/>
-  <rdf:type rdf:resource="#Screenwriter"/>
-  <fullName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Aaron Sorkin</fullName>
-  <birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">09/06/1961</birthDate>
-  <nationality rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Estados Unidos</nationality>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#charlie_kaufman">
-  <rdf:type rdf:resource="#Person"/>
-  <rdf:type rdf:resource="#Director"/>
-  <rdf:type rdf:resource="#Screenwriter"/>
-  <fullName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Charlie Kaufman</fullName>
-  <birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">19/11/1958</birthDate>
-  <nationality rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Estados Unidos</nationality>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#theme_documentario">
@@ -707,194 +1737,287 @@
   <themeName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Documentário</themeName>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#morgan_freeman">
-  <rdf:type rdf:resource="#Person"/>
-  <rdf:type rdf:resource="#Actor"/>
-  <fullName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Morgan Freeman</fullName>
-  <birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">01/06/1937</birthDate>
-  <nationality rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Estados Unidos</nationality>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#robert_de_niro">
-  <rdf:type rdf:resource="#Person"/>
-  <rdf:type rdf:resource="#Actor"/>
-  <fullName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Robert De Niro</fullName>
-  <birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">17/08/1943</birthDate>
-  <nationality rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Estados Unidos</nationality>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#al_pacino">
-  <rdf:type rdf:resource="#Person"/>
-  <rdf:type rdf:resource="#Actor"/>
-  <fullName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Al Pacino</fullName>
-  <birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">25/04/1940</birthDate>
-  <nationality rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Estados Unidos</nationality>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#brad_pitt">
-  <rdf:type rdf:resource="#Person"/>
-  <rdf:type rdf:resource="#Actor"/>
-  <fullName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Brad Pitt</fullName>
-  <birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">18/12/1963</birthDate>
-  <nationality rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Estados Unidos</nationality>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#christian_bale">
-  <rdf:type rdf:resource="#Person"/>
-  <rdf:type rdf:resource="#Actor"/>
-  <fullName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Christian Bale</fullName>
-  <birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">30/01/1974</birthDate>
-  <nationality rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Reino Unido</nationality>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#hugh_jackman">
-  <rdf:type rdf:resource="#Person"/>
-  <rdf:type rdf:resource="#Actor"/>
-  <fullName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Hugh Jackman</fullName>
-  <birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">12/10/1968</birthDate>
-  <nationality rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Reino Unido</nationality>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#emma_watson">
-  <rdf:type rdf:resource="#Person"/>
-  <rdf:type rdf:resource="#Actor"/>
-  <fullName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Emma Watson</fullName>
-  <birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">15/04/1990</birthDate>
-  <nationality rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Reino Unido</nationality>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#scarlett_johansson">
-  <rdf:type rdf:resource="#Person"/>
-  <rdf:type rdf:resource="#Actor"/>
-  <fullName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Scarlett Johansson</fullName>
-  <birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">22/11/1984</birthDate>
-  <nationality rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Estados Unidos</nationality>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#natalie_portman">
-  <rdf:type rdf:resource="#Person"/>
-  <rdf:type rdf:resource="#Actor"/>
-  <fullName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Natalie Portman</fullName>
-  <birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">09/06/1981</birthDate>
-  <nationality rdf:datatype="http://www.w3.org/2001/XMLSchema#string">França</nationality>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#samuel_l_jackson">
-  <rdf:type rdf:resource="#Person"/>
-  <rdf:type rdf:resource="#Actor"/>
-  <fullName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Samuel L. Jackson</fullName>
-  <birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">21/12/1948</birthDate>
-  <nationality rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Estados Unidos</nationality>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#tilda_swinton">
-  <rdf:type rdf:resource="#Person"/>
-  <rdf:type rdf:resource="#Actor"/>
-  <fullName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tilda Swinton</fullName>
-  <birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">05/11/1960</birthDate>
-  <nationality rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Reino Unido</nationality>
-</owl:NamedIndividual>
-
 <owl:NamedIndividual rdf:about="#vincent_cassel">
-  <rdf:type rdf:resource="#Person"/>
   <rdf:type rdf:resource="#Actor"/>
-  <fullName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Vincent Cassel</fullName>
+  <rdf:type rdf:resource="#Person"/>
   <birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">23/11/1966</birthDate>
+  <fullName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Vincent Cassel</fullName>
   <nationality rdf:datatype="http://www.w3.org/2001/XMLSchema#string">França</nationality>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#audrey_tautou">
-  <rdf:type rdf:resource="#Person"/>
+<owl:NamedIndividual rdf:about="#wagner_moura">
   <rdf:type rdf:resource="#Actor"/>
-  <fullName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Audrey Tautou</fullName>
-  <birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">09/08/1976</birthDate>
-  <nationality rdf:datatype="http://www.w3.org/2001/XMLSchema#string">França</nationality>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#ryoo_seung_ryong">
-  <rdf:type rdf:resource="#Person"/>
-  <rdf:type rdf:resource="#Actor"/>
-  <fullName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ryoo Seung-ryong</fullName>
-  <birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">29/11/1970</birthDate>
-  <nationality rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Coreia do Sul</nationality>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#tatsuya_nakadai">
-  <rdf:type rdf:resource="#Person"/>
-  <rdf:type rdf:resource="#Actor"/>
-  <fullName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tatsuya Nakadai</fullName>
-  <birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">13/12/1932</birthDate>
-  <nationality rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Japão</nationality>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#martin_scorsese">
-  <rdf:type rdf:resource="#Person"/>
   <rdf:type rdf:resource="#Director"/>
-  <fullName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Martin Scorsese</fullName>
-  <birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">17/11/1942</birthDate>
-  <nationality rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Estados Unidos</nationality>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#james_cameron">
   <rdf:type rdf:resource="#Person"/>
-  <rdf:type rdf:resource="#Director"/>
-  <rdf:type rdf:resource="#Screenwriter"/>
-  <fullName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">James Cameron</fullName>
-  <birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">16/08/1954</birthDate>
-  <nationality rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Canadá</nationality>
+  <birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">27/06/1976</birthDate>
+  <fullName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Wagner Moura</fullName>
+  <nationality rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Brasil</nationality>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#peter_jackson">
-  <rdf:type rdf:resource="#Person"/>
-  <rdf:type rdf:resource="#Director"/>
-  <rdf:type rdf:resource="#Screenwriter"/>
-  <fullName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Peter Jackson</fullName>
-  <birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">31/10/1961</birthDate>
-  <nationality rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Reino Unido</nationality>
+<owl:NamedIndividual rdf:about="#mateus">
+  <rdf:type rdf:resource="#User"/>
+  <friendOf rdf:resource="#ana"/>
+  <friendOf rdf:resource="#carlos"/>
+  <watched rdf:resource="#film_the_dark_knight"/>
+  <watched rdf:resource="#film_inception"/>
+  <watched rdf:resource="#film_the_prestige"/>
+  <watched rdf:resource="#film_se7en"/>
+  <watched rdf:resource="#film_fight_club"/>
+  <watched rdf:resource="#film_titanic"/>
+  <watched rdf:resource="#film_pulp_fiction"/>
+  <watched rdf:resource="#film_saving_private_ryan"/>
+  <hasPreference rdf:resource="#preference_001"/>
+  <hasPreference rdf:resource="#preference_002"/>
+  <hasPreference rdf:resource="#preference_003"/>
+  <hasPreference rdf:resource="#preference_004"/>
+  <hasPreference rdf:resource="#preference_005"/>
+  <hasPreference rdf:resource="#preference_006"/>
+  <makesRating rdf:resource="#rating_mateus_film_inception"/>
+  <makesRating rdf:resource="#rating_mateus_film_the_dark_knight"/>
+  <makesRating rdf:resource="#rating_mateus_film_the_prestige"/>
+  <makesRating rdf:resource="#rating_mateus_film_se7en"/>
+  <makesRating rdf:resource="#rating_mateus_film_fight_club"/>
+  <makesRating rdf:resource="#rating_mateus_film_titanic"/>
+  <makesRating rdf:resource="#rating_mateus_film_pulp_fiction"/>
+  <makesRating rdf:resource="#rating_mateus_film_saving_private_ryan"/>
+  <watched rdf:resource="#film_goodfellas"/>
+  <makesRating rdf:resource="#rating_mateus_film_goodfellas"/>
+  <username rdf:datatype="http://www.w3.org/2001/XMLSchema#string">mateus</username>
+  <fullName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">mateus esposte</fullName>
+  <email rdf:datatype="http://www.w3.org/2001/XMLSchema#string">mateus@example.com</email>
+  <age rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">23</age>
+  <passwordHash rdf:datatype="http://www.w3.org/2001/XMLSchema#string">d67de3620533c7cc85ba4476d9587e84:14623f77485e0e0be9eee17a2e6dac35862674e39c124ea60ad1e9b904b9e029</passwordHash>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#ridley_scott">
-  <rdf:type rdf:resource="#Person"/>
-  <rdf:type rdf:resource="#Director"/>
-  <fullName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ridley Scott</fullName>
-  <birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">30/11/1937</birthDate>
-  <nationality rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Reino Unido</nationality>
+<owl:NamedIndividual rdf:about="#ana">
+  <rdf:type rdf:resource="#User"/>
+  <friendOf rdf:resource="#mateus"/>
+  <friendOf rdf:resource="#julia"/>
+  <watched rdf:resource="#film_inception"/>
+  <watched rdf:resource="#film_the_dark_knight"/>
+  <watched rdf:resource="#film_the_prestige"/>
+  <watched rdf:resource="#film_shutter_island"/>
+  <watched rdf:resource="#film_prisoners"/>
+  <watched rdf:resource="#film_the_departed"/>
+  <watched rdf:resource="#film_bridge_of_spies"/>
+  <watched rdf:resource="#film_the_post"/>
+  <makesRating rdf:resource="#rating_ana_film_inception"/>
+  <makesRating rdf:resource="#rating_ana_film_the_dark_knight"/>
+  <makesRating rdf:resource="#rating_ana_film_the_prestige"/>
+  <makesRating rdf:resource="#rating_ana_film_prisoners"/>
+  <makesRating rdf:resource="#rating_ana_film_shutter_island"/>
+  <makesRating rdf:resource="#rating_ana_film_the_departed"/>
+  <makesRating rdf:resource="#rating_ana_film_bridge_of_spies"/>
+  <makesRating rdf:resource="#rating_ana_film_the_post"/>
+  <hasPreference rdf:resource="#preference_007"/>
+  <hasPreference rdf:resource="#preference_008"/>
+  <hasPreference rdf:resource="#preference_009"/>
+  <hasPreference rdf:resource="#preference_010"/>
+  <hasPreference rdf:resource="#preference_011"/>
+  <username rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ana</username>
+  <fullName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ana Souza</fullName>
+  <email rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ana@example.com</email>
+  <age rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">23</age>
+  <passwordHash rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1692dd79c570f950340887948f99643d:50b51fb821b592d4f70cc939495db9be7afa04bec00bb310a7db3ffb26142baf</passwordHash>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#david_fincher">
-  <rdf:type rdf:resource="#Person"/>
-  <rdf:type rdf:resource="#Director"/>
-  <fullName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">David Fincher</fullName>
-  <birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">28/08/1962</birthDate>
-  <nationality rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Estados Unidos</nationality>
+<owl:NamedIndividual rdf:about="#carlos">
+  <rdf:type rdf:resource="#User"/>
+  <friendOf rdf:resource="#mateus"/>
+  <username rdf:datatype="http://www.w3.org/2001/XMLSchema#string">carlos</username>
+  <fullName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Carlos Lima</fullName>
+  <email rdf:datatype="http://www.w3.org/2001/XMLSchema#string">carlos@example.com</email>
+  <age rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">24</age>
+  <passwordHash rdf:datatype="http://www.w3.org/2001/XMLSchema#string">d8ddd607edf7d73cd85257e81e8af965:159928fc5462c3c52b64969313610ebbb8d98d91cc3f5046132cb3a10c076180</passwordHash>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#film_inception">
-  <rdf:type rdf:resource="#Film"/>
-  <hasDirector rdf:resource="#christopher_nolan"/>
-  <hasActor rdf:resource="#leonardo_dicaprio"/>
-  <hasTheme rdf:resource="#theme_ficcao_cientifica"/>
-  <hasCountryOfOrigin rdf:resource="#country_reino_unido"/>
-  <dubbedIn rdf:resource="#language_ingles"/>
-  <originalTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Inception</originalTitle>
-  <portugueseTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A Origem</portugueseTitle>
-  <releaseDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2010</releaseDate>
-  <durationMinutes rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">148</durationMinutes>
-  <ageRating rdf:datatype="http://www.w3.org/2001/XMLSchema#string">14 anos</ageRating>
+<owl:NamedIndividual rdf:about="#preference_001">
+  <rdf:type rdf:resource="#Preference"/>
+  <prefers rdf:resource="#theme_ficcao_cientifica"/>
+  <interestLevel rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</interestLevel>
+  <preferenceType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Theme</preferenceType>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#film_parasite">
-  <rdf:type rdf:resource="#Film"/>
-  <hasDirector rdf:resource="#bong_joon_ho"/>
-  <hasActor rdf:resource="#song_kang_ho"/>
-  <hasTheme rdf:resource="#theme_suspense"/>
-  <hasCountryOfOrigin rdf:resource="#country_coreia_do_sul"/>
-  <dubbedIn rdf:resource="#language_coreano"/>
-  <originalTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Parasite</originalTitle>
-  <portugueseTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Parasita</portugueseTitle>
-  <releaseDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2019</releaseDate>
-  <durationMinutes rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">132</durationMinutes>
-  <ageRating rdf:datatype="http://www.w3.org/2001/XMLSchema#string">16 anos</ageRating>
+<owl:NamedIndividual rdf:about="#preference_002">
+  <rdf:type rdf:resource="#Preference"/>
+  <prefers rdf:resource="#theme_suspense"/>
+  <interestLevel rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</interestLevel>
+  <preferenceType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Theme</preferenceType>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#preference_003">
+  <rdf:type rdf:resource="#Preference"/>
+  <prefers rdf:resource="#christopher_nolan"/>
+  <interestLevel rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</interestLevel>
+  <preferenceType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Director</preferenceType>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#preference_004">
+  <rdf:type rdf:resource="#Preference"/>
+  <prefers rdf:resource="#leonardo_dicaprio"/>
+  <interestLevel rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</interestLevel>
+  <preferenceType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Actor</preferenceType>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#preference_005">
+  <rdf:type rdf:resource="#Preference"/>
+  <prefers rdf:resource="#christian_bale"/>
+  <interestLevel rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</interestLevel>
+  <preferenceType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Actor</preferenceType>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#preference_006">
+  <rdf:type rdf:resource="#Preference"/>
+  <prefers rdf:resource="#film_batman_begins"/>
+  <interestLevel rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</interestLevel>
+  <preferenceType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CinematicWork</preferenceType>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#rating_mateus_film_inception">
+  <rdf:type rdf:resource="#Rating"/>
+  <ratingAbout rdf:resource="#film_inception"/>
+  <score rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</score>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#rating_mateus_film_the_dark_knight">
+  <rdf:type rdf:resource="#Rating"/>
+  <ratingAbout rdf:resource="#film_the_dark_knight"/>
+  <score rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</score>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#rating_mateus_film_the_prestige">
+  <rdf:type rdf:resource="#Rating"/>
+  <ratingAbout rdf:resource="#film_the_prestige"/>
+  <score rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</score>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#rating_mateus_film_se7en">
+  <rdf:type rdf:resource="#Rating"/>
+  <ratingAbout rdf:resource="#film_se7en"/>
+  <score rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</score>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#rating_mateus_film_fight_club">
+  <rdf:type rdf:resource="#Rating"/>
+  <ratingAbout rdf:resource="#film_fight_club"/>
+  <score rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</score>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#rating_mateus_film_titanic">
+  <rdf:type rdf:resource="#Rating"/>
+  <ratingAbout rdf:resource="#film_titanic"/>
+  <score rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</score>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#rating_mateus_film_pulp_fiction">
+  <rdf:type rdf:resource="#Rating"/>
+  <ratingAbout rdf:resource="#film_pulp_fiction"/>
+  <score rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</score>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#rating_mateus_film_saving_private_ryan">
+  <rdf:type rdf:resource="#Rating"/>
+  <ratingAbout rdf:resource="#film_saving_private_ryan"/>
+  <score rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</score>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#julia">
+  <rdf:type rdf:resource="#User"/>
+  <friendOf rdf:resource="#ana"/>
+  <username rdf:datatype="http://www.w3.org/2001/XMLSchema#string">julia</username>
+  <fullName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Julia Martins</fullName>
+  <email rdf:datatype="http://www.w3.org/2001/XMLSchema#string">julia@example.com</email>
+  <age rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">25</age>
+  <passwordHash rdf:datatype="http://www.w3.org/2001/XMLSchema#string">b50c94dd59d202e8dfdbcea566d7ad7c:a2bac490a23334e3feae581b559b2ef19f3beacbc911a218e9178872fb9e452c</passwordHash>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#rating_ana_film_inception">
+  <rdf:type rdf:resource="#Rating"/>
+  <ratingAbout rdf:resource="#film_inception"/>
+  <score rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</score>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#rating_ana_film_the_dark_knight">
+  <rdf:type rdf:resource="#Rating"/>
+  <ratingAbout rdf:resource="#film_the_dark_knight"/>
+  <score rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</score>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#rating_ana_film_the_prestige">
+  <rdf:type rdf:resource="#Rating"/>
+  <ratingAbout rdf:resource="#film_the_prestige"/>
+  <score rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</score>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#rating_ana_film_prisoners">
+  <rdf:type rdf:resource="#Rating"/>
+  <ratingAbout rdf:resource="#film_prisoners"/>
+  <score rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</score>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#rating_ana_film_shutter_island">
+  <rdf:type rdf:resource="#Rating"/>
+  <ratingAbout rdf:resource="#film_shutter_island"/>
+  <score rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</score>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#rating_ana_film_the_departed">
+  <rdf:type rdf:resource="#Rating"/>
+  <ratingAbout rdf:resource="#film_the_departed"/>
+  <score rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</score>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#rating_ana_film_bridge_of_spies">
+  <rdf:type rdf:resource="#Rating"/>
+  <ratingAbout rdf:resource="#film_bridge_of_spies"/>
+  <score rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</score>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#rating_ana_film_the_post">
+  <rdf:type rdf:resource="#Rating"/>
+  <ratingAbout rdf:resource="#film_the_post"/>
+  <score rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</score>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#preference_007">
+  <rdf:type rdf:resource="#Preference"/>
+  <prefers rdf:resource="#theme_drama"/>
+  <interestLevel rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</interestLevel>
+  <preferenceType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Theme</preferenceType>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#preference_008">
+  <rdf:type rdf:resource="#Preference"/>
+  <prefers rdf:resource="#theme_suspense"/>
+  <interestLevel rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</interestLevel>
+  <preferenceType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Theme</preferenceType>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#preference_009">
+  <rdf:type rdf:resource="#Preference"/>
+  <prefers rdf:resource="#david_fincher"/>
+  <interestLevel rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</interestLevel>
+  <preferenceType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Director</preferenceType>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#preference_010">
+  <rdf:type rdf:resource="#Preference"/>
+  <prefers rdf:resource="#leonardo_dicaprio"/>
+  <interestLevel rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</interestLevel>
+  <preferenceType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Actor</preferenceType>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#preference_011">
+  <rdf:type rdf:resource="#Preference"/>
+  <prefers rdf:resource="#tom_hanks"/>
+  <interestLevel rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</interestLevel>
+  <preferenceType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Actor</preferenceType>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#rating_mateus_film_goodfellas">
+  <rdf:type rdf:resource="#Rating"/>
+  <ratingAbout rdf:resource="#film_goodfellas"/>
+  <score rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</score>
 </owl:NamedIndividual>
 
 <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#topDataProperty">

@@ -93,12 +93,6 @@ class RecommendationService:
 
         score = 0
         for preference in preferences:
-            print(
-                preference.preference_type,
-                preference.preferred_element,
-                preference.interest_level
-            )
-
             if (
                 preference.preference_type == "Theme"
                 and preference.preferred_element == movie.theme

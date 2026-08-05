@@ -1518,21 +1518,3 @@ class AdminMoviesView(ctk.CTkFrame):
         )
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

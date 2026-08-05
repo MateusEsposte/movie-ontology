@@ -194,6 +194,35 @@ class MoviesView(ctk.CTkFrame):
             command=self.watch_movie
         )
 
+        self.current_rating_label = ctk.CTkLabel(
+            self.details_frame,
+            text="Nota atual: -",
+            font=("Arial", 16)
+        )
+
+        self.current_rating_label.pack(
+            pady=(10, 5)
+        )
+
+        self.rating_combobox = ctk.CTkComboBox(
+            self.details_frame,
+            values=["1", "2", "3", "4", "5"]
+        )
+
+        self.rating_combobox.pack(
+            pady=5
+        )
+
+        self.save_rating_button = ctk.CTkButton(
+            self.details_frame,
+            text="Salvar avaliação",
+            command=self.save_rating
+        )
+
+        self.save_rating_button.pack(
+            pady=(5, 20)
+        )
+
         self.watch_button.pack(
             pady=20
         )
@@ -237,6 +266,7 @@ class MoviesView(ctk.CTkFrame):
         )
 
         self.update_watch_button()
+        self.load_rating()
 
     def watch_movie(self):
         if self.selected_movie is None:
@@ -251,19 +281,7 @@ class MoviesView(ctk.CTkFrame):
         )
 
         self.update_watch_button()
-
-        print(
-            f"{self.current_user.username} assistiu {self.selected_movie.original_title}"
-        )
-
-        movies = self.user_service.get_watched_movies(
-            self.current_user.username
-        )
-
-        print("\nFilmes assistidos:")
-
-        for movie in movies:
-            print(movie.original_title)
+        self.load_rating()
 
     def update_watch_button(self):
         if self.selected_movie is None:
@@ -283,10 +301,32 @@ class MoviesView(ctk.CTkFrame):
                 text="Assistido ✓",
                 state="disabled"
             )
+            self.rating_combobox.configure(
+                state="readonly"
+            )
+
+            self.save_rating_button.configure(
+                state="normal"
+            )
+
         else:
             self.watch_button.configure(
                 text="Marcar como assistido",
                 state="normal"
+            )
+
+            self.current_rating_label.configure(
+                text="Assista ao filme para avaliá-lo."
+            )
+
+            self.rating_combobox.set("5")
+
+            self.rating_combobox.configure(
+                state="disabled"
+            )
+
+            self.save_rating_button.configure(
+                state="disabled"
             )
 
     def render_movie_list(
@@ -411,7 +451,43 @@ class MoviesView(ctk.CTkFrame):
                 state="disabled"
             )
 
+    def load_rating(self):
+        if self.selected_movie is None:
+            return
 
+        rating = self.user_service.get_movie_rating(
+            self.current_user.username,
+            self.selected_movie.ontology_id
+        )
+
+        if rating is None:
+            self.current_rating_label.configure(
+                text="Nota atual: -"
+            )
+            self.rating_combobox.set("5")
+        else:
+            self.current_rating_label.configure(
+                text=f"Nota atual: {rating}"
+            )
+            self.rating_combobox.set(
+                str(rating)
+            )
+
+    def save_rating(self):
+        if self.selected_movie is None:
+            return
+
+        rating = int(
+            self.rating_combobox.get()
+        )
+
+        self.user_service.rate_movie(
+            self.current_user.username,
+            self.selected_movie.ontology_id,
+            rating
+        )
+
+        self.load_rating()
 
 
 

@@ -88,3 +88,19 @@ PERSON_PREFIX = ""
 COUNTRY_PREFIX = "country_"
 THEME_PREFIX = "theme_"
 LANGUAGE_PREFIX = "language_"
+
+# ==========================
+# LOGIN E SENHA
+# ==========================
+
+# mateus
+# 123456
+
+# ana
+# 123456
+
+# carlos
+# 123456
+
+# julia
+# 123456
