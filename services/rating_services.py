@@ -138,8 +138,14 @@ class RatingService:
 
         self.repository.add_object_property(
             user,
-            HAS_RATING,
+            MAKES_RATING,
             rating
+        )
+
+        self.repository.add_object_property(
+            rating,
+            RATING_OF,
+            user
         )
 
         self.repository.add_object_property(
@@ -175,94 +181,6 @@ class RatingService:
 
         return self._build_rating(rating)
 
-    def delete_rating(
-        self,
-        rating_id: str
-    ):
-
-        rating = self.repository.require_individual(
-            rating_id
-        )
-
-        self.repository.remove_individual(
-            rating
-        )
-
-    def list_user_ratings(
-        self,
-        username: str
-    ) -> list[Rating]:
-
-        ratings = []
-
-        user = self.repository.require_individual(
-            username
-        )
-
-        user_ratings = self.repository.get_object_property(
-            user,
-            HAS_RATING
-        )
-
-        for rating in user_ratings:
-            ratings.append(
-                self._build_rating(rating)
-            )
-
-        return ratings
-
-    def list_movie_ratings(
-        self,
-        movie_title: str
-    ) -> list[Rating]:
-
-        ratings = []
-
-        for rating in self.list_ratings():
-
-            if rating.movie_title == movie_title:
-                ratings.append(rating)
-
-        return ratings
-
-    def update_rating(
-        self,
-        rating_id: str,
-        score: float,
-        rating_date: str
-    ) -> Rating:
-
-        rating = self.repository.require_individual(
-            rating_id
-        )
-
-        self.repository.set_data_property(
-            rating,
-            SCORE,
-            score
-        )
-
-        self.repository.set_data_property(
-            rating,
-            RATING_DATE,
-            rating_date
-        )
-
-        return self._build_rating(rating)
-    
-    def delete_rating(
-        self,
-        rating_id: str
-    ):
-
-        rating = self.repository.require_individual(
-            rating_id
-        )
-
-        self.repository.remove_individual(
-            rating
-        )
-
     def list_user_ratings(
         self,
         username: str
@@ -276,7 +194,7 @@ class RatingService:
 
         for rating in self.repository.get_object_property(
             user,
-            HAS_RATING
+            MAKES_RATING
         ):
 
             ratings.append(
@@ -298,6 +216,19 @@ class RatingService:
                 ratings.append(rating)
 
         return ratings
+    
+    def delete_rating(
+        self,
+        rating_id: str
+    ):
+
+        rating = self.repository.require_individual(
+            rating_id
+        )
+
+        self.repository.remove_individual(
+            rating
+        )
 
     def calculate_average(
         self,

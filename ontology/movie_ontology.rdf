@@ -1756,8 +1756,6 @@
 
 <owl:NamedIndividual rdf:about="#mateus">
   <rdf:type rdf:resource="#User"/>
-  <friendOf rdf:resource="#ana"/>
-  <friendOf rdf:resource="#carlos"/>
   <watched rdf:resource="#film_the_dark_knight"/>
   <watched rdf:resource="#film_inception"/>
   <watched rdf:resource="#film_the_prestige"/>
@@ -1782,53 +1780,25 @@
   <makesRating rdf:resource="#rating_mateus_film_saving_private_ryan"/>
   <watched rdf:resource="#film_goodfellas"/>
   <makesRating rdf:resource="#rating_mateus_film_goodfellas"/>
+  <watched rdf:resource="#film_batman_begins"/>
+  <makesRating rdf:resource="#rating_mateus_film_batman_begins"/>
+  <watched rdf:resource="#film_parasite"/>
+  <makesRating rdf:resource="#rating_mateus_film_parasite"/>
+  <watched rdf:resource="#film_inglourious_basterds"/>
+  <makesRating rdf:resource="#rating_mateus_film_inglourious_basterds"/>
+  <watched rdf:resource="#film_shutter_island"/>
+  <makesRating rdf:resource="#rating_mateus_film_shutter_island"/>
+  <watched rdf:resource="#film_prisoners"/>
+  <makesRating rdf:resource="#rating_mateus_film_prisoners"/>
+  <watched rdf:resource="#film_the_wolf_of_wall_street"/>
+  <makesRating rdf:resource="#rating_mateus_film_the_wolf_of_wall_street"/>
+  <watched rdf:resource="#film_lucy"/>
+  <makesRating rdf:resource="#rating_mateus_film_lucy"/>
   <username rdf:datatype="http://www.w3.org/2001/XMLSchema#string">mateus</username>
   <fullName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">mateus esposte</fullName>
   <email rdf:datatype="http://www.w3.org/2001/XMLSchema#string">mateus@example.com</email>
   <age rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">23</age>
   <passwordHash rdf:datatype="http://www.w3.org/2001/XMLSchema#string">d67de3620533c7cc85ba4476d9587e84:14623f77485e0e0be9eee17a2e6dac35862674e39c124ea60ad1e9b904b9e029</passwordHash>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#ana">
-  <rdf:type rdf:resource="#User"/>
-  <friendOf rdf:resource="#mateus"/>
-  <friendOf rdf:resource="#julia"/>
-  <watched rdf:resource="#film_inception"/>
-  <watched rdf:resource="#film_the_dark_knight"/>
-  <watched rdf:resource="#film_the_prestige"/>
-  <watched rdf:resource="#film_shutter_island"/>
-  <watched rdf:resource="#film_prisoners"/>
-  <watched rdf:resource="#film_the_departed"/>
-  <watched rdf:resource="#film_bridge_of_spies"/>
-  <watched rdf:resource="#film_the_post"/>
-  <makesRating rdf:resource="#rating_ana_film_inception"/>
-  <makesRating rdf:resource="#rating_ana_film_the_dark_knight"/>
-  <makesRating rdf:resource="#rating_ana_film_the_prestige"/>
-  <makesRating rdf:resource="#rating_ana_film_prisoners"/>
-  <makesRating rdf:resource="#rating_ana_film_shutter_island"/>
-  <makesRating rdf:resource="#rating_ana_film_the_departed"/>
-  <makesRating rdf:resource="#rating_ana_film_bridge_of_spies"/>
-  <makesRating rdf:resource="#rating_ana_film_the_post"/>
-  <hasPreference rdf:resource="#preference_007"/>
-  <hasPreference rdf:resource="#preference_008"/>
-  <hasPreference rdf:resource="#preference_009"/>
-  <hasPreference rdf:resource="#preference_010"/>
-  <hasPreference rdf:resource="#preference_011"/>
-  <username rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ana</username>
-  <fullName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ana Souza</fullName>
-  <email rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ana@example.com</email>
-  <age rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">23</age>
-  <passwordHash rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1692dd79c570f950340887948f99643d:50b51fb821b592d4f70cc939495db9be7afa04bec00bb310a7db3ffb26142baf</passwordHash>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#carlos">
-  <rdf:type rdf:resource="#User"/>
-  <friendOf rdf:resource="#mateus"/>
-  <username rdf:datatype="http://www.w3.org/2001/XMLSchema#string">carlos</username>
-  <fullName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Carlos Lima</fullName>
-  <email rdf:datatype="http://www.w3.org/2001/XMLSchema#string">carlos@example.com</email>
-  <age rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">24</age>
-  <passwordHash rdf:datatype="http://www.w3.org/2001/XMLSchema#string">d8ddd607edf7d73cd85257e81e8af965:159928fc5462c3c52b64969313610ebbb8d98d91cc3f5046132cb3a10c076180</passwordHash>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#preference_001">
@@ -1906,7 +1876,7 @@
 <owl:NamedIndividual rdf:about="#rating_mateus_film_titanic">
   <rdf:type rdf:resource="#Rating"/>
   <ratingAbout rdf:resource="#film_titanic"/>
-  <score rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</score>
+  <score rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</score>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#rating_mateus_film_pulp_fiction">
@@ -1921,9 +1891,147 @@
   <score rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</score>
 </owl:NamedIndividual>
 
+<owl:NamedIndividual rdf:about="#rating_mateus_film_goodfellas">
+  <rdf:type rdf:resource="#Rating"/>
+  <ratingAbout rdf:resource="#film_goodfellas"/>
+  <score rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</score>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#rating_mateus_film_batman_begins">
+  <rdf:type rdf:resource="#Rating"/>
+  <ratingAbout rdf:resource="#film_batman_begins"/>
+  <score rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</score>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#rating_mateus_film_parasite">
+  <rdf:type rdf:resource="#Rating"/>
+  <ratingAbout rdf:resource="#film_parasite"/>
+  <score rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</score>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#rating_mateus_film_inglourious_basterds">
+  <rdf:type rdf:resource="#Rating"/>
+  <ratingAbout rdf:resource="#film_inglourious_basterds"/>
+  <score rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</score>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#rating_mateus_film_shutter_island">
+  <rdf:type rdf:resource="#Rating"/>
+  <ratingAbout rdf:resource="#film_shutter_island"/>
+  <score rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</score>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#rating_mateus_film_prisoners">
+  <rdf:type rdf:resource="#Rating"/>
+  <ratingAbout rdf:resource="#film_prisoners"/>
+  <score rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</score>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#rating_mateus_film_the_wolf_of_wall_street">
+  <rdf:type rdf:resource="#Rating"/>
+  <ratingAbout rdf:resource="#film_the_wolf_of_wall_street"/>
+  <score rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</score>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#rating_mateus_film_lucy">
+  <rdf:type rdf:resource="#Rating"/>
+  <ratingAbout rdf:resource="#film_lucy"/>
+  <score rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</score>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#ana">
+  <rdf:type rdf:resource="#User"/>
+  <friendOf rdf:resource="#julia"/>
+  <watched rdf:resource="#film_inception"/>
+  <watched rdf:resource="#film_the_dark_knight"/>
+  <watched rdf:resource="#film_the_prestige"/>
+  <watched rdf:resource="#film_shutter_island"/>
+  <watched rdf:resource="#film_prisoners"/>
+  <watched rdf:resource="#film_the_departed"/>
+  <watched rdf:resource="#film_bridge_of_spies"/>
+  <watched rdf:resource="#film_the_post"/>
+  <makesRating rdf:resource="#rating_ana_film_inception"/>
+  <makesRating rdf:resource="#rating_ana_film_the_dark_knight"/>
+  <makesRating rdf:resource="#rating_ana_film_the_prestige"/>
+  <makesRating rdf:resource="#rating_ana_film_prisoners"/>
+  <makesRating rdf:resource="#rating_ana_film_shutter_island"/>
+  <makesRating rdf:resource="#rating_ana_film_the_departed"/>
+  <makesRating rdf:resource="#rating_ana_film_bridge_of_spies"/>
+  <makesRating rdf:resource="#rating_ana_film_the_post"/>
+  <hasPreference rdf:resource="#preference_007"/>
+  <hasPreference rdf:resource="#preference_008"/>
+  <hasPreference rdf:resource="#preference_009"/>
+  <hasPreference rdf:resource="#preference_010"/>
+  <hasPreference rdf:resource="#preference_011"/>
+  <friendOf rdf:resource="#carlos"/>
+  <watched rdf:resource="#film_lucy"/>
+  <makesRating rdf:resource="#rating_ana_film_lucy"/>
+  <watched rdf:resource="#film_batman_begins"/>
+  <makesRating rdf:resource="#rating_ana_film_batman_begins"/>
+  <watched rdf:resource="#film_parasite"/>
+  <makesRating rdf:resource="#rating_ana_film_parasite"/>
+  <watched rdf:resource="#film_la_femme_nikita"/>
+  <makesRating rdf:resource="#rating_ana_film_la_femme_nikita"/>
+  <watched rdf:resource="#film_inglourious_basterds"/>
+  <makesRating rdf:resource="#rating_ana_film_inglourious_basterds"/>
+  <watched rdf:resource="#film_titanic"/>
+  <makesRating rdf:resource="#rating_ana_film_titanic"/>
+  <watched rdf:resource="#film_goodfellas"/>
+  <makesRating rdf:resource="#rating_ana_film_goodfellas"/>
+  <watched rdf:resource="#film_casino"/>
+  <makesRating rdf:resource="#rating_ana_film_casino"/>
+  <watched rdf:resource="#film_gangs_of_new_york"/>
+  <makesRating rdf:resource="#rating_ana_film_gangs_of_new_york"/>
+  <watched rdf:resource="#film_pulp_fiction"/>
+  <makesRating rdf:resource="#rating_ana_film_pulp_fiction"/>
+  <watched rdf:resource="#film_taxi_driver"/>
+  <makesRating rdf:resource="#rating_ana_film_taxi_driver"/>
+  <friendOf rdf:resource="#tiago"/>
+  <username rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ana</username>
+  <fullName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ana Souza</fullName>
+  <email rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ana@example.com</email>
+  <age rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">23</age>
+  <passwordHash rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1692dd79c570f950340887948f99643d:50b51fb821b592d4f70cc939495db9be7afa04bec00bb310a7db3ffb26142baf</passwordHash>
+</owl:NamedIndividual>
+
 <owl:NamedIndividual rdf:about="#julia">
   <rdf:type rdf:resource="#User"/>
   <friendOf rdf:resource="#ana"/>
+  <watched rdf:resource="#film_the_irishman"/>
+  <makesRating rdf:resource="#rating_julia_film_the_irishman"/>
+  <watched rdf:resource="#film_titanic"/>
+  <makesRating rdf:resource="#rating_julia_film_titanic"/>
+  <watched rdf:resource="#film_the_curious_case_of_benjamin_button"/>
+  <makesRating rdf:resource="#rating_julia_film_the_curious_case_of_benjamin_button"/>
+  <watched rdf:resource="#film_gran_torino"/>
+  <watched rdf:resource="#film_million_dollar_baby"/>
+  <makesRating rdf:resource="#rating_julia_film_million_dollar_baby"/>
+  <hasPreference rdf:resource="#preference_021"/>
+  <hasPreference rdf:resource="#preference_022"/>
+  <hasPreference rdf:resource="#preference_023"/>
+  <hasPreference rdf:resource="#preference_024"/>
+  <hasPreference rdf:resource="#preference_025"/>
+  <hasPreference rdf:resource="#preference_026"/>
+  <hasPreference rdf:resource="#preference_027"/>
+  <hasPreference rdf:resource="#preference_028"/>
+  <watched rdf:resource="#film_parasite"/>
+  <makesRating rdf:resource="#rating_julia_film_parasite"/>
+  <watched rdf:resource="#film_prisoners"/>
+  <makesRating rdf:resource="#rating_julia_film_prisoners"/>
+  <watched rdf:resource="#film_goodfellas"/>
+  <makesRating rdf:resource="#rating_julia_film_goodfellas"/>
+  <watched rdf:resource="#film_casino"/>
+  <makesRating rdf:resource="#rating_julia_film_casino"/>
+  <watched rdf:resource="#film_the_departed"/>
+  <makesRating rdf:resource="#rating_julia_film_the_departed"/>
+  <watched rdf:resource="#film_taxi_driver"/>
+  <makesRating rdf:resource="#rating_julia_film_taxi_driver"/>
+  <watched rdf:resource="#film_lucy"/>
+  <watched rdf:resource="#film_leon_the_professional"/>
+  <makesRating rdf:resource="#rating_julia_film_leon_the_professional"/>
+  <watched rdf:resource="#film_the_big_blue"/>
+  <makesRating rdf:resource="#rating_julia_film_the_big_blue"/>
+  <friendOf rdf:resource="#tiago"/>
   <username rdf:datatype="http://www.w3.org/2001/XMLSchema#string">julia</username>
   <fullName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Julia Martins</fullName>
   <email rdf:datatype="http://www.w3.org/2001/XMLSchema#string">julia@example.com</email>
@@ -1940,7 +2048,7 @@
 <owl:NamedIndividual rdf:about="#rating_ana_film_the_dark_knight">
   <rdf:type rdf:resource="#Rating"/>
   <ratingAbout rdf:resource="#film_the_dark_knight"/>
-  <score rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</score>
+  <score rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</score>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#rating_ana_film_the_prestige">
@@ -2014,10 +2122,501 @@
   <preferenceType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Actor</preferenceType>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#rating_mateus_film_goodfellas">
+<owl:NamedIndividual rdf:about="#carlos">
+  <rdf:type rdf:resource="#User"/>
+  <friendOf rdf:resource="#ana"/>
+  <hasPreference rdf:resource="#preference_012"/>
+  <hasPreference rdf:resource="#preference_013"/>
+  <hasPreference rdf:resource="#preference_014"/>
+  <hasPreference rdf:resource="#preference_015"/>
+  <hasPreference rdf:resource="#preference_016"/>
+  <hasPreference rdf:resource="#preference_017"/>
+  <hasPreference rdf:resource="#preference_018"/>
+  <hasPreference rdf:resource="#preference_019"/>
+  <hasPreference rdf:resource="#preference_020"/>
+  <watched rdf:resource="#film_pulp_fiction"/>
+  <makesRating rdf:resource="#rating_carlos_film_pulp_fiction"/>
+  <watched rdf:resource="#film_parasite"/>
+  <makesRating rdf:resource="#rating_carlos_film_parasite"/>
+  <watched rdf:resource="#film_se7en"/>
+  <makesRating rdf:resource="#rating_carlos_film_se7en"/>
+  <watched rdf:resource="#film_the_prestige"/>
+  <makesRating rdf:resource="#rating_carlos_film_the_prestige"/>
+  <watched rdf:resource="#film_inception"/>
+  <makesRating rdf:resource="#rating_carlos_film_inception"/>
+  <watched rdf:resource="#film_lucy"/>
+  <makesRating rdf:resource="#rating_carlos_film_lucy"/>
+  <watched rdf:resource="#film_batman_begins"/>
+  <makesRating rdf:resource="#rating_carlos_film_batman_begins"/>
+  <watched rdf:resource="#film_prisoners"/>
+  <makesRating rdf:resource="#rating_carlos_film_prisoners"/>
+  <watched rdf:resource="#film_shutter_island"/>
+  <makesRating rdf:resource="#rating_carlos_film_shutter_island"/>
+  <watched rdf:resource="#film_taxi_driver"/>
+  <makesRating rdf:resource="#rating_carlos_film_taxi_driver"/>
+  <watched rdf:resource="#film_raging_bull"/>
+  <makesRating rdf:resource="#rating_carlos_film_raging_bull"/>
+  <watched rdf:resource="#film_casino"/>
+  <makesRating rdf:resource="#rating_carlos_film_casino"/>
+  <watched rdf:resource="#film_killers_of_the_flower_moon"/>
+  <makesRating rdf:resource="#rating_carlos_film_killers_of_the_flower_moon"/>
+  <hasPreference rdf:resource="#preference_029"/>
+  <hasPreference rdf:resource="#preference_030"/>
+  <friendOf rdf:resource="#tiago"/>
+  <username rdf:datatype="http://www.w3.org/2001/XMLSchema#string">carlos</username>
+  <fullName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Carlos Lima</fullName>
+  <email rdf:datatype="http://www.w3.org/2001/XMLSchema#string">carlos@example.com</email>
+  <age rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">24</age>
+  <passwordHash rdf:datatype="http://www.w3.org/2001/XMLSchema#string">d8ddd607edf7d73cd85257e81e8af965:159928fc5462c3c52b64969313610ebbb8d98d91cc3f5046132cb3a10c076180</passwordHash>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#rating_ana_film_lucy">
+  <rdf:type rdf:resource="#Rating"/>
+  <ratingAbout rdf:resource="#film_lucy"/>
+  <score rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</score>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#rating_ana_film_batman_begins">
+  <rdf:type rdf:resource="#Rating"/>
+  <ratingAbout rdf:resource="#film_batman_begins"/>
+  <score rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</score>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#rating_ana_film_parasite">
+  <rdf:type rdf:resource="#Rating"/>
+  <ratingAbout rdf:resource="#film_parasite"/>
+  <score rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</score>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#rating_ana_film_la_femme_nikita">
+  <rdf:type rdf:resource="#Rating"/>
+  <ratingAbout rdf:resource="#film_la_femme_nikita"/>
+  <score rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</score>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#rating_ana_film_inglourious_basterds">
+  <rdf:type rdf:resource="#Rating"/>
+  <ratingAbout rdf:resource="#film_inglourious_basterds"/>
+  <score rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</score>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#rating_ana_film_titanic">
+  <rdf:type rdf:resource="#Rating"/>
+  <ratingAbout rdf:resource="#film_titanic"/>
+  <score rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</score>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#rating_ana_film_goodfellas">
   <rdf:type rdf:resource="#Rating"/>
   <ratingAbout rdf:resource="#film_goodfellas"/>
+  <score rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</score>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#rating_ana_film_casino">
+  <rdf:type rdf:resource="#Rating"/>
+  <ratingAbout rdf:resource="#film_casino"/>
+  <score rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</score>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#rating_ana_film_gangs_of_new_york">
+  <rdf:type rdf:resource="#Rating"/>
+  <ratingAbout rdf:resource="#film_gangs_of_new_york"/>
+  <score rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</score>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#rating_ana_film_pulp_fiction">
+  <rdf:type rdf:resource="#Rating"/>
+  <ratingAbout rdf:resource="#film_pulp_fiction"/>
+  <score rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</score>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#rating_ana_film_taxi_driver">
+  <rdf:type rdf:resource="#Rating"/>
+  <ratingAbout rdf:resource="#film_taxi_driver"/>
+  <score rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</score>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#tiago">
+  <rdf:type rdf:resource="#User"/>
+  <hasPreference rdf:resource="#preference_031"/>
+  <hasPreference rdf:resource="#preference_032"/>
+  <hasPreference rdf:resource="#preference_033"/>
+  <hasPreference rdf:resource="#preference_034"/>
+  <hasPreference rdf:resource="#preference_035"/>
+  <hasPreference rdf:resource="#preference_036"/>
+  <hasPreference rdf:resource="#preference_037"/>
+  <hasPreference rdf:resource="#preference_038"/>
+  <friendOf rdf:resource="#carlos"/>
+  <friendOf rdf:resource="#ana"/>
+  <friendOf rdf:resource="#julia"/>
+  <watched rdf:resource="#film_snowpiercer"/>
+  <makesRating rdf:resource="#rating_tiago_film_snowpiercer"/>
+  <watched rdf:resource="#film_inception"/>
+  <makesRating rdf:resource="#rating_tiago_film_inception"/>
+  <watched rdf:resource="#film_batman_begins"/>
+  <makesRating rdf:resource="#rating_tiago_film_batman_begins"/>
+  <username rdf:datatype="http://www.w3.org/2001/XMLSchema#string">tiago</username>
+  <fullName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">tiago luis</fullName>
+  <email rdf:datatype="http://www.w3.org/2001/XMLSchema#string">tiago@gmai.com</email>
+  <age rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">19</age>
+  <passwordHash rdf:datatype="http://www.w3.org/2001/XMLSchema#string">936b6bda1dba3053f869d6d24f189952:ccab68293efa3a7ccd4fe12df791872b785cf5b614acd9d0b952ae039d705a3a</passwordHash>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#preference_012">
+  <rdf:type rdf:resource="#Preference"/>
+  <prefers rdf:resource="#theme_terror"/>
+  <interestLevel rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</interestLevel>
+  <preferenceType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Theme</preferenceType>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#preference_013">
+  <rdf:type rdf:resource="#Preference"/>
+  <prefers rdf:resource="#theme_suspense"/>
+  <interestLevel rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</interestLevel>
+  <preferenceType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Theme</preferenceType>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#preference_014">
+  <rdf:type rdf:resource="#Preference"/>
+  <prefers rdf:resource="#theme_drama"/>
+  <interestLevel rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</interestLevel>
+  <preferenceType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Theme</preferenceType>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#preference_015">
+  <rdf:type rdf:resource="#Preference"/>
+  <prefers rdf:resource="#christian_bale"/>
+  <interestLevel rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</interestLevel>
+  <preferenceType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Actor</preferenceType>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#preference_016">
+  <rdf:type rdf:resource="#Preference"/>
+  <prefers rdf:resource="#robert_de_niro"/>
+  <preferenceType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Actor</preferenceType>
+  <interestLevel rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</interestLevel>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#preference_017">
+  <rdf:type rdf:resource="#Preference"/>
+  <prefers rdf:resource="#keanu_reeves"/>
+  <interestLevel rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</interestLevel>
+  <preferenceType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Actor</preferenceType>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#preference_018">
+  <rdf:type rdf:resource="#Preference"/>
+  <prefers rdf:resource="#steven_spielberg"/>
+  <interestLevel rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</interestLevel>
+  <preferenceType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Director</preferenceType>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#preference_019">
+  <rdf:type rdf:resource="#Preference"/>
+  <prefers rdf:resource="#martin_scorsese"/>
+  <interestLevel rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</interestLevel>
+  <preferenceType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Director</preferenceType>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#preference_020">
+  <rdf:type rdf:resource="#Preference"/>
+  <prefers rdf:resource="#film_pulp_fiction"/>
+  <interestLevel rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</interestLevel>
+  <preferenceType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CinematicWork</preferenceType>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#rating_carlos_film_pulp_fiction">
+  <rdf:type rdf:resource="#Rating"/>
+  <ratingAbout rdf:resource="#film_pulp_fiction"/>
+  <score rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</score>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#rating_carlos_film_parasite">
+  <rdf:type rdf:resource="#Rating"/>
+  <ratingAbout rdf:resource="#film_parasite"/>
+  <score rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</score>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#rating_carlos_film_se7en">
+  <rdf:type rdf:resource="#Rating"/>
+  <ratingAbout rdf:resource="#film_se7en"/>
+  <score rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</score>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#rating_carlos_film_the_prestige">
+  <rdf:type rdf:resource="#Rating"/>
+  <ratingAbout rdf:resource="#film_the_prestige"/>
+  <score rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</score>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#rating_carlos_film_inception">
+  <rdf:type rdf:resource="#Rating"/>
+  <ratingAbout rdf:resource="#film_inception"/>
+  <score rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</score>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#rating_carlos_film_lucy">
+  <rdf:type rdf:resource="#Rating"/>
+  <ratingAbout rdf:resource="#film_lucy"/>
+  <score rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</score>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#rating_carlos_film_batman_begins">
+  <rdf:type rdf:resource="#Rating"/>
+  <ratingAbout rdf:resource="#film_batman_begins"/>
+  <score rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</score>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#rating_carlos_film_prisoners">
+  <rdf:type rdf:resource="#Rating"/>
+  <ratingAbout rdf:resource="#film_prisoners"/>
   <score rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</score>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#rating_carlos_film_shutter_island">
+  <rdf:type rdf:resource="#Rating"/>
+  <ratingAbout rdf:resource="#film_shutter_island"/>
+  <score rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</score>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#rating_carlos_film_taxi_driver">
+  <rdf:type rdf:resource="#Rating"/>
+  <ratingAbout rdf:resource="#film_taxi_driver"/>
+  <score rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</score>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#rating_carlos_film_raging_bull">
+  <rdf:type rdf:resource="#Rating"/>
+  <ratingAbout rdf:resource="#film_raging_bull"/>
+  <score rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</score>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#rating_carlos_film_casino">
+  <rdf:type rdf:resource="#Rating"/>
+  <ratingAbout rdf:resource="#film_casino"/>
+  <score rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</score>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#rating_carlos_film_killers_of_the_flower_moon">
+  <rdf:type rdf:resource="#Rating"/>
+  <ratingAbout rdf:resource="#film_killers_of_the_flower_moon"/>
+  <score rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</score>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#preference_029">
+  <rdf:type rdf:resource="#Preference"/>
+  <prefers rdf:resource="#samuel_l_jackson"/>
+  <interestLevel rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</interestLevel>
+  <preferenceType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Actor</preferenceType>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#preference_030">
+  <rdf:type rdf:resource="#Preference"/>
+  <prefers rdf:resource="#wagner_moura"/>
+  <interestLevel rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</interestLevel>
+  <preferenceType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Actor</preferenceType>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#rating_julia_film_the_irishman">
+  <rdf:type rdf:resource="#Rating"/>
+  <ratingAbout rdf:resource="#film_the_irishman"/>
+  <score rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</score>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#rating_julia_film_titanic">
+  <rdf:type rdf:resource="#Rating"/>
+  <ratingAbout rdf:resource="#film_titanic"/>
+  <score rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</score>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#rating_julia_film_the_curious_case_of_benjamin_button">
+  <rdf:type rdf:resource="#Rating"/>
+  <ratingAbout rdf:resource="#film_the_curious_case_of_benjamin_button"/>
+  <score rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</score>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#rating_julia_film_million_dollar_baby">
+  <rdf:type rdf:resource="#Rating"/>
+  <ratingAbout rdf:resource="#film_million_dollar_baby"/>
+  <score rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</score>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#preference_021">
+  <rdf:type rdf:resource="#Preference"/>
+  <prefers rdf:resource="#theme_drama"/>
+  <interestLevel rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</interestLevel>
+  <preferenceType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Theme</preferenceType>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#preference_022">
+  <rdf:type rdf:resource="#Preference"/>
+  <prefers rdf:resource="#theme_comedia"/>
+  <interestLevel rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</interestLevel>
+  <preferenceType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Theme</preferenceType>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#preference_023">
+  <rdf:type rdf:resource="#Preference"/>
+  <prefers rdf:resource="#theme_ficcao_cientifica"/>
+  <interestLevel rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</interestLevel>
+  <preferenceType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Theme</preferenceType>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#preference_024">
+  <rdf:type rdf:resource="#Preference"/>
+  <prefers rdf:resource="#brad_pitt"/>
+  <interestLevel rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</interestLevel>
+  <preferenceType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Actor</preferenceType>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#preference_025">
+  <rdf:type rdf:resource="#Preference"/>
+  <prefers rdf:resource="#emma_watson"/>
+  <interestLevel rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</interestLevel>
+  <preferenceType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Actor</preferenceType>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#preference_026">
+  <rdf:type rdf:resource="#Preference"/>
+  <prefers rdf:resource="#leonardo_dicaprio"/>
+  <interestLevel rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</interestLevel>
+  <preferenceType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Actor</preferenceType>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#preference_027">
+  <rdf:type rdf:resource="#Preference"/>
+  <prefers rdf:resource="#quentin_tarantino"/>
+  <interestLevel rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</interestLevel>
+  <preferenceType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Director</preferenceType>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#preference_028">
+  <rdf:type rdf:resource="#Preference"/>
+  <prefers rdf:resource="#christopher_nolan"/>
+  <interestLevel rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</interestLevel>
+  <preferenceType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Director</preferenceType>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#rating_julia_film_parasite">
+  <rdf:type rdf:resource="#Rating"/>
+  <ratingAbout rdf:resource="#film_parasite"/>
+  <score rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</score>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#rating_julia_film_prisoners">
+  <rdf:type rdf:resource="#Rating"/>
+  <ratingAbout rdf:resource="#film_prisoners"/>
+  <score rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</score>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#rating_julia_film_goodfellas">
+  <rdf:type rdf:resource="#Rating"/>
+  <ratingAbout rdf:resource="#film_goodfellas"/>
+  <score rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</score>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#rating_julia_film_casino">
+  <rdf:type rdf:resource="#Rating"/>
+  <ratingAbout rdf:resource="#film_casino"/>
+  <score rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</score>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#rating_julia_film_the_departed">
+  <rdf:type rdf:resource="#Rating"/>
+  <ratingAbout rdf:resource="#film_the_departed"/>
+  <score rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</score>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#rating_julia_film_taxi_driver">
+  <rdf:type rdf:resource="#Rating"/>
+  <ratingAbout rdf:resource="#film_taxi_driver"/>
+  <score rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</score>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#rating_julia_film_leon_the_professional">
+  <rdf:type rdf:resource="#Rating"/>
+  <ratingAbout rdf:resource="#film_leon_the_professional"/>
+  <score rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</score>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#rating_julia_film_the_big_blue">
+  <rdf:type rdf:resource="#Rating"/>
+  <ratingAbout rdf:resource="#film_the_big_blue"/>
+  <score rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</score>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#preference_031">
+  <rdf:type rdf:resource="#Preference"/>
+  <prefers rdf:resource="#theme_suspense"/>
+  <interestLevel rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</interestLevel>
+  <preferenceType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Theme</preferenceType>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#preference_032">
+  <rdf:type rdf:resource="#Preference"/>
+  <prefers rdf:resource="#theme_terror"/>
+  <interestLevel rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</interestLevel>
+  <preferenceType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Theme</preferenceType>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#preference_033">
+  <rdf:type rdf:resource="#Preference"/>
+  <prefers rdf:resource="#leonardo_dicaprio"/>
+  <interestLevel rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</interestLevel>
+  <preferenceType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Actor</preferenceType>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#preference_034">
+  <rdf:type rdf:resource="#Preference"/>
+  <prefers rdf:resource="#emma_watson"/>
+  <interestLevel rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</interestLevel>
+  <preferenceType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Actor</preferenceType>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#preference_035">
+  <rdf:type rdf:resource="#Preference"/>
+  <prefers rdf:resource="#brad_pitt"/>
+  <interestLevel rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</interestLevel>
+  <preferenceType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Actor</preferenceType>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#preference_036">
+  <rdf:type rdf:resource="#Preference"/>
+  <prefers rdf:resource="#akira_kurosawa"/>
+  <interestLevel rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</interestLevel>
+  <preferenceType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Director</preferenceType>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#preference_037">
+  <rdf:type rdf:resource="#Preference"/>
+  <prefers rdf:resource="#christopher_nolan"/>
+  <interestLevel rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</interestLevel>
+  <preferenceType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Director</preferenceType>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#preference_038">
+  <rdf:type rdf:resource="#Preference"/>
+  <prefers rdf:resource="#steven_spielberg"/>
+  <interestLevel rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</interestLevel>
+  <preferenceType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Director</preferenceType>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#rating_tiago_film_snowpiercer">
+  <rdf:type rdf:resource="#Rating"/>
+  <ratingAbout rdf:resource="#film_snowpiercer"/>
+  <score rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</score>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#rating_tiago_film_inception">
+  <rdf:type rdf:resource="#Rating"/>
+  <ratingAbout rdf:resource="#film_inception"/>
+  <score rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</score>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#rating_tiago_film_batman_begins">
+  <rdf:type rdf:resource="#Rating"/>
+  <ratingAbout rdf:resource="#film_batman_begins"/>
+  <score rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</score>
 </owl:NamedIndividual>
 
 <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#topDataProperty">
