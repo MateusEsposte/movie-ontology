@@ -1,4 +1,4 @@
-# 🎬 Movie Recommendation System using Ontologies
+# Movie Recommendation System using Ontologies
 
 Sistema de recomendação de filmes baseado em ontologias, desenvolvido como projeto da disciplina de **Engenharia de Ontologias**.
 
