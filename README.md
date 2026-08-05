@@ -212,6 +212,7 @@ Usuários recém-criados podem inicialmente receber apenas recomendações basea
 ---
 
 # Autores
+Mateus da Cruz Esposte (13862650)
 
 Projeto desenvolvido para a disciplina de Engenharia de Ontologias.
 
